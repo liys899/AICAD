@@ -1,10 +1,7 @@
 import os
 from flask import Flask, request, send_file
-import json
 from utils.download import get_donwload_string
-from codex import generate_cq_obj
-from utils.json import NumpyEncoder, sanitize_for_json
-from utils.tessellate import tessellate
+from codex import generate_scad_bundle
 from flask import jsonify
 from flask_cors import CORS, cross_origin
 from flask import request
@@ -24,30 +21,33 @@ app.config["CORS_HEADERS"] = "Content-Type"
 def cad():
     try:
         query = request.args.get("query")
-        id, obj = generate_cq_obj(query)
-        converted_obj = tessellate([obj])
-        safe = sanitize_for_json(converted_obj)
-        return jsonify(
-            {
-                "id": id,
-                "shapes": json.loads(json.dumps(safe, cls=NumpyEncoder)),
-            }
-        )
+        data = generate_scad_bundle(query)
+        return jsonify(data)
     except Exception as e:
-        print(e)
-        return jsonify({"error": f"Something went wrong.{e}"})
+        debug_id = request.args.get("debug_id") or "cad_error"
+        return (
+            jsonify(
+                {
+                    "error": {
+                        "code": "CAD_GENERATION_FAILED",
+                        "message": str(e),
+                        "debug_id": debug_id,
+                    }
+                }
+            ),
+            400,
+        )
 
 @cross_origin()
 @app.route("/download", methods=["GET"])
 def download():
     id = request.args.get("id")
     file_type = request.args.get("file_type")
-    file_path = get_donwload_string(id, file_type)
     try:
+        file_path = get_donwload_string(id, file_type)
         return send_file(file_path, as_attachment=True)
     except Exception as e:
-        print(e)
-        return jsonify({"error": f"Something went wrong.{e}"})
+        return jsonify({"error": {"code": "DOWNLOAD_FAILED", "message": str(e)}}), 400
 
 
 if __name__ == "__main__":

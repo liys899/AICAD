@@ -3,7 +3,25 @@ import { downloadAxiosResponse } from "../utils"
 
 const BASE_URL = "http://127.0.0.1:5001"
 
-export function getCadShapes(query: string, uuid: string | null = null) {
+export interface ParamMeta {
+  name: string
+  label: string
+  min: number
+  max: number
+  step: number
+  value: number
+}
+
+export interface CadDslResponse {
+  id: string
+  apiVersion: string
+  pipeline: string
+  dsl: Record<string, unknown>
+  scad: string
+  paramsMeta: ParamMeta[]
+}
+
+export function getCadDsl(query: string, uuid: string | null = null) {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,
@@ -19,15 +37,15 @@ export function getCadShapes(query: string, uuid: string | null = null) {
 
   return axios.request(config)
     .then(async (response) => {
-      return response.data
+      return response.data as CadDslResponse
     })
     .catch((error) => {
-      console.log(error)
+      throw error
     })
 }
 
 
-export function getCadDownload(id: string, file_type: "step" | "stl") {
+export function getCadDownload(id: string, file_type: "scad" | "stl") {
   let config = {
     method: 'get',
     maxBodyLength: Infinity,

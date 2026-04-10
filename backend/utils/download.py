@@ -1,17 +1,30 @@
-import importlib
 import os
-import cadquery as cq
+import shutil
+import subprocess
 
 
 def get_donwload_string(id: str, extension: str = "step"):
-    # Export the box
-    cad_file_path = f"generated/{id}.{extension}"
-    if not os.path.exists(cad_file_path):
-        spec = importlib.util.spec_from_file_location(
-            "obj_module", f"generated/{id}.py"
-        )
-        obj_module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(obj_module)
+    scad_path = f"generated_scad/{id}.scad"
+    if not os.path.exists(scad_path):
+        raise FileNotFoundError(f"SCAD source not found for id={id}")
 
-        cq.exporters.export(obj_module.obj, cad_file_path)
-    return cad_file_path
+    extension = (extension or "scad").lower()
+    if extension == "scad":
+        return scad_path
+
+    out_path = f"generated_scad/{id}.{extension}"
+    if os.path.exists(out_path):
+        return out_path
+
+    if extension not in {"stl"}:
+        raise ValueError("Only scad/stl are supported in scad-v1 pipeline.")
+
+    openscad_bin = shutil.which("openscad")
+    if not openscad_bin:
+        raise RuntimeError("OpenSCAD CLI not found in PATH; install OpenSCAD to export STL.")
+
+    cmd = [openscad_bin, "-o", out_path, scad_path]
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+    if proc.returncode != 0:
+        raise RuntimeError(f"OpenSCAD export failed: {proc.stderr.strip()}")
+    return out_path

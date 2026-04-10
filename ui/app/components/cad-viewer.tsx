@@ -1,92 +1,90 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from 'react'
-import "../../dist/three-cad-viewer/three-cad-viewer.css"
-import { Viewer } from "../../dist/three-cad-viewer/three-cad-viewer.esm.js"
-
-function nc(_change: unknown) {}
+import { useEffect, useRef, useState } from 'react'
+import * as THREE from "three"
+import { STLLoader } from "three/examples/jsm/loaders/STLLoader.js"
+import { createOpenSCAD, OpenSCADInstance } from "openscad-wasm"
 
 export interface CadViewerProps {
-    cadShapes: any
+    scadScript: string
 }
 
 
-export default function CadViewer({ cadShapes }: CadViewerProps) {
-    const ref = useRef(null)
-    const [viewport, setViewport] = useState({ width: 1024, height: 768 })
+export default function CadViewer({ scadScript }: CadViewerProps) {
+    const ref = useRef<HTMLDivElement>(null)
+    const [status, setStatus] = useState("Idle")
 
     useEffect(() => {
-        const update = () => setViewport({ width: window.innerWidth, height: window.innerHeight })
-        update()
-        window.addEventListener("resize", update)
-        return () => window.removeEventListener("resize", update)
-    }, [])
+        if (!ref.current) return
+        let active = true
+        let renderer: THREE.WebGLRenderer | null = null
+        let openScad: OpenSCADInstance | null = null
 
-    const viewerOptions = useMemo(() => ({
-        theme: "light",
-        ortho: true,
-        control: "trackball", // "orbit",
-        normalLen: 0,
-        cadWidth: viewport.width,
-        height: viewport.height * 0.85,
-        ticks: 10,
-        ambientIntensity: 0.9,
-        directIntensity: 0.12,
-        transparent: false,
-        blackEdges: false,
-        axes: true,
-        grid: [false, false, false],
-        timeit: false,
-        rotateSpeed: 1,
-        tools: false,
-        glass: false
-    }), [viewport.height, viewport.width])
-
-    const renderOptions = useMemo(() => ({
-        ambientIntensity: 1.0,
-        directIntensity: 1.1,
-        metalness: 0.30,
-        roughness: 0.65,
-        edgeColor: 0x707070,
-        defaultOpacity: 0.5,
-        normalLen: 0,
-        up: "Z"
-    }), [])
-
-
-    useEffect(() => {
-        const container = ref.current //document.getElementById("cad_view")
-
-        // 2) Create the CAD display in this container
-        // const display = new Display(container, options)
-
-        // 3) Create the CAD viewer
-
-        // var shapesStates = viewer.renderTessellatedShapes(shapes, states, options)
-        if (cadShapes && cadShapes.length > 0) {
-            const viewer = new Viewer(container, viewerOptions, nc)
-
-            const [shapes, states] = cadShapes as unknown as [any, any]
-            const render = (_name: string, shapes: any, states: any) => {
-                viewer?.clear()
-                const [unselected, selected] = viewer.renderTessellatedShapes(shapes, states, renderOptions)
-                console.log(unselected)
-                console.log(selected)
-
-                viewer.render(
-                    unselected,
-                    selected,
-                    states,
-                    renderOptions,
-                )
+        const run = async () => {
+            if (!scadScript?.trim()) {
+                setStatus("No model yet")
+                return
             }
-            render("input", shapes, states)
+            setStatus("Compiling OpenSCAD (WASM)...")
+            openScad = await createOpenSCAD()
+            const stlText = await openScad.renderToStl(scadScript)
+            if (!active || !ref.current) return
+
+            const loader = new STLLoader()
+            const geometry = loader.parse(new TextEncoder().encode(stlText).buffer)
+            geometry.computeVertexNormals()
+
+            const scene = new THREE.Scene()
+            scene.background = new THREE.Color(0xf8f8f8)
+            const camera = new THREE.PerspectiveCamera(55, ref.current.clientWidth / Math.max(ref.current.clientHeight, 1), 0.1, 5000)
+            camera.position.set(140, 120, 140)
+            camera.lookAt(0, 0, 0)
+
+            renderer = new THREE.WebGLRenderer({ antialias: true })
+            renderer.setSize(ref.current.clientWidth || 1024, ref.current.clientHeight || 640)
+            ref.current.innerHTML = ""
+            ref.current.appendChild(renderer.domElement)
+
+            const material = new THREE.MeshStandardMaterial({ color: 0x7d93b2, metalness: 0.15, roughness: 0.65 })
+            const mesh = new THREE.Mesh(geometry, material)
+            scene.add(mesh)
+
+            scene.add(new THREE.AmbientLight(0xffffff, 1.0))
+            const key = new THREE.DirectionalLight(0xffffff, 1.0)
+            key.position.set(100, 100, 120)
+            scene.add(key)
+            scene.add(new THREE.GridHelper(240, 24))
+            scene.add(new THREE.AxesHelper(80))
+
+            const box = new THREE.Box3().setFromObject(mesh)
+            const size = box.getSize(new THREE.Vector3()).length() || 1
+            const center = box.getCenter(new THREE.Vector3())
+            mesh.position.sub(center)
+            camera.near = size / 100
+            camera.far = size * 20
+            camera.updateProjectionMatrix()
+
+            const animate = () => {
+                if (!active || !renderer) return
+                mesh.rotation.z += 0.005
+                renderer.render(scene, camera)
+                requestAnimationFrame(animate)
+            }
+            animate()
+            setStatus("Preview ready")
         }
 
-
-    }, [cadShapes, viewerOptions, renderOptions])
+        run().catch((e) => setStatus(`Preview failed: ${e?.message || e}`))
+        return () => {
+            active = false
+            if (renderer) renderer.dispose()
+        }
+    }, [scadScript])
 
     return (
-        <div ref={ref}></div>
+        <div>
+            <div style={{ marginBottom: 8, fontSize: 12, color: "#666" }}>{status}</div>
+            <div ref={ref} style={{ width: "100%", height: "70vh", border: "1px solid #efefef" }} />
+        </div>
     )
 }
