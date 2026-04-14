@@ -1,4 +1,4 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -18,10 +18,37 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@media (max-width: 991px) {
+  .cqask-main-row {
+    flex-direction: column !important;
+    overflow-y: auto !important;
+  }
+
+  .cqask-chat-col,
+  .cqask-viewer-col,
+  .cqask-params-col {
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    width: 100% !important;
+    min-height: 0;
+  }
+
+  .cqask-chat-col {
+    min-height: 280px;
+    max-height: 42dvh;
+  }
+
+  .cqask-viewer-col {
+    min-height: 220px;
+    max-height: 38dvh;
+  }
+
+  .cqask-params-col {
+    min-height: 200px;
+    max-height: 36dvh;
+    padding-bottom: 8px;
+  }
 }
