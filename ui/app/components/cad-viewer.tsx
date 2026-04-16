@@ -17,6 +17,7 @@ export default function CadViewer({ scadScript }: CadViewerProps) {
   const overlaySceneRef = useRef<THREE.Scene | null>(null)
   const overlayCameraRef = useRef<THREE.OrthographicCamera | null>(null)
   const [status, setStatus] = useState("Idle")
+  const [isRendering, setIsRendering] = useState(false)
 
   useEffect(() => {
     if (!ref.current) return
@@ -42,6 +43,7 @@ export default function CadViewer({ scadScript }: CadViewerProps) {
     const run = async () => {
       if (!scadScript?.trim()) {
         setStatus("No model yet")
+        setIsRendering(false)
         if (ref.current) ref.current.innerHTML = ""
         rendererRef.current = null
         cameraRef.current = null
@@ -49,6 +51,7 @@ export default function CadViewer({ scadScript }: CadViewerProps) {
         overlayCameraRef.current = null
         return
       }
+      setIsRendering(true)
       setStatus("Compiling OpenSCAD (WASM)...")
       const openScad = await createOpenSCAD()
       const stlText = await openScad.renderToStl(scadScript)
@@ -134,9 +137,25 @@ export default function CadViewer({ scadScript }: CadViewerProps) {
       }
       animate()
       setStatus("Preview ready")
+      setIsRendering(false)
     }
 
-    run().catch((e) => setStatus(`Preview failed: ${e?.message || e}`))
+    run().catch((e) => {
+      const msg = (() => {
+        if (!e) return "Unknown error"
+        if (typeof e === "string") return e
+        if (e instanceof Error) return e.message || e.name
+        const maybeMsg = (e as any)?.message
+        if (typeof maybeMsg === "string" && maybeMsg.trim()) return maybeMsg
+        try {
+          const s = JSON.stringify(e)
+          if (s && s !== "{}") return s
+        } catch {}
+        return String(e)
+      })()
+      setStatus(`Preview failed: ${msg}`)
+      setIsRendering(false)
+    })
     return () => {
       active = false
       if (winResizeAttached) window.removeEventListener("resize", onWinResize)
@@ -169,7 +188,17 @@ export default function CadViewer({ scadScript }: CadViewerProps) {
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1, minHeight: 0, minWidth: 0, width: "100%" }}>
       <div style={{ flexShrink: 0, marginBottom: 8, fontSize: 12, color: "#666" }}>{status}</div>
-      <div ref={ref} style={{ flex: 1, minHeight: 0, width: "100%", border: "1px solid #efefef", position: "relative" }} />
+      <div style={{ flex: 1, minHeight: 0, width: "100%", border: "1px solid #efefef", position: "relative" }}>
+        <div ref={ref} style={{ height: "100%", width: "100%" }} />
+        {isRendering ? (
+          <div className="cad-loading-overlay">
+            <div className="cad-loading-content">
+              <div className="cad-loading-spinner" />
+              <span style={{ color: "#fff", fontSize: 12 }}>正在编译并渲染预览...</span>
+            </div>
+          </div>
+        ) : null}
+      </div>
     </div>
   )
 }

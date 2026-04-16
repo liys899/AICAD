@@ -1,0 +1,87 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "直径20 长100 的实心轴，中心打直径6通孔"
+    },
+    {
+      "role": "assistant",
+      "content": "[RELATIONSHIP_HINTS]\nRelationship parser constraints (must satisfy in final DSL):\n- through_hole: use boolean difference op to create hole feature.\nReturn ONE complete JSON object only."
+    },
+    {
+      "role": "user",
+      "content": "Use these relationship hints strictly when generating final DSL JSON."
+    }
+  ],
+  "dsl": {
+    "version": "1.0",
+    "unit": "mm",
+    "shape": "assembly",
+    "params": {},
+    "parts": [
+      {
+        "shape": "shaft",
+        "params": {
+          "radius": 10.0,
+          "length": 100.0
+        },
+        "unit": "mm"
+      },
+      {
+        "shape": "cylinder",
+        "params": {
+          "radius": 1.0,
+          "height": 100.2
+        },
+        "unit": "mm"
+      }
+    ],
+    "ops": [
+      {
+        "type": "boolean",
+        "name": "cut1",
+        "kind": "difference",
+        "targets": [
+          "p0",
+          "p1"
+        ]
+      }
+    ],
+    "result": "cut1"
+  },
+  "paramsMeta": [
+    {
+      "name": "p0_radius",
+      "label": "P0 shaft radius",
+      "min": 0.1,
+      "max": 30.0,
+      "step": 0.1,
+      "value": 10.0
+    },
+    {
+      "name": "p0_length",
+      "label": "P0 shaft length",
+      "min": 0.1,
+      "max": 300.0,
+      "step": 0.1,
+      "value": 100.0
+    },
+    {
+      "name": "p1_radius",
+      "label": "P1 cylinder radius",
+      "min": 0.1,
+      "max": 11.0,
+      "step": 0.1,
+      "value": 1.0
+    },
+    {
+      "name": "p1_height",
+      "label": "P1 cylinder height",
+      "min": 0.1,
+      "max": 300.6,
+      "step": 0.1,
+      "value": 100.2
+    }
+  ],
+  "reply": "已生成组合体（2 个实体，1 个操作，单位按 mm 换算为毫米）。"
+}

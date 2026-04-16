@@ -118,5 +118,69 @@ def download():
         return jsonify({"error": {"code": "DOWNLOAD_FAILED", "message": str(e)}}), 400
 
 
+@cross_origin()
+@app.route("/standards/fasteners", methods=["GET"])
+def standards_fasteners():
+    """
+    Lightweight "parameter library" manifest for industrial fasteners.
+
+    The actual dimensional tables live inside BOSL2 (vendored under backend/openscad_vendor/BOSL2/).
+    This endpoint tells the UI how to call BOSL2's standard screw generator via DSL `shape=library_call`.
+    """
+    return jsonify(
+        {
+            "vendor": "BOSL2",
+            "recommended_dsl": {
+                "version": "1.0",
+                "unit": "mm",
+                "shape": "library_call",
+                "params": {
+                    "module": "screw",
+                    "include_mode": "include",
+                    "library_paths": [
+                        "openscad_vendor/BOSL2/std.scad",
+                        "openscad_vendor/BOSL2/screws.scad",
+                    ],
+                    "args": {
+                        "spec": "M8,40",
+                        "head": "hex",
+                        "drive": "none",
+                        "thread": "coarse",
+                        "details": True,
+                    },
+                },
+            },
+            "spec_format": {
+                "metric_examples": ["M8", "M8x1.25", "M8,40", "M8x1.25,40"],
+                "notes": [
+                    "If length is omitted in spec, pass length=... (mm) in args.",
+                    "If pitch is omitted, BOSL2 uses standard pitch for the diameter (default coarse).",
+                ],
+            },
+            "thread_options": ["coarse", "fine", "extrafine", "superfine", "none", True, False, 1.25],
+            "head_options": [
+                "none",
+                "hex",
+                "socket",
+                "button",
+                "flat",
+                "flat sharp",
+                "pan",
+                "cheese",
+            ],
+            "drive_options": [
+                "none",
+                "hex",
+                "slot",
+                "phillips",
+                "torx",
+                "t20",
+            ],
+        }
+    )
+
+
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    debug = os.getenv("FLASK_DEBUG", "false").strip().lower() == "true"
+    # Disable auto-reloader by default to avoid proxy socket hang-up during requests.
+    app.run(debug=debug, port=5001, use_reloader=False, threaded=True)

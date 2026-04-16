@@ -1,0 +1,7548 @@
+{
+  "root": "D:/CQAsk-main/backend/openscad_vendor",
+  "total_files": 49,
+  "total_modules": 441,
+  "modules": [
+    {
+      "module": "position",
+      "args": [
+        "at",
+        "from"
+      ],
+      "signature": "module position(at,from)",
+      "line": 514,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "orient",
+      "args": [
+        "anchor",
+        "spin"
+      ],
+      "signature": "module orient(anchor, spin) {",
+      "line": 570,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "align",
+      "args": [
+        "anchor",
+        "align",
+        "inside",
+        "inset",
+        "shiftout",
+        "overlap"
+      ],
+      "signature": "module align(anchor,align=CENTER,inside=false,inset=0,shiftout=0,overlap)",
+      "line": 706,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "attach",
+      "args": [
+        "parent",
+        "child",
+        "overlap",
+        "align",
+        "spin",
+        "norot",
+        "inset",
+        "shiftout",
+        "inside",
+        "from",
+        "to"
+      ],
+      "signature": "module attach(parent, child, overlap, align, spin=0, norot, inset=0, shiftout=0, inside=false, from, to)",
+      "line": 938,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "attach_part",
+      "args": [
+        "name",
+        "ind"
+      ],
+      "signature": "module attach_part(name, ind=0)",
+      "line": 1110,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "tag",
+      "args": [
+        "tag"
+      ],
+      "signature": "module tag(tag)",
+      "line": 1161,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "tag_this",
+      "args": [
+        "tag"
+      ],
+      "signature": "module tag_this(tag)",
+      "line": 1194,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "force_tag",
+      "args": [
+        "tag"
+      ],
+      "signature": "module force_tag(tag)",
+      "line": 1256,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "default_tag",
+      "args": [
+        "tag",
+        "do_tag"
+      ],
+      "signature": "module default_tag(tag,do_tag=true)",
+      "line": 1304,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "tag_scope",
+      "args": [
+        "scope"
+      ],
+      "signature": "module tag_scope(scope){",
+      "line": 1399,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "diff",
+      "args": [
+        "remove",
+        "keep"
+      ],
+      "signature": "module diff(remove=\"remove\", keep=\"keep\")",
+      "line": 1586,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "tag_diff",
+      "args": [
+        "tag",
+        "remove",
+        "keep"
+      ],
+      "signature": "module tag_diff(tag=\"\",remove=\"remove\", keep=\"keep\")",
+      "line": 1654,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "intersect",
+      "args": [
+        "intersect",
+        "keep"
+      ],
+      "signature": "module intersect(intersect=\"intersect\",keep=\"keep\")",
+      "line": 1733,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "tag_intersect",
+      "args": [
+        "tag",
+        "intersect",
+        "keep"
+      ],
+      "signature": "module tag_intersect(tag=\"\",intersect=\"intersect\",keep=\"keep\")",
+      "line": 1783,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "conv_hull",
+      "args": [
+        "keep"
+      ],
+      "signature": "module conv_hull(keep=\"keep\")",
+      "line": 1830,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "tag_conv_hull",
+      "args": [
+        "tag",
+        "keep"
+      ],
+      "signature": "module tag_conv_hull(tag=\"\",keep=\"keep\")",
+      "line": 1877,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "hide",
+      "args": [
+        "tags"
+      ],
+      "signature": "module hide(tags)",
+      "line": 1917,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "hide_this",
+      "args": [],
+      "signature": "module hide_this()",
+      "line": 1952,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "show_only",
+      "args": [
+        "tags"
+      ],
+      "signature": "module show_only(tags)",
+      "line": 1978,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "show_all",
+      "args": [],
+      "signature": "module show_all()",
+      "line": 1999,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "show_int",
+      "args": [
+        "tags"
+      ],
+      "signature": "module show_int(tags)",
+      "line": 2021,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "attachable",
+      "args": [
+        "anchor",
+        "spin",
+        "orient",
+        "size",
+        "size2",
+        "shift",
+        "r",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "l",
+        "h",
+        "vnf",
+        "path",
+        "region",
+        "scale",
+        "extent",
+        "cp",
+        "offset",
+        "anchors",
+        "two_d",
+        "axis",
+        "override",
+        "geom",
+        "parts",
+        "expose_tags",
+        "keep_color"
+      ],
+      "signature": "module attachable( anchor, spin, orient, size, size2, shift, r,r1,r2, d,d1,d2, l,h, vnf, path, region, scale, extent=true, cp=[0,0,0], offset=[0,0,0], anchors=[], two_d=false, axis=UP,override, geom, parts=[], expose_tags=false, keep_color=false ) {",
+      "line": 2407,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "_show_highlight",
+      "args": [],
+      "signature": "module _show_highlight()",
+      "line": 2478,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "_show_ghost",
+      "args": [],
+      "signature": "module _show_ghost()",
+      "line": 2487,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "change_anchors",
+      "args": [
+        "named",
+        "alias",
+        "remove"
+      ],
+      "signature": "module change_anchors(named=undef, alias=undef, remove=undef)",
+      "line": 2716,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "show_anchors",
+      "args": [
+        "s",
+        "std",
+        "custom"
+      ],
+      "signature": "module show_anchors(s=10, std=true, custom=true) {",
+      "line": 3843,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "anchor_arrow",
+      "args": [
+        "s",
+        "color",
+        "flag",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module anchor_arrow(s=10, color=[0.333,0.333,1], flag=true, $tag=\"anchor-arrow\", $fn=12, anchor=BOT, spin=0, orient=UP) {",
+      "line": 3910,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "anchor_arrow2d",
+      "args": [
+        "s",
+        "color"
+      ],
+      "signature": "module anchor_arrow2d(s=15, color=[0.333,0.333,1], $tag=\"anchor-arrow\") {",
+      "line": 3944,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "expose_anchors",
+      "args": [
+        "opacity"
+      ],
+      "signature": "module expose_anchors(opacity=0.2) {",
+      "line": 3963,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "show_transform_list",
+      "args": [
+        "tlist",
+        "s"
+      ],
+      "signature": "module show_transform_list(tlist, s=5) {",
+      "line": 4011,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "generic_airplane",
+      "args": [
+        "s"
+      ],
+      "signature": "module generic_airplane(s=5) {",
+      "line": 4036,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "frame_ref",
+      "args": [
+        "s",
+        "opacity"
+      ],
+      "signature": "module frame_ref(s=15, opacity=1) {",
+      "line": 4075,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "_edges_text3d",
+      "args": [
+        "txt",
+        "size"
+      ],
+      "signature": "module _edges_text3d(txt,size=3) {",
+      "line": 4094,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "_show_edges",
+      "args": [
+        "edges",
+        "size",
+        "text",
+        "txtsize",
+        "toplabel"
+      ],
+      "signature": "module _show_edges(edges=\"ALL\", size=20, text, txtsize=3,toplabel) {",
+      "line": 4291,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "_show_corners",
+      "args": [
+        "corners",
+        "size",
+        "text",
+        "txtsize",
+        "toplabel"
+      ],
+      "signature": "module _show_corners(corners=\"ALL\", size=20, text, txtsize=3,toplabel) {",
+      "line": 4472,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "_show_cube_faces",
+      "args": [
+        "faces",
+        "size",
+        "toplabel",
+        "botlabel"
+      ],
+      "signature": "module _show_cube_faces(faces, size=20, toplabel,botlabel) {",
+      "line": 4486,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "restore",
+      "args": [
+        "desc"
+      ],
+      "signature": "module restore(desc)",
+      "line": 4645,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "desc_copies",
+      "args": [
+        "transforms"
+      ],
+      "signature": "module desc_copies(transforms)",
+      "line": 4873,
+      "path": "BOSL2/attachments.scad"
+    },
+    {
+      "module": "ball_bearing",
+      "args": [
+        "trade_size",
+        "id",
+        "od",
+        "width",
+        "shield",
+        "flange",
+        "fd",
+        "fw",
+        "rounding",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module ball_bearing(trade_size, id, od, width, shield=true, flange=false, fd, fw, rounding, anchor=CTR, spin=0, orient=UP) {",
+      "line": 51,
+      "path": "BOSL2/ball_bearings.scad"
+    },
+    {
+      "module": "bezier_sweep",
+      "args": [
+        "shape",
+        "bezier",
+        "splinesteps",
+        "method",
+        "endpoint",
+        "normal",
+        "closed",
+        "twist",
+        "twist_by_length",
+        "scale",
+        "scale_by_length",
+        "symmetry",
+        "last_normal",
+        "caps",
+        "style",
+        "convexity",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype",
+        "profiles",
+        "width",
+        "texture",
+        "tex_reps",
+        "tex_size",
+        "tex_samples",
+        "tex_inset",
+        "tex_rot",
+        "tex_depth",
+        "tex_extra",
+        "tex_skip"
+      ],
+      "signature": "module bezier_sweep(shape, bezier, splinesteps=16, method=\"incremental\", endpoint=true, normal, closed, twist=0, twist_by_length=true, scale=1, scale_by_length=true, symmetry=1, last_normal, caps, style=\"min_edge\", convexity=10, anchor=\"origin\",cp=\"centroid\",spin=0, orient=UP, atype=\"hull\",profiles=false,width=1, texture, tex_reps, tex_size, tex_samples, tex_inset=false, tex_rot=0, tex_depth=1, tex_extra, tex_skip)",
+      "line": 1791,
+      "path": "BOSL2/beziers.scad"
+    },
+    {
+      "module": "bezpath_sweep",
+      "args": [
+        "shape",
+        "bezpath",
+        "splinesteps",
+        "N",
+        "method",
+        "endpoint",
+        "normal",
+        "closed",
+        "twist",
+        "twist_by_length",
+        "scale",
+        "scale_by_length",
+        "symmetry",
+        "last_normal",
+        "caps",
+        "style",
+        "convexity",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype",
+        "profiles",
+        "width",
+        "texture",
+        "tex_reps",
+        "tex_size",
+        "tex_samples",
+        "tex_inset",
+        "tex_rot",
+        "tex_depth",
+        "tex_extra",
+        "tex_skip"
+      ],
+      "signature": "module bezpath_sweep(shape, bezpath, splinesteps=16, N=3, method=\"incremental\", endpoint=true, normal, closed, twist=0, twist_by_length=true, scale=1, scale_by_length=true, symmetry=1, last_normal, caps, style=\"min_edge\", convexity=10, anchor=\"origin\",cp=\"centroid\",spin=0, orient=UP, atype=\"hull\",profiles=false,width=1, texture, tex_reps, tex_size, tex_samples, tex_inset=false, tex_rot=0, tex_depth=1, tex_extra, tex_skip)",
+      "line": 1912,
+      "path": "BOSL2/beziers.scad"
+    },
+    {
+      "module": "debug_bezier",
+      "args": [
+        "bezpath",
+        "width",
+        "N"
+      ],
+      "signature": "module debug_bezier(bezpath, width=1, N=3) {",
+      "line": 1971,
+      "path": "BOSL2/beziers.scad"
+    },
+    {
+      "module": "debug_bezier_patches",
+      "args": [
+        "patches",
+        "size",
+        "splinesteps",
+        "showcps",
+        "showdots",
+        "showpatch",
+        "convexity",
+        "style"
+      ],
+      "signature": "module debug_bezier_patches(patches=[], size, splinesteps=16, showcps=true, showdots=false, showpatch=true, convexity=10, style=\"default\")",
+      "line": 2036,
+      "path": "BOSL2/beziers.scad"
+    },
+    {
+      "module": "translate_copies",
+      "args": [
+        "a"
+      ],
+      "signature": "module translate_copies(a=[[0,0,0]]) move_copies(a) children();",
+      "line": 5,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "xspread",
+      "args": [
+        "spacing",
+        "n",
+        "l"
+      ],
+      "signature": "module xspread(spacing, n, l, sp) xcopies(spacing=spacing, n=n, l=l, sp=sp) children();",
+      "line": 7,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "yspread",
+      "args": [
+        "spacing",
+        "n",
+        "l"
+      ],
+      "signature": "module yspread(spacing, n, l, sp) ycopies(spacing=spacing, n=n, l=l, sp=sp) children();",
+      "line": 8,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "zspread",
+      "args": [
+        "spacing",
+        "n",
+        "l"
+      ],
+      "signature": "module zspread(spacing, n, l, sp) zcopies(spacing=spacing, n=n, l=l, sp=sp) children();",
+      "line": 9,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "spread",
+      "args": [
+        "p1",
+        "p2",
+        "spacing",
+        "l",
+        "n"
+      ],
+      "signature": "module spread(p1=[0,0,0], p2=[10,0,0], spacing, l, n=2) line_copies(p1=p1, p2=p2, spacing=spacing, l=l, n=n) children();",
+      "line": 11,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "grid_of",
+      "args": [
+        "xa",
+        "ya",
+        "za",
+        "count"
+      ],
+      "signature": "module grid_of(xa=[0],ya=[0],za=[0],count,spacing) grid3d(xa=xa, ya=ya, za=za, n=count, spacing=spacing) children();",
+      "line": 12,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "xring",
+      "args": [
+        "n",
+        "r",
+        "sa",
+        "cp",
+        "rot"
+      ],
+      "signature": "module xring(n=2,r=0,sa=0,cp=[0,0,0],rot=true) xrot_copies(n=n,r=r,sa=sa,cp=cp,subrot=rot) children();",
+      "line": 14,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "yring",
+      "args": [
+        "n",
+        "r",
+        "sa",
+        "cp",
+        "rot"
+      ],
+      "signature": "module yring(n=2,r=0,sa=0,cp=[0,0,0],rot=true) yrot_copies(n=n,r=r,sa=sa,cp=cp,subrot=rot) children();",
+      "line": 15,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "zring",
+      "args": [
+        "n",
+        "r",
+        "sa",
+        "cp",
+        "rot"
+      ],
+      "signature": "module zring(n=2,r=0,sa=0,cp=[0,0,0],rot=true) zrot_copies(n=n,r=r,sa=sa,cp=cp,subrot=rot) children();",
+      "line": 16,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "leftcube",
+      "args": [],
+      "signature": "module leftcube(size) cube(size, anchor=RIGHT);",
+      "line": 18,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "rightcube",
+      "args": [],
+      "signature": "module rightcube(size) cube(size, anchor=LEFT);",
+      "line": 19,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "fwdcube",
+      "args": [],
+      "signature": "module fwdcube(size) cube(size, anchor=BACK);",
+      "line": 20,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "backcube",
+      "args": [],
+      "signature": "module backcube(size) cube(size, anchor=FWD);",
+      "line": 21,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "downcube",
+      "args": [],
+      "signature": "module downcube(size) cube(size, anchor=TOP);",
+      "line": 22,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "upcube",
+      "args": [],
+      "signature": "module upcube(size) cube(size, anchor=BOT);",
+      "line": 23,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "cube2pt",
+      "args": [
+        "p1"
+      ],
+      "signature": "module cube2pt(p1,p2) cuboid(p1=p1,p2=p2);",
+      "line": 25,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "offsetcube",
+      "args": [
+        "size",
+        "v"
+      ],
+      "signature": "module offsetcube(size=[1,1,1],v=[0,0,0]) cuboid(size,anchor=-v);",
+      "line": 26,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "rrect",
+      "args": [
+        "size",
+        "r",
+        "center"
+      ],
+      "signature": "module rrect(size=[1,1,1], r=0.25, center=false) cuboid(size,rounding=r,edges=\"Z\",anchor=center?CENTER:BOT);",
+      "line": 27,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "rcube",
+      "args": [
+        "size",
+        "r",
+        "center"
+      ],
+      "signature": "module rcube(size=[1,1,1], r=0.25, center=false) cuboid(size,rounding=r,anchor=center?CENTER:BOT);",
+      "line": 28,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "chamfcube",
+      "args": [
+        "size",
+        "chamfer",
+        "chamfaxes",
+        "chamfcorners"
+      ],
+      "signature": "module chamfcube(size=[1,1,1],chamfer=0.25,chamfaxes=[1,1,1],chamfcorners=false) {",
+      "line": 29,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "trapezoid",
+      "args": [
+        "size1",
+        "size2",
+        "h",
+        "shift",
+        "align",
+        "orient",
+        "center"
+      ],
+      "signature": "module trapezoid(size1=[1,1], size2=[1,1], h=1, shift=[0,0], align=CTR, orient=0, center)",
+      "line": 41,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "pyramid",
+      "args": [
+        "n",
+        "h",
+        "l",
+        "r",
+        "d",
+        "circum"
+      ],
+      "signature": "module pyramid(n=4, h=1, l=1, r, d, circum=false) {",
+      "line": 44,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "prism",
+      "args": [
+        "n",
+        "h",
+        "l",
+        "r",
+        "d",
+        "circum",
+        "center"
+      ],
+      "signature": "module prism(n=3, h=1, l=1, r, d, circum=false, center=false) {",
+      "line": 49,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "chamferred_cylinder",
+      "args": [
+        "h",
+        "r",
+        "d",
+        "chamfer",
+        "chamfedge",
+        "angle",
+        "top",
+        "bottom",
+        "center"
+      ],
+      "signature": "module chamferred_cylinder(h,r,d,chamfer=0.25,chamfedge,angle=45,top=true,bottom=true,center=false) {",
+      "line": 54,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "chamf_cyl",
+      "args": [
+        "h",
+        "r",
+        "d",
+        "chamfer",
+        "chamfedge",
+        "angle",
+        "center",
+        "top",
+        "bottom"
+      ],
+      "signature": "module chamf_cyl(h=1, r, d, chamfer=0.25, chamfedge, angle=45, center=false, top=true, bottom=true) {",
+      "line": 59,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "filleted_cylinder",
+      "args": [
+        "h",
+        "r",
+        "d",
+        "r1",
+        "r2",
+        "d1",
+        "d2",
+        "fillet",
+        "center"
+      ],
+      "signature": "module filleted_cylinder(h=1, r, d, r1, r2, d1, d2, fillet=0.25, center=false)",
+      "line": 64,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "rcylinder",
+      "args": [
+        "h",
+        "r",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "fillet",
+        "center"
+      ],
+      "signature": "module rcylinder(h=1, r=1, r1, r2, d, d1, d2, fillet=0.25, center=false)",
+      "line": 67,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "thinning_brace",
+      "args": [
+        "h",
+        "l",
+        "thick",
+        "ang",
+        "strut",
+        "wall",
+        "center"
+      ],
+      "signature": "module thinning_brace(h=50, l=100, thick=5, ang=30, strut=5, wall=3, center=true)",
+      "line": 70,
+      "path": "BOSL2/bosl1compat.scad"
+    },
+    {
+      "module": "pco1810_neck",
+      "args": [
+        "wall",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module pco1810_neck(wall=2, anchor=\"support-ring\", spin=0, orient=UP)",
+      "line": 50,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "pco1810_cap",
+      "args": [
+        "h",
+        "r",
+        "d",
+        "wall",
+        "texture",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module pco1810_cap(h, r, d, wall, texture=\"none\", anchor=BOTTOM, spin=0, orient=UP)",
+      "line": 180,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "pco1881_neck",
+      "args": [
+        "wall",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module pco1881_neck(wall=2, anchor=\"support-ring\", spin=0, orient=UP)",
+      "line": 255,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "pco1881_cap",
+      "args": [
+        "wall",
+        "texture",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module pco1881_cap(wall=2, texture=\"none\", anchor=BOTTOM, spin=0, orient=UP)",
+      "line": 382,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "generic_bottle_neck",
+      "args": [
+        "wall",
+        "neck_d",
+        "id",
+        "thread_od",
+        "height",
+        "support_d",
+        "pitch",
+        "round_supp",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module generic_bottle_neck( wall, neck_d = 25, id = 21.4, thread_od = 27.2, height = 17, support_d = 33.0, pitch = 3.2, round_supp = false, anchor = \"support-ring\", spin = 0, orient = UP ) {",
+      "line": 443,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "generic_bottle_cap",
+      "args": [
+        "wall",
+        "texture",
+        "height",
+        "thread_depth",
+        "thread_od",
+        "tolerance",
+        "neck_od",
+        "flank_angle",
+        "pitch",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module generic_bottle_cap( wall = 2, texture = \"none\", height, thread_depth, thread_od, tolerance = .2, neck_od, flank_angle = 15, pitch = 4, anchor = BOTTOM, spin = 0, orient = UP ) {",
+      "line": 577,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "bottle_adapter_neck_to_cap",
+      "args": [
+        "wall",
+        "texture",
+        "cap_wall",
+        "cap_h",
+        "cap_thread_depth",
+        "tolerance",
+        "cap_neck_od",
+        "cap_neck_id",
+        "cap_thread_taper",
+        "cap_thread_pitch",
+        "neck_d",
+        "neck_id",
+        "neck_thread_od",
+        "neck_h",
+        "neck_thread_pitch",
+        "neck_support_od",
+        "d",
+        "taper_lead_in",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module bottle_adapter_neck_to_cap( wall, texture = \"none\", cap_wall = 2, cap_h = 11.2, cap_thread_depth = 2.34, tolerance = .2, cap_neck_od = 25.5, cap_neck_id, cap_thread_taper = 15, cap_thread_pitch = 4, neck_d = 25, neck_id = 21.4, neck_thread_od = 27.2, neck_h = 17, neck_thread_pitch = 3.2, neck_support_od, d = 0, taper_lead_in = 0, anchor, spin,orient ) {",
+      "line": 675,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "bottle_adapter_cap_to_cap",
+      "args": [
+        "wall",
+        "texture",
+        "cap_h1",
+        "cap_thread_depth1",
+        "tolerance",
+        "cap_neck_od1",
+        "cap_thread_pitch1",
+        "cap_h2",
+        "cap_thread_depth2",
+        "cap_neck_od2",
+        "cap_thread_pitch2",
+        "d",
+        "neck_id",
+        "taper_lead_in",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module bottle_adapter_cap_to_cap( wall = 2, texture = \"none\", cap_h1 = 11.2, cap_thread_depth1 = 2.34, tolerance = .2, cap_neck_od1 = 25.5, cap_thread_pitch1 = 4, cap_h2, cap_thread_depth2, cap_neck_od2, cap_thread_pitch2, d = 0, neck_id, taper_lead_in = 0, anchor, spin,orient ) {",
+      "line": 800,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "bottle_adapter_neck_to_neck",
+      "args": [
+        "d",
+        "neck_od1",
+        "neck_id1",
+        "thread_od1",
+        "height1",
+        "support_od1",
+        "thread_pitch1",
+        "neck_od2",
+        "neck_id2",
+        "thread_od2",
+        "height2",
+        "support_od2",
+        "pitch2",
+        "taper_lead_in",
+        "wall",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module bottle_adapter_neck_to_neck( d = 0, neck_od1 = 25, neck_id1 = 21.4, thread_od1 = 27.2, height1 = 17, support_od1 = 33.0, thread_pitch1 = 3.2, neck_od2, neck_id2, thread_od2, height2, support_od2,  pitch2, taper_lead_in = 0, wall, anchor, spin, orient ) {",
+      "line": 926,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "sp_neck",
+      "args": [
+        "diam",
+        "type",
+        "wall",
+        "id",
+        "style",
+        "bead",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module sp_neck(diam,type,wall,id,style=\"L\",bead=false, anchor, spin, orient)",
+      "line": 1171,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "sp_cap",
+      "args": [
+        "diam",
+        "type",
+        "wall",
+        "style",
+        "top_adj",
+        "bot_adj",
+        "texture",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module sp_cap(diam,type,wall,style=\"L\",top_adj=0, bot_adj=0, texture=\"none\", anchor, spin, orient)",
+      "line": 1286,
+      "path": "BOSL2/bottlecaps.scad"
+    },
+    {
+      "module": "_square",
+      "args": [
+        "size",
+        "center"
+      ],
+      "signature": "module _square(size,center=false) square(size,center=center);",
+      "line": 12,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_circle",
+      "args": [
+        "r"
+      ],
+      "signature": "module _circle(r,d) circle(r=r,d=d);",
+      "line": 14,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_text",
+      "args": [
+        "text",
+        "size",
+        "font",
+        "halign",
+        "valign",
+        "spacing",
+        "direction",
+        "language",
+        "script"
+      ],
+      "signature": "module _text(text,size,font,halign,valign,spacing,direction,language,script)",
+      "line": 16,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_color",
+      "args": [],
+      "signature": "module _color(color) if (color==undef || color==\"default\") children(); else color(color) children();",
+      "line": 23,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_cube",
+      "args": [
+        "size"
+      ],
+      "signature": "module _cube(size,center) cube(size,center=center);",
+      "line": 25,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_cylinder",
+      "args": [
+        "h",
+        "r1",
+        "r2",
+        "center",
+        "r",
+        "d",
+        "d1"
+      ],
+      "signature": "module _cylinder(h,r1,r2,center,r,d,d1,d2) cylinder(h,r=r,d=d,r1=r1,r2=r2,d1=d1,d2=d2,center=center);",
+      "line": 27,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_sphere",
+      "args": [
+        "r"
+      ],
+      "signature": "module _sphere(r,d) sphere(r=r,d=d);",
+      "line": 29,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_multmatrix",
+      "args": [],
+      "signature": "module _multmatrix(m) multmatrix(m) children();",
+      "line": 31,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_translate",
+      "args": [],
+      "signature": "module _translate(v) translate(v) children();",
+      "line": 32,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_rotate",
+      "args": [
+        "a"
+      ],
+      "signature": "module _rotate(a,v) rotate(a=a,v=v) children();",
+      "line": 33,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "_scale",
+      "args": [],
+      "signature": "module _scale(v) scale(v) children();",
+      "line": 34,
+      "path": "BOSL2/builtins.scad"
+    },
+    {
+      "module": "recolor",
+      "args": [
+        "c"
+      ],
+      "signature": "module recolor(c=\"default\")",
+      "line": 46,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "color_this",
+      "args": [
+        "c"
+      ],
+      "signature": "module color_this(c=\"default\")",
+      "line": 79,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "rainbow",
+      "args": [
+        "list",
+        "stride",
+        "maxhues",
+        "shuffle",
+        "seed"
+      ],
+      "signature": "module rainbow(list, stride=1, maxhues, shuffle=false, seed)",
+      "line": 114,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "color_overlaps",
+      "args": [
+        "color"
+      ],
+      "signature": "module color_overlaps(color=\"red\") {",
+      "line": 154,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "highlight",
+      "args": [
+        "highlight"
+      ],
+      "signature": "module highlight(highlight=true)",
+      "line": 190,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "highlight_this",
+      "args": [],
+      "signature": "module highlight_this()",
+      "line": 212,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "ghost",
+      "args": [
+        "ghost"
+      ],
+      "signature": "module ghost(ghost=true)",
+      "line": 239,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "ghost_this",
+      "args": [],
+      "signature": "module ghost_this()",
+      "line": 260,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "hsl",
+      "args": [
+        "h",
+        "s",
+        "l",
+        "a"
+      ],
+      "signature": "module hsl(h,s=1,l=0.5,a=1)",
+      "line": 304,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "hsv",
+      "args": [
+        "h",
+        "s",
+        "v",
+        "a"
+      ],
+      "signature": "module hsv(h,s=1,v=1,a=1)",
+      "line": 357,
+      "path": "BOSL2/color.scad"
+    },
+    {
+      "module": "cubetruss",
+      "args": [
+        "extents",
+        "clips",
+        "bracing",
+        "size",
+        "strut",
+        "clipthick",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cubetruss(extents=6, clips=[], bracing, size, strut, clipthick, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 50,
+      "path": "BOSL2/cubetruss.scad"
+    },
+    {
+      "module": "cubetruss_corner",
+      "args": [
+        "h",
+        "extents",
+        "bracing",
+        "size",
+        "strut",
+        "clipthick",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cubetruss_corner(h=1, extents=[1,1,0,0,1], bracing, size, strut, clipthick, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 122,
+      "path": "BOSL2/cubetruss.scad"
+    },
+    {
+      "module": "cubetruss_support",
+      "args": [
+        "size",
+        "strut",
+        "extents",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cubetruss_support(size, strut, extents=1, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 201,
+      "path": "BOSL2/cubetruss.scad"
+    },
+    {
+      "module": "cubetruss_foot",
+      "args": [
+        "w",
+        "size",
+        "strut",
+        "clipthick",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cubetruss_foot(w=1, size, strut, clipthick, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 261,
+      "path": "BOSL2/cubetruss.scad"
+    },
+    {
+      "module": "cubetruss_joiner",
+      "args": [
+        "w",
+        "vert",
+        "size",
+        "strut",
+        "clipthick",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cubetruss_joiner(w=1, vert=true, size, strut, clipthick, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 343,
+      "path": "BOSL2/cubetruss.scad"
+    },
+    {
+      "module": "cubetruss_uclip",
+      "args": [
+        "dual",
+        "size",
+        "strut",
+        "clipthick",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cubetruss_uclip(dual=true, size, strut, clipthick, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 412,
+      "path": "BOSL2/cubetruss.scad"
+    },
+    {
+      "module": "cubetruss_segment",
+      "args": [
+        "size",
+        "strut",
+        "bracing",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cubetruss_segment(size, strut, bracing, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 464,
+      "path": "BOSL2/cubetruss.scad"
+    },
+    {
+      "module": "cubetruss_clip",
+      "args": [
+        "extents",
+        "size",
+        "strut",
+        "clipthick",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cubetruss_clip(extents=1, size, strut, clipthick, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 537,
+      "path": "BOSL2/cubetruss.scad"
+    },
+    {
+      "module": "move_copies",
+      "args": [
+        "a"
+      ],
+      "signature": "module move_copies(a=[[0,0,0]])",
+      "line": 128,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "xcopies",
+      "args": [
+        "spacing",
+        "n",
+        "l",
+        "sp"
+      ],
+      "signature": "module xcopies(spacing, n, l, sp)",
+      "line": 198,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "ycopies",
+      "args": [
+        "spacing",
+        "n",
+        "l",
+        "sp"
+      ],
+      "signature": "module ycopies(spacing, n, l, sp)",
+      "line": 283,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "zcopies",
+      "args": [
+        "spacing",
+        "n",
+        "l",
+        "sp"
+      ],
+      "signature": "module zcopies(spacing, n, l, sp)",
+      "line": 382,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "line_of",
+      "args": [
+        "spacing",
+        "n",
+        "l",
+        "p1",
+        "p2"
+      ],
+      "signature": "module line_of(spacing, n, l, p1, p2) {",
+      "line": 509,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "line_copies",
+      "args": [
+        "spacing",
+        "n",
+        "l",
+        "p1",
+        "p2"
+      ],
+      "signature": "module line_copies(spacing, n, l, p1, p2)",
+      "line": 514,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "grid2d",
+      "args": [
+        "spacing",
+        "n",
+        "size",
+        "stagger",
+        "inside",
+        "nonzero"
+      ],
+      "signature": "module grid2d(spacing, n, size, stagger=false, inside=undef, nonzero)",
+      "line": 638,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "grid_copies",
+      "args": [
+        "spacing",
+        "n",
+        "size",
+        "stagger",
+        "inside",
+        "nonzero",
+        "axes"
+      ],
+      "signature": "module grid_copies(spacing, n, size, stagger=false, inside=undef, nonzero, axes=\"xy\")",
+      "line": 644,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "rot_copies",
+      "args": [
+        "rots",
+        "v",
+        "cp",
+        "n",
+        "sa",
+        "offset",
+        "delta",
+        "subrot"
+      ],
+      "signature": "module rot_copies(rots=[], v, cp=[0,0,0], n, sa=0, offset=0, delta=[0,0,0], subrot=true)",
+      "line": 887,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "xrot_copies",
+      "args": [
+        "rots",
+        "cp",
+        "n",
+        "sa",
+        "r",
+        "d",
+        "subrot"
+      ],
+      "signature": "module xrot_copies(rots=[], cp=[0,0,0], n, sa=0, r, d, subrot=true)",
+      "line": 1007,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "yrot_copies",
+      "args": [
+        "rots",
+        "cp",
+        "n",
+        "sa",
+        "r",
+        "d",
+        "subrot"
+      ],
+      "signature": "module yrot_copies(rots=[], cp=[0,0,0], n, sa=0, r, d, subrot=true)",
+      "line": 1092,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "zrot_copies",
+      "args": [
+        "rots",
+        "cp",
+        "n",
+        "sa",
+        "r",
+        "d",
+        "subrot"
+      ],
+      "signature": "module zrot_copies(rots=[], cp=[0,0,0], n, sa=0, r, d, subrot=true)",
+      "line": 1178,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "arc_of",
+      "args": [
+        "n",
+        "r",
+        "rx",
+        "ry",
+        "d",
+        "dx",
+        "dy",
+        "sa",
+        "ea",
+        "rot"
+      ],
+      "signature": "module arc_of(n=6,r,rx,ry,d,dx,dy,sa=0,ea=360,rot=true){",
+      "line": 1257,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "arc_copies",
+      "args": [
+        "n",
+        "r",
+        "rx",
+        "ry",
+        "d",
+        "dx",
+        "dy",
+        "sa",
+        "ea",
+        "rot"
+      ],
+      "signature": "module arc_copies( n=6, r=undef, rx=undef, ry=undef, d=undef, dx=undef, dy=undef, sa=0, ea=360, rot=true ) {",
+      "line": 1263,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "ovoid_spread",
+      "args": [
+        "n",
+        "r",
+        "d",
+        "cone_ang",
+        "scale",
+        "perp"
+      ],
+      "signature": "module ovoid_spread(n=100, r=undef, d=undef, cone_ang=90, scale=[1,1,1], perp=true)",
+      "line": 1365,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "sphere_copies",
+      "args": [
+        "n",
+        "r",
+        "d",
+        "cone_ang",
+        "scale",
+        "perp"
+      ],
+      "signature": "module sphere_copies(n=100, r=undef, d=undef, cone_ang=90, scale=[1,1,1], perp=true)",
+      "line": 1372,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "path_spread",
+      "args": [
+        "path",
+        "n",
+        "spacing",
+        "sp",
+        "rotate_children",
+        "dist",
+        "closed"
+      ],
+      "signature": "module path_spread(path, n, spacing, sp=undef, rotate_children=true, dist, closed){",
+      "line": 1540,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "path_copies",
+      "args": [
+        "path",
+        "n",
+        "spacing",
+        "sp",
+        "dist",
+        "rotate_children",
+        "dist",
+        "closed"
+      ],
+      "signature": "module path_copies(path, n, spacing, sp=undef, dist, rotate_children=true, dist, closed)",
+      "line": 1546,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "xflip_copy",
+      "args": [
+        "offset",
+        "x"
+      ],
+      "signature": "module xflip_copy(offset=0, x=0)",
+      "line": 1683,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "yflip_copy",
+      "args": [
+        "offset",
+        "y"
+      ],
+      "signature": "module yflip_copy(offset=0, y=0)",
+      "line": 1734,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "zflip_copy",
+      "args": [
+        "offset",
+        "z"
+      ],
+      "signature": "module zflip_copy(offset=0, z=0)",
+      "line": 1785,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "mirror_copy",
+      "args": [
+        "v",
+        "offset",
+        "cp"
+      ],
+      "signature": "module mirror_copy(v=[0,0,1], offset=0, cp)",
+      "line": 1837,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "xdistribute",
+      "args": [
+        "spacing",
+        "sizes",
+        "l"
+      ],
+      "signature": "module xdistribute(spacing=10, sizes=undef, l=undef)",
+      "line": 1926,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "ydistribute",
+      "args": [
+        "spacing",
+        "sizes",
+        "l"
+      ],
+      "signature": "module ydistribute(spacing=10, sizes=undef, l=undef)",
+      "line": 1975,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "zdistribute",
+      "args": [
+        "spacing",
+        "sizes",
+        "l"
+      ],
+      "signature": "module zdistribute(spacing=10, sizes=undef, l=undef)",
+      "line": 2024,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "distribute",
+      "args": [
+        "spacing",
+        "sizes",
+        "dir",
+        "l"
+      ],
+      "signature": "module distribute(spacing=undef, sizes=undef, dir=RIGHT, l=undef)",
+      "line": 2075,
+      "path": "BOSL2/distributors.scad"
+    },
+    {
+      "module": "stroke",
+      "args": [
+        "path",
+        "width",
+        "closed",
+        "endcaps",
+        "endcap1",
+        "endcap2",
+        "joints",
+        "dots",
+        "endcap_width",
+        "endcap_width1",
+        "endcap_width2",
+        "joint_width",
+        "dots_width",
+        "endcap_length",
+        "endcap_length1",
+        "endcap_length2",
+        "joint_length",
+        "dots_length",
+        "endcap_extent",
+        "endcap_extent1",
+        "endcap_extent2",
+        "joint_extent",
+        "dots_extent",
+        "endcap_angle",
+        "endcap_angle1",
+        "endcap_angle2",
+        "joint_angle",
+        "dots_angle",
+        "endcap_color",
+        "endcap_color1",
+        "endcap_color2",
+        "joint_color",
+        "dots_color",
+        "color",
+        "trim",
+        "trim1",
+        "trim2",
+        "singleton_scale",
+        "convexity"
+      ],
+      "signature": "module stroke( path, width=1, closed, endcaps,       endcap1,        endcap2,        joints,       dots, endcap_width,  endcap_width1,  endcap_width2,  joint_width,  dots_width, endcap_length, endcap_length1, endcap_length2, joint_length, dots_length, endcap_extent, endcap_extent1, endcap_extent2, joint_extent, dots_extent, endcap_angle,  endcap_angle1,  endcap_angle2,  joint_angle,  dots_angle, endcap_color,  endcap_color1,  endcap_color2,  joint_color,  dots_color, color, trim, trim1, trim2, singleton_scale=2, convexity=10 ) {",
+      "line": 193,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "setcolor",
+      "args": [
+        "clr"
+      ],
+      "signature": "module setcolor(clr) {",
+      "line": 205,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "dashed_stroke",
+      "args": [
+        "path",
+        "dashpat",
+        "width",
+        "closed",
+        "fit",
+        "roundcaps"
+      ],
+      "signature": "module dashed_stroke(path, dashpat=[3,3], width=1, closed=false, fit=true, roundcaps=false) {",
+      "line": 673,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "arc",
+      "args": [
+        "n",
+        "r",
+        "angle",
+        "d",
+        "cp",
+        "points",
+        "corner",
+        "width",
+        "thickness",
+        "start",
+        "wedge",
+        "rounding",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module arc(n, r, angle, d, cp, points, corner, width, thickness, start, wedge=false, rounding, anchor=CENTER, spin=0)",
+      "line": 914,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "catenary",
+      "args": [
+        "width",
+        "droop",
+        "n",
+        "angle",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module catenary(width, droop, n=100, angle, anchor=CTR, spin=0) {",
+      "line": 1051,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "helix",
+      "args": [
+        "l",
+        "h",
+        "turns",
+        "angle",
+        "r",
+        "r1",
+        "r2",
+        "d",
+        "d1"
+      ],
+      "signature": "module helix(l,h,turns,angle, r, r1, r2, d, d1, d2) {no_module();}",
+      "line": 1091,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "turtle",
+      "args": [
+        "commands",
+        "state",
+        "full_state",
+        "repeat"
+      ],
+      "signature": "module turtle(commands, state=[[[0,0]],[1,0],90,0], full_state=false, repeat=1) {no_module();}",
+      "line": 1242,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "debug_polygon",
+      "args": [
+        "points",
+        "paths",
+        "vertices",
+        "edges",
+        "convexity",
+        "size"
+      ],
+      "signature": "module debug_polygon(points, paths, vertices=true, edges=true, convexity=2, size=1)",
+      "line": 1419,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "_debug_poly_verts",
+      "args": [
+        "points",
+        "size"
+      ],
+      "signature": "module _debug_poly_verts(points, size)",
+      "line": 1439,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "_debug_poly_edges",
+      "args": [
+        "j",
+        "points",
+        "path",
+        "vertices",
+        "size"
+      ],
+      "signature": "module _debug_poly_edges(j,points, path,vertices,size)",
+      "line": 1460,
+      "path": "BOSL2/drawing.scad"
+    },
+    {
+      "module": "showit",
+      "args": [
+        "label",
+        "rgn",
+        "poly",
+        "outline",
+        "width"
+      ],
+      "signature": "module showit(label, rgn, poly=polycolor, outline=outlinecolor, width=0.5) {",
+      "line": 22,
+      "path": "BOSL2/examples/boolean_geometry.scad"
+    },
+    {
+      "module": "tree",
+      "args": [
+        "l",
+        "sc",
+        "depth"
+      ],
+      "signature": "module tree(l=1500, sc=0.7, depth=10)",
+      "line": 2,
+      "path": "BOSL2/examples/fractal_tree.scad"
+    },
+    {
+      "module": "jigsaw_puzzle_cuts",
+      "args": [
+        "piece_size",
+        "pieces",
+        "kerf",
+        "seed"
+      ],
+      "signature": "module jigsaw_puzzle_cuts(piece_size=50, pieces=[5,5], kerf=0.2, seed=8889)",
+      "line": 17,
+      "path": "BOSL2/examples/jigsaw_puzzle.scad"
+    },
+    {
+      "module": "orient_cube",
+      "args": [
+        "ang"
+      ],
+      "signature": "module orient_cube(ang) {",
+      "line": 14,
+      "path": "BOSL2/examples/orientations.scad"
+    },
+    {
+      "module": "text3d",
+      "args": [
+        "text",
+        "h",
+        "size"
+      ],
+      "signature": "module text3d(text, h=0.01, size=3) {",
+      "line": 36,
+      "path": "BOSL2/examples/orientations.scad"
+    },
+    {
+      "module": "dottedline",
+      "args": [
+        "l"
+      ],
+      "signature": "module dottedline(l, d) for(y = [0:d*3:l]) up(y) sphere(d=d);",
+      "line": 42,
+      "path": "BOSL2/examples/orientations.scad"
+    },
+    {
+      "module": "orient_cubes",
+      "args": [],
+      "signature": "module orient_cubes() {",
+      "line": 44,
+      "path": "BOSL2/examples/orientations.scad"
+    },
+    {
+      "module": "spur_gear",
+      "args": [
+        "circ_pitch",
+        "teeth",
+        "thickness",
+        "shaft_diam",
+        "hide",
+        "pressure_angle",
+        "clearance",
+        "backlash",
+        "helical",
+        "internal",
+        "interior",
+        "profile_shift",
+        "slices",
+        "herringbone",
+        "shorten",
+        "pitch",
+        "diam_pitch",
+        "mod",
+        "atype",
+        "gear_spin",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module spur_gear( circ_pitch, teeth, thickness, shaft_diam = 0, hide = 0, pressure_angle, clearance, backlash = 0.0, helical, internal, interior, profile_shift=\"auto\", slices, herringbone=false, shorten=0, pitch, diam_pitch, mod, atype=\"pitch\", gear_spin = 0, anchor = CENTER, spin = 0, orient = UP ) {",
+      "line": 978,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "spur_gear2d",
+      "args": [
+        "circ_pitch",
+        "teeth",
+        "hide",
+        "pressure_angle",
+        "clearance",
+        "backlash",
+        "internal",
+        "interior",
+        "profile_shift",
+        "helical",
+        "shorten",
+        "shaft_diam",
+        "pitch",
+        "diam_pitch",
+        "mod",
+        "gear_spin",
+        "atype",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module spur_gear2d( circ_pitch, teeth, hide = 0, pressure_angle, clearance, backlash = 0.0, internal, interior, profile_shift=\"auto\", helical, shorten = 0, shaft_diam = 0, pitch, diam_pitch, mod, gear_spin = 0, atype=\"pitch\", anchor = CENTER, spin = 0 ) {",
+      "line": 1282,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "ring_gear",
+      "args": [
+        "circ_pitch",
+        "teeth",
+        "thickness",
+        "backing",
+        "pressure_angle",
+        "helical",
+        "herringbone",
+        "profile_shift",
+        "clearance",
+        "backlash",
+        "or",
+        "od",
+        "width",
+        "pitch",
+        "diam_pitch",
+        "mod",
+        "slices",
+        "gear_spin",
+        "anchor",
+        "atype",
+        "spin",
+        "orient"
+      ],
+      "signature": "module ring_gear( circ_pitch, teeth, thickness = 10, backing, pressure_angle, helical, herringbone = false, profile_shift=0, clearance, backlash = 0.0, or,od,width, pitch, diam_pitch, mod, slices, gear_spin = 0, anchor = CENTER, atype = \"pitch\", spin = 0, orient = UP ) {",
+      "line": 1404,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "ring_gear2d",
+      "args": [
+        "circ_pitch",
+        "teeth",
+        "backing",
+        "pressure_angle",
+        "helical",
+        "profile_shift",
+        "clearance",
+        "backlash",
+        "or",
+        "od",
+        "width",
+        "pitch",
+        "diam_pitch",
+        "mod",
+        "atype",
+        "gear_spin",
+        "shorten",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module ring_gear2d( circ_pitch, teeth, backing, pressure_angle, helical, profile_shift=0, clearance, backlash = 0.0, or,od,width, pitch, diam_pitch, mod, atype=\"pitch\", gear_spin = 0,shorten=0, anchor = CENTER, spin = 0 ) {",
+      "line": 1559,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "rack",
+      "args": [
+        "pitch",
+        "teeth",
+        "thickness",
+        "backing",
+        "width",
+        "bottom",
+        "pressure_angle",
+        "backlash",
+        "clearance",
+        "helical",
+        "herringbone",
+        "profile_shift",
+        "gear_travel",
+        "circ_pitch",
+        "diam_pitch",
+        "mod",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module rack( pitch, teeth, thickness, backing, width, bottom, pressure_angle, backlash = 0.0, clearance, helical, herringbone = false, profile_shift = 0, gear_travel = 0, circ_pitch, diam_pitch, mod, anchor = CENTER, spin = 0, orient = UP ) {",
+      "line": 1717,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "rack2d",
+      "args": [
+        "pitch",
+        "teeth",
+        "backing",
+        "width",
+        "bottom",
+        "pressure_angle",
+        "backlash",
+        "clearance",
+        "helical",
+        "profile_shift",
+        "gear_travel",
+        "circ_pitch",
+        "diam_pitch",
+        "mod",
+        "rounding",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module rack2d( pitch, teeth, backing, width, bottom, pressure_angle, backlash = 0, clearance, helical, profile_shift = 0, gear_travel = 0, circ_pitch, diam_pitch, mod, rounding = true, anchor = CENTER, spin = 0 ) {",
+      "line": 2056,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "crown_gear",
+      "args": [
+        "circ_pitch",
+        "teeth",
+        "backing",
+        "face_width",
+        "pressure_angle",
+        "clearance",
+        "backlash",
+        "profile_shift",
+        "slices",
+        "bottom",
+        "thickness",
+        "diam_pitch",
+        "pitch",
+        "mod",
+        "gear_spin",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module crown_gear( circ_pitch, teeth, backing, face_width=10, pressure_angle=20, clearance, backlash=0, profile_shift=0, slices=10, bottom, thickness, diam_pitch, pitch, mod, gear_spin=0, anchor=CTR, spin=0, orient=UP ) {",
+      "line": 2271,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "bevel_gear",
+      "args": [
+        "teeth",
+        "mate_teeth",
+        "shaft_angle",
+        "bottom",
+        "backing",
+        "thickness",
+        "cone_backing",
+        "face_width",
+        "shaft_diam",
+        "pressure_angle",
+        "clearance",
+        "backlash",
+        "cutter_radius",
+        "spiral",
+        "right_handed",
+        "slices",
+        "pitch",
+        "diam_pitch",
+        "circ_pitch",
+        "mod",
+        "anchor",
+        "spin",
+        "gear_spin",
+        "orient"
+      ],
+      "signature": "module bevel_gear( teeth, mate_teeth, shaft_angle=90, bottom,backing,thickness,cone_backing=true, face_width, shaft_diam = 0, pressure_angle = 20, clearance = undef, backlash = 0.0, cutter_radius, spiral = 35, right_handed = false, slices = 5, pitch, diam_pitch, circ_pitch, mod, anchor = \"pitchbase\", spin = 0, gear_spin=0, orient = UP ) {",
+      "line": 2653,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "worm",
+      "args": [
+        "circ_pitch",
+        "d",
+        "l",
+        "starts",
+        "left_handed",
+        "pressure_angle",
+        "backlash",
+        "clearance",
+        "pitch",
+        "diam_pitch",
+        "mod",
+        "gear_spin",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module worm( circ_pitch, d=15, l=100, starts=1, left_handed=false, pressure_angle, backlash=0, clearance, pitch, diam_pitch, mod, gear_spin=0, anchor=CENTER, spin=0, orient=UP ) {",
+      "line": 2827,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "enveloping_worm",
+      "args": [
+        "circ_pitch",
+        "mate_teeth",
+        "d",
+        "left_handed",
+        "starts",
+        "arc",
+        "pressure_angle",
+        "gear_spin",
+        "rounding",
+        "taper",
+        "diam_pitch",
+        "mod",
+        "pitch",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module enveloping_worm( circ_pitch, mate_teeth, d, left_handed=false, starts=1, arc, pressure_angle=20, gear_spin=0, rounding=true, taper=true, diam_pitch, mod, pitch, anchor=CTR, spin=0, orient=UP ) {",
+      "line": 3013,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "worm_gear",
+      "args": [
+        "circ_pitch",
+        "teeth",
+        "worm_diam",
+        "worm_starts",
+        "worm_arc",
+        "crowning",
+        "left_handed",
+        "pressure_angle",
+        "backlash",
+        "clearance",
+        "profile_shift",
+        "slices",
+        "shaft_diam",
+        "gear_spin",
+        "pitch",
+        "diam_pitch",
+        "mod",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module worm_gear( circ_pitch, teeth, worm_diam, worm_starts = 1, worm_arc = 45, crowning = 0.1, left_handed = false, pressure_angle, backlash = 0, clearance, profile_shift=\"auto\", slices = 10, shaft_diam = 0, gear_spin=0, pitch, diam_pitch, mod, anchor = CENTER, spin = 0, orient = UP ) {",
+      "line": 3270,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "_show_gear_tooth_profile",
+      "args": [
+        "circ_pitch",
+        "teeth",
+        "pressure_angle",
+        "profile_shift",
+        "helical",
+        "internal",
+        "clearance",
+        "backlash",
+        "show_verts",
+        "diam_pitch",
+        "mod"
+      ],
+      "signature": "module _show_gear_tooth_profile( circ_pitch, teeth, pressure_angle=20, profile_shift, helical=0, internal=false, clearance, backlash=0, show_verts=false, diam_pitch, mod ) {",
+      "line": 4700,
+      "path": "BOSL2/gears.scad"
+    },
+    {
+      "module": "show_plane",
+      "args": [
+        "plane",
+        "size",
+        "offset"
+      ],
+      "signature": "module show_plane(plane, size, offset=0)",
+      "line": 962,
+      "path": "BOSL2/geometry.scad"
+    },
+    {
+      "module": "hull_points",
+      "args": [
+        "points",
+        "fast"
+      ],
+      "signature": "module hull_points(points, fast=false) {",
+      "line": 2466,
+      "path": "BOSL2/geometry.scad"
+    },
+    {
+      "module": "knuckle_hinge",
+      "args": [
+        "length",
+        "segs",
+        "offset",
+        "inner",
+        "arm_height",
+        "arm_angle",
+        "gap",
+        "seg_ratio",
+        "knuckle_diam",
+        "pin_diam",
+        "fill",
+        "clear_top",
+        "round_bot",
+        "round_top",
+        "pin_fn",
+        "clearance",
+        "teardrop",
+        "in_place",
+        "clip",
+        "tap_depth",
+        "screw_head",
+        "screw_tolerance",
+        "knuckle_clearance",
+        "anchor",
+        "orient",
+        "spin"
+      ],
+      "signature": "module knuckle_hinge(length, segs, offset, inner=false, arm_height=0, arm_angle=45, gap=0.2, seg_ratio=1, knuckle_diam=4, pin_diam, fill=true, clear_top=false, round_bot=0, round_top=0, pin_fn, clearance=0, teardrop, in_place=false, clip, tap_depth, screw_head, screw_tolerance=\"close\", knuckle_clearance, anchor=BOT,orient,spin)",
+      "line": 333,
+      "path": "BOSL2/hinges.scad"
+    },
+    {
+      "module": "_knuckle_hinge_profile",
+      "args": [
+        "offset",
+        "arm_height",
+        "arm_angle",
+        "knuckle_diam",
+        "pin_diam",
+        "fill",
+        "clear_top",
+        "round_bot",
+        "round_top",
+        "pin_fn",
+        "clearance",
+        "tearspin",
+        "clip"
+      ],
+      "signature": "module _knuckle_hinge_profile(offset, arm_height, arm_angle=45, knuckle_diam=4, pin_diam=1.75, fill=true, clear_top=false, round_bot=0, round_top=0, pin_fn, clearance=0, tearspin, clip)",
+      "line": 445,
+      "path": "BOSL2/hinges.scad"
+    },
+    {
+      "module": "living_hinge_mask",
+      "args": [
+        "l",
+        "thick",
+        "layerheight",
+        "foldangle",
+        "hingegap",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module living_hinge_mask(l, thick, layerheight=0.2, foldangle=90, hingegap=undef, anchor=CENTER, spin=0, orient=UP)",
+      "line": 504,
+      "path": "BOSL2/hinges.scad"
+    },
+    {
+      "module": "folding_hinge_mask",
+      "args": [
+        "l",
+        "thick",
+        "layerheight",
+        "foldangle",
+        "hingegap",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module folding_hinge_mask(l, thick, layerheight=0.2, foldangle=90, hingegap=undef, anchor=CENTER, spin=0, orient=UP)",
+      "line": 515,
+      "path": "BOSL2/hinges.scad"
+    },
+    {
+      "module": "apply_folding_hinges_and_snaps",
+      "args": [
+        "thick",
+        "foldangle",
+        "hinges",
+        "snaps",
+        "sockets",
+        "snaplen",
+        "snapdiam",
+        "hingegap",
+        "layerheight"
+      ],
+      "signature": "module apply_folding_hinges_and_snaps(thick, foldangle=90, hinges=[], snaps=[], sockets=[], snaplen=5, snapdiam=5, hingegap=undef, layerheight=0.2)",
+      "line": 576,
+      "path": "BOSL2/hinges.scad"
+    },
+    {
+      "module": "snap_lock",
+      "args": [
+        "thick",
+        "snaplen",
+        "snapdiam",
+        "layerheight",
+        "foldangle",
+        "hingegap",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module snap_lock(thick, snaplen=5, snapdiam=5, layerheight=0.2, foldangle=90, hingegap=undef, anchor=CENTER, spin=0, orient=UP)",
+      "line": 635,
+      "path": "BOSL2/hinges.scad"
+    },
+    {
+      "module": "snap_socket",
+      "args": [
+        "thick",
+        "snaplen",
+        "snapdiam",
+        "layerheight",
+        "foldangle",
+        "hingegap",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module snap_socket(thick, snaplen=5, snapdiam=5, layerheight=0.2, foldangle=90, hingegap=undef, anchor=CENTER, spin=0, orient=UP)",
+      "line": 675,
+      "path": "BOSL2/hinges.scad"
+    },
+    {
+      "module": "ring_hook",
+      "args": [
+        "base_size",
+        "hole_z",
+        "or",
+        "ir",
+        "od",
+        "id",
+        "wall",
+        "hole",
+        "rounding",
+        "fillet",
+        "hole_rounding",
+        "outside_segments",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module ring_hook(base_size, hole_z, or, ir, od, id, wall, hole=\"circle\", rounding=0, fillet=0, hole_rounding=0, outside_segments, anchor=BOTTOM, spin=0, orient=UP)",
+      "line": 129,
+      "path": "BOSL2/hooks.scad"
+    },
+    {
+      "module": "metaballs",
+      "args": [
+        "spec",
+        "bounding_box",
+        "voxel_size",
+        "voxel_count",
+        "isovalue",
+        "closed",
+        "exact_bounds",
+        "convexity",
+        "cp",
+        "anchor",
+        "spin",
+        "orient",
+        "atype",
+        "show_stats",
+        "show_box",
+        "debug"
+      ],
+      "signature": "module metaballs(spec, bounding_box, voxel_size, voxel_count, isovalue=1, closed=true, exact_bounds=false, convexity=6, cp=\"centroid\", anchor=\"origin\", spin=0, orient=UP, atype=\"hull\", show_stats=false, show_box=false, debug=false) {",
+      "line": 2476,
+      "path": "BOSL2/isosurface.scad"
+    },
+    {
+      "module": "metaballs2d",
+      "args": [
+        "spec",
+        "bounding_box",
+        "pixel_size",
+        "pixel_count",
+        "isovalue",
+        "use_centers",
+        "smoothing",
+        "exact_bounds",
+        "convexity",
+        "cp",
+        "anchor",
+        "spin",
+        "atype",
+        "show_stats",
+        "show_box",
+        "debug"
+      ],
+      "signature": "module metaballs2d(spec, bounding_box, pixel_size, pixel_count, isovalue=1, use_centers=false, smoothing=undef, exact_bounds=false, convexity=6, cp=\"centroid\", anchor=\"origin\", spin=0, atype=\"hull\", show_stats=false, show_box=false, debug=false) {",
+      "line": 3016,
+      "path": "BOSL2/isosurface.scad"
+    },
+    {
+      "module": "isosurface",
+      "args": [
+        "f",
+        "isovalue",
+        "bounding_box",
+        "voxel_size",
+        "voxel_count",
+        "reverse",
+        "closed",
+        "exact_bounds",
+        "convexity",
+        "cp",
+        "anchor",
+        "spin",
+        "orient",
+        "atype",
+        "show_stats",
+        "show_box",
+        "_mball"
+      ],
+      "signature": "module isosurface(f, isovalue, bounding_box, voxel_size, voxel_count=undef, reverse=false, closed=true, exact_bounds=false, convexity=6, cp=\"centroid\", anchor=\"origin\", spin=0, orient=UP, atype=\"hull\", show_stats=false, show_box=false, _mball=false) {",
+      "line": 3393,
+      "path": "BOSL2/isosurface.scad"
+    },
+    {
+      "module": "contour",
+      "args": [
+        "f",
+        "isovalue",
+        "bounding_box",
+        "pixel_size",
+        "pixel_count",
+        "use_centers",
+        "smoothing",
+        "exact_bounds",
+        "cp",
+        "anchor",
+        "spin",
+        "atype",
+        "show_stats",
+        "show_box",
+        "_mball"
+      ],
+      "signature": "module contour(f, isovalue, bounding_box, pixel_size, pixel_count=undef, use_centers=true, smoothing=undef, exact_bounds=false, cp=\"centroid\", anchor=\"origin\", spin=0, atype=\"hull\", show_stats=false, show_box=false, _mball=false) {",
+      "line": 3681,
+      "path": "BOSL2/isosurface.scad"
+    },
+    {
+      "module": "half_joiner_clear",
+      "args": [
+        "l",
+        "w",
+        "ang",
+        "clearance",
+        "overlap",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module half_joiner_clear(l=20, w=10, ang=30, clearance=0, overlap=0.01, anchor=CENTER, spin=0, orient=UP)",
+      "line": 57,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "half_joiner",
+      "args": [
+        "l",
+        "w",
+        "base",
+        "ang",
+        "screwsize",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module half_joiner(l=20, w=10, base=10, ang=30, screwsize, anchor=CENTER, spin=0, orient=UP)",
+      "line": 233,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "half_joiner2",
+      "args": [
+        "l",
+        "w",
+        "base",
+        "ang",
+        "screwsize",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module half_joiner2(l=20, w=10, base=10, ang=30, screwsize, anchor=CENTER, spin=0, orient=UP)",
+      "line": 445,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "joiner_clear",
+      "args": [
+        "l",
+        "w",
+        "ang",
+        "clearance",
+        "overlap",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module joiner_clear(l=40, w=10, ang=30, clearance=0, overlap=0.01, anchor=CENTER, spin=0, orient=UP)",
+      "line": 488,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "joiner",
+      "args": [
+        "l",
+        "w",
+        "base",
+        "ang",
+        "screwsize",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module joiner(l=40, w=10, base=10, ang=30, screwsize, anchor=CENTER, spin=0, orient=UP)",
+      "line": 536,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "dovetail",
+      "args": [
+        "gender",
+        "width",
+        "height",
+        "slide",
+        "h",
+        "w",
+        "angle",
+        "slope",
+        "thickness",
+        "taper",
+        "back_width",
+        "chamfer",
+        "extra",
+        "entry_slot_length",
+        "r",
+        "radius",
+        "round",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module dovetail(gender, width, height, slide, h, w, angle, slope, thickness, taper, back_width, chamfer, extra=0.01, entry_slot_length=0, r, radius, round=false, anchor=BOTTOM, spin=0, orient)",
+      "line": 667,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "_pin_nub",
+      "args": [
+        "r",
+        "nub",
+        "h"
+      ],
+      "signature": "module _pin_nub(r, nub, h)",
+      "line": 769,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "_pin_slot",
+      "args": [
+        "l",
+        "r",
+        "t",
+        "d",
+        "nub",
+        "depth",
+        "stretch"
+      ],
+      "signature": "module _pin_slot(l, r, t, d, nub, depth, stretch) {",
+      "line": 784,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "_pin_shaft",
+      "args": [
+        "r",
+        "lStraight",
+        "nub",
+        "nubscale",
+        "stretch",
+        "d",
+        "pointed"
+      ],
+      "signature": "module _pin_shaft(r, lStraight, nub, nubscale, stretch, d, pointed)",
+      "line": 799,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "snap_pin",
+      "args": [
+        "size",
+        "r",
+        "radius",
+        "d",
+        "diameter",
+        "l",
+        "length",
+        "nub_depth",
+        "snap",
+        "thickness",
+        "clearance",
+        "preload",
+        "pointed",
+        "anchor",
+        "spin",
+        "orient",
+        "center"
+      ],
+      "signature": "module snap_pin(size,r,radius,d,diameter, l,length, nub_depth, snap, thickness, clearance=0.2, preload, pointed=true, anchor=FRONT, spin=0, orient=FRONT, center) {",
+      "line": 891,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "snap_pin_socket",
+      "args": [
+        "size",
+        "r",
+        "radius",
+        "l",
+        "length",
+        "d",
+        "diameter",
+        "nub_depth",
+        "snap",
+        "fixed",
+        "pointed",
+        "fins",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module snap_pin_socket(size, r, radius, l,length, d,diameter,nub_depth, snap, fixed=true, pointed=true, fins=false, anchor=BOTTOM, spin=0, orient=DOWN) {",
+      "line": 968,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "rabbit_clip",
+      "args": [
+        "type",
+        "length",
+        "width",
+        "snap",
+        "thickness",
+        "depth",
+        "compression",
+        "clearance",
+        "lock",
+        "lock_clearance",
+        "splinesteps",
+        "anchor",
+        "orient",
+        "spin"
+      ],
+      "signature": "module rabbit_clip(type, length, width,  snap, thickness, depth, compression=0.1,  clearance=.1, lock=false, lock_clearance=0, splinesteps=8, anchor, orient, spin=0)",
+      "line": 1150,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "apply_lock",
+      "args": [],
+      "signature": "module apply_lock() {",
+      "line": 1172,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "hirth",
+      "args": [
+        "n",
+        "ir",
+        "or",
+        "id",
+        "od",
+        "tooth_angle",
+        "cone_angle",
+        "chamfer",
+        "rounding",
+        "base",
+        "crop",
+        "skew",
+        "rot",
+        "orient",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module hirth(n, ir, or, id, od, tooth_angle=60, cone_angle=0, chamfer, rounding, base=1, crop=false,skew=0, rot=false, orient,anchor,spin)",
+      "line": 1388,
+      "path": "BOSL2/joiners.scad"
+    },
+    {
+      "module": "echo_matrix",
+      "args": [
+        "M",
+        "description",
+        "sig",
+        "sep",
+        "eps"
+      ],
+      "signature": "module echo_matrix(M,description,sig=4,sep=1,eps=1e-9)",
+      "line": 137,
+      "path": "BOSL2/linalg.scad"
+    },
+    {
+      "module": "linear_bearing_housing",
+      "args": [
+        "d",
+        "l",
+        "tab",
+        "gap",
+        "wall",
+        "tabwall",
+        "screwsize",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module linear_bearing_housing(d=15, l=24, tab=8, gap=5, wall=3, tabwall=5, screwsize=3, anchor=BOTTOM, spin=0, orient=UP)",
+      "line": 43,
+      "path": "BOSL2/linear_bearings.scad"
+    },
+    {
+      "module": "linear_bearing",
+      "args": [
+        "l",
+        "od",
+        "id",
+        "length",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module linear_bearing(l, od=15, id=8, length, anchor=CTR, spin=0, orient=UP) {",
+      "line": 110,
+      "path": "BOSL2/linear_bearings.scad"
+    },
+    {
+      "module": "lmXuu_housing",
+      "args": [
+        "size",
+        "tab",
+        "gap",
+        "wall",
+        "tabwall",
+        "screwsize",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module lmXuu_housing(size=8, tab=7, gap=5, wall=3, tabwall=5, screwsize=3, anchor=BOTTOM, spin=0, orient=UP)",
+      "line": 148,
+      "path": "BOSL2/linear_bearings.scad"
+    },
+    {
+      "module": "lmXuu_bearing",
+      "args": [
+        "size",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module lmXuu_bearing(size=8, anchor=CTR, spin=0, orient=UP) {",
+      "line": 174,
+      "path": "BOSL2/linear_bearings.scad"
+    },
+    {
+      "module": "mask2d_roundover",
+      "args": [
+        "r",
+        "inset",
+        "mask_angle",
+        "excess",
+        "flat_top",
+        "d",
+        "h",
+        "height",
+        "cut",
+        "quarter_round",
+        "joint",
+        "anchor",
+        "spin",
+        "clip_angle"
+      ],
+      "signature": "module mask2d_roundover(r, inset=0, mask_angle, excess=0.01, flat_top, d, h, height, cut, quarter_round=false, joint, anchor=CENTER,spin=0, clip_angle) {",
+      "line": 146,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mask2d_smooth",
+      "args": [
+        "mask_angle",
+        "cut",
+        "joint",
+        "height",
+        "h",
+        "k",
+        "excess",
+        "inset",
+        "flat_top",
+        "splinesteps",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module mask2d_smooth(mask_angle, cut, joint, height, h, k=0.5, excess=.01, inset=0, flat_top=false, splinesteps=16, anchor=CENTER, spin=0)",
+      "line": 357,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mask2d_teardrop",
+      "args": [
+        "r",
+        "angle",
+        "mask_angle",
+        "excess",
+        "inset",
+        "flat_top",
+        "height",
+        "d",
+        "h",
+        "cut",
+        "joint",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module mask2d_teardrop(r, angle=45, mask_angle, excess=0.01, inset=0, flat_top=false, height, d, h, cut, joint, anchor=CENTER, spin=0) {",
+      "line": 484,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mask2d_cove",
+      "args": [
+        "r",
+        "inset",
+        "mask_angle",
+        "excess",
+        "flat_top",
+        "bulge",
+        "d",
+        "h",
+        "height",
+        "quarter_round",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module mask2d_cove(r, inset=0, mask_angle, excess=0.01, flat_top, bulge, d, h, height, quarter_round=false, anchor=CENTER, spin=0)",
+      "line": 576,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mask2d_chamfer",
+      "args": [
+        "edge",
+        "angle",
+        "inset",
+        "excess",
+        "mask_angle",
+        "flat_top",
+        "x",
+        "y",
+        "h",
+        "w",
+        "height",
+        "width",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module mask2d_chamfer(edge, angle, inset=0, excess=0.01, mask_angle=90, flat_top=false, x, y, h, w, height, width, anchor=CENTER,spin=0) {",
+      "line": 747,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mask2d_rabbet",
+      "args": [
+        "size",
+        "mask_angle",
+        "excess",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module mask2d_rabbet(size, mask_angle=90, excess=0.01, anchor=CTR, spin=0) {",
+      "line": 867,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mask2d_dovetail",
+      "args": [
+        "edge",
+        "angle",
+        "shelf",
+        "inset",
+        "mask_angle",
+        "excess",
+        "flat_top",
+        "w",
+        "h",
+        "width",
+        "height",
+        "slope",
+        "anchor",
+        "spin",
+        "x",
+        "y"
+      ],
+      "signature": "module mask2d_dovetail(edge, angle, shelf=0, inset=0, mask_angle=90, excess=0.01, flat_top=true, w,h,width,height, slope, anchor=CENTER, spin=0,x,y) {",
+      "line": 954,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mask2d_ogee",
+      "args": [
+        "pattern",
+        "excess",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module mask2d_ogee(pattern, excess=0.01, anchor=CENTER,spin=0) {",
+      "line": 1062,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "face_profile",
+      "args": [
+        "faces",
+        "r",
+        "d",
+        "excess",
+        "convexity"
+      ],
+      "signature": "module face_profile(faces=[], r, d, excess=0.01, convexity=10) {",
+      "line": 1169,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "edge_profile",
+      "args": [
+        "edges",
+        "except",
+        "excess",
+        "convexity"
+      ],
+      "signature": "module edge_profile(edges=EDGES_ALL, except=[], excess=0.01, convexity=10) {",
+      "line": 1225,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "edge_profile_asym",
+      "args": [
+        "edges",
+        "except",
+        "excess",
+        "convexity",
+        "flip",
+        "corner_type",
+        "size"
+      ],
+      "signature": "module edge_profile_asym( edges=EDGES_ALL, except=[], excess=0.01, convexity=10, flip=false, corner_type=\"none\", size=[0,0] ) {",
+      "line": 1419,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "corner_profile",
+      "args": [
+        "corners",
+        "except",
+        "r",
+        "d",
+        "axis",
+        "convexity"
+      ],
+      "signature": "module corner_profile(corners=CORNERS_ALL, except=[], r, d, axis=\"Z\", convexity=10) {",
+      "line": 1712,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "rot_to_axis",
+      "args": [
+        "axis"
+      ],
+      "signature": "module rot_to_axis(axis) {",
+      "line": 1720,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mirror_if",
+      "args": [
+        "cond",
+        "plane"
+      ],
+      "signature": "module mirror_if(cond,plane) {",
+      "line": 1728,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "mirror_to_corner",
+      "args": [
+        "corner"
+      ],
+      "signature": "module mirror_to_corner(corner) {",
+      "line": 1732,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "corner_round_mask2d",
+      "args": [
+        "r"
+      ],
+      "signature": "module corner_round_mask2d(r) {",
+      "line": 1738,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "chamfer_edge_mask",
+      "args": [
+        "l",
+        "chamfer",
+        "excess",
+        "h",
+        "length",
+        "height",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module chamfer_edge_mask(l, chamfer=1, excess=0.1, h, length, height, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 1819,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "rounding_angled_edge_mask",
+      "args": [
+        "h",
+        "r",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "ang",
+        "anchor",
+        "spin",
+        "orient",
+        "l",
+        "height",
+        "length"
+      ],
+      "signature": "module rounding_angled_edge_mask(h, r, r1, r2, d, d1, d2, ang=90, anchor=CENTER, spin=0, orient=UP,l,height,length)",
+      "line": 1948,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "rounding_angled_corner_mask",
+      "args": [
+        "r",
+        "ang",
+        "d",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module rounding_angled_corner_mask(r, ang=90, d, anchor=CENTER, spin=0, orient=UP)",
+      "line": 1957,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "rounding_edge_mask",
+      "args": [
+        "l",
+        "r",
+        "ang",
+        "r1",
+        "r2",
+        "excess",
+        "d1",
+        "d2",
+        "d",
+        "r",
+        "length",
+        "h",
+        "height",
+        "anchor",
+        "spin",
+        "orient",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "_remove_tag"
+      ],
+      "signature": "module rounding_edge_mask(l, r, ang, r1, r2, excess=0.01, d1, d2,d,r,length, h, height, anchor=CENTER, spin=0, orient=UP, rounding,rounding1,rounding2,chamfer,chamfer1,chamfer2, _remove_tag=true)",
+      "line": 1965,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "teardrop_edge_mask",
+      "args": [
+        "l",
+        "r",
+        "angle",
+        "excess",
+        "ang",
+        "d",
+        "anchor",
+        "spin",
+        "orient",
+        "h",
+        "height",
+        "length"
+      ],
+      "signature": "module teardrop_edge_mask(l, r, angle=45, excess=0.1, ang, d, anchor=CTR, spin=0, orient=UP,h,height,length)",
+      "line": 2113,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "polygon_edge_mask",
+      "args": [
+        "mask",
+        "length",
+        "height",
+        "l",
+        "h",
+        "scale",
+        "anchor",
+        "atype",
+        "spin",
+        "orient"
+      ],
+      "signature": "module polygon_edge_mask(mask, length, height, l, h, scale=1, anchor=\"origin\", atype=\"hull\", spin=0, orient=UP)",
+      "line": 2174,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "chamfer_corner_mask",
+      "args": [
+        "chamfer",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module chamfer_corner_mask(chamfer=1, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 2233,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "rounding_corner_mask",
+      "args": [
+        "r",
+        "ang",
+        "d",
+        "style",
+        "excess",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module rounding_corner_mask(r, ang=90, d, style=\"octa\", excess=0.1, anchor=CENTER, spin=0, orient=UP)",
+      "line": 2300,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "teardrop_corner_mask",
+      "args": [
+        "r",
+        "angle",
+        "excess",
+        "d",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module teardrop_corner_mask(r, angle=45, excess=0.1, d, anchor=CTR, spin=0, orient=UP)",
+      "line": 2356,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "chamfer_cylinder_mask",
+      "args": [
+        "r",
+        "chamfer",
+        "d",
+        "ang",
+        "from_end",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module chamfer_cylinder_mask(r, chamfer, d, ang=45, from_end=false, anchor=CENTER, spin=0, orient=UP)",
+      "line": 2430,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "rounding_cylinder_mask",
+      "args": [
+        "r",
+        "rounding",
+        "d",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module rounding_cylinder_mask(r, rounding, d, anchor=CENTER, spin=0, orient=UP)",
+      "line": 2487,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "rounding_hole_mask",
+      "args": [
+        "r",
+        "rounding",
+        "excess",
+        "d",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module rounding_hole_mask(r, rounding, excess=0.1, d, anchor=CENTER, spin=0, orient=UP)",
+      "line": 2543,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "face_mask",
+      "args": [
+        "faces"
+      ],
+      "signature": "module face_mask(faces=[LEFT,RIGHT,FRONT,BACK,BOT,TOP]) {",
+      "line": 2595,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "edge_mask",
+      "args": [
+        "edges",
+        "except"
+      ],
+      "signature": "module edge_mask(edges=EDGES_ALL, except=[]) {",
+      "line": 2641,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "corner_mask",
+      "args": [
+        "corners",
+        "except"
+      ],
+      "signature": "module corner_mask(corners=CORNERS_ALL, except=[]) {",
+      "line": 2698,
+      "path": "BOSL2/masks.scad"
+    },
+    {
+      "module": "generic_screw",
+      "args": [
+        "screwsize",
+        "screwlen",
+        "headsize",
+        "headlen",
+        "pitch",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module generic_screw( screwsize=3, screwlen=10, headsize=6, headlen=3, pitch=undef, anchor=\"base\", spin=0, orient=UP ) {",
+      "line": 391,
+      "path": "BOSL2/metric_screws.scad"
+    },
+    {
+      "module": "metric_bolt",
+      "args": [
+        "headtype",
+        "size",
+        "l",
+        "shank",
+        "pitch",
+        "details",
+        "coarse",
+        "phillips",
+        "torx",
+        "flange",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module metric_bolt( headtype=\"socket\", size=3, l=12, shank=0, pitch=undef, details=false, coarse=true, phillips=undef, torx=undef, flange=0, anchor=\"base\", spin=0, orient=UP ) {",
+      "line": 482,
+      "path": "BOSL2/metric_screws.scad"
+    },
+    {
+      "module": "metric_nut",
+      "args": [
+        "size",
+        "hole",
+        "pitch",
+        "details",
+        "flange",
+        "center",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module metric_nut( size=3, hole=true, pitch=undef, details=false, flange=0, center, anchor, spin=0, orient=UP ) {",
+      "line": 655,
+      "path": "BOSL2/metric_screws.scad"
+    },
+    {
+      "module": "extrude_from_to",
+      "args": [
+        "pt1",
+        "pt2",
+        "convexity",
+        "twist",
+        "scale",
+        "slices"
+      ],
+      "signature": "module extrude_from_to(pt1, pt2, convexity, twist, scale, slices) {",
+      "line": 41,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "path_extrude2d",
+      "args": [
+        "path",
+        "caps",
+        "closed",
+        "s",
+        "convexity"
+      ],
+      "signature": "module path_extrude2d(path, caps=false, closed=false, s, convexity=10) {",
+      "line": 114,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "path_extrude",
+      "args": [
+        "path",
+        "convexity",
+        "clipsize"
+      ],
+      "signature": "module path_extrude(path, convexity=10, clipsize=100) {",
+      "line": 203,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "cylindrical_extrude",
+      "args": [
+        "ir",
+        "or",
+        "od",
+        "id",
+        "size",
+        "convexity",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cylindrical_extrude(ir, or, od, id, size, convexity=10, spin=0, orient=UP) {",
+      "line": 292,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "bounding_box",
+      "args": [
+        "excess",
+        "planar"
+      ],
+      "signature": "module bounding_box(excess=0, planar=false) {",
+      "line": 365,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "_xProjection",
+      "args": [],
+      "signature": "module _xProjection() {",
+      "line": 367,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "_oversize_bbox",
+      "args": [],
+      "signature": "module _oversize_bbox() {",
+      "line": 387,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "_shrink_cube",
+      "args": [],
+      "signature": "module _shrink_cube() {",
+      "line": 403,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "chain_hull",
+      "args": [],
+      "signature": "module chain_hull()",
+      "line": 465,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "minkowski_difference",
+      "args": [
+        "planar"
+      ],
+      "signature": "module minkowski_difference(planar=false) {",
+      "line": 513,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "offset3d",
+      "args": [
+        "r",
+        "size",
+        "convexity"
+      ],
+      "signature": "module offset3d(r, size=1000, convexity=10) {",
+      "line": 551,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "round3d",
+      "args": [
+        "r",
+        "or",
+        "ir",
+        "size"
+      ],
+      "signature": "module round3d(r, or, ir, size=1000)",
+      "line": 606,
+      "path": "BOSL2/miscellaneous.scad"
+    },
+    {
+      "module": "modular_hose",
+      "args": [
+        "size",
+        "type",
+        "clearance",
+        "waist_len",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module modular_hose(size, type, clearance=0, waist_len, anchor=BOTTOM, spin=0,orient=UP)",
+      "line": 160,
+      "path": "BOSL2/modular_hose.scad"
+    },
+    {
+      "module": "nema_stepper_motor",
+      "args": [
+        "size",
+        "h",
+        "shaft_len",
+        "details",
+        "atype",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module nema_stepper_motor(size=17, h=24, shaft_len=20, details=true, atype=\"body\", anchor=TOP, spin=0, orient=UP)",
+      "line": 49,
+      "path": "BOSL2/nema_steppers.scad"
+    },
+    {
+      "module": "nema_mount_mask",
+      "args": [
+        "size",
+        "depth",
+        "l",
+        "atype",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module nema_mount_mask(size, depth=5, l=5, atype=\"full\", anchor=CENTER, spin=0, orient=UP)",
+      "line": 148,
+      "path": "BOSL2/nema_steppers.scad"
+    },
+    {
+      "module": "debug_nurbs",
+      "args": [
+        "control",
+        "degree",
+        "splinesteps",
+        "width",
+        "size",
+        "mult",
+        "weights",
+        "type",
+        "knots",
+        "show_weights",
+        "show_knots",
+        "show_index",
+        "show_control"
+      ],
+      "signature": "module debug_nurbs(control,degree,splinesteps=16,width=1, size, mult,weights,type=\"clamped\",knots, show_weights, show_knots=false, show_index=true, show_control=true)",
+      "line": 401,
+      "path": "BOSL2/nurbs.scad"
+    },
+    {
+      "module": "nurbs_vnf",
+      "args": [
+        "patch",
+        "degree",
+        "splinesteps",
+        "weights",
+        "type",
+        "mult",
+        "knots",
+        "style",
+        "reverse",
+        "triangulate",
+        "convexity",
+        "cp",
+        "anchor",
+        "spin",
+        "orient",
+        "atype",
+        "caps",
+        "cap1",
+        "cap2"
+      ],
+      "signature": "module nurbs_vnf(patch, degree, splinesteps=16, weights, type=\"clamped\", mult, knots, style=\"default\", reverse=false, triangulate=false, convexity=2, cp=\"centroid\", anchor=\"origin\", spin=0, orient=UP, atype=\"hull\", caps, cap1, cap2)",
+      "line": 667,
+      "path": "BOSL2/nurbs.scad"
+    },
+    {
+      "module": "half_of",
+      "args": [
+        "v",
+        "cp",
+        "s",
+        "planar",
+        "cut_path",
+        "cut_angle",
+        "offset",
+        "show_frameref",
+        "convexity"
+      ],
+      "signature": "module half_of(v=UP, cp, s=100, planar=false, cut_path, cut_angle=0, offset=0, show_frameref=false, convexity=10)",
+      "line": 90,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "maybe_offset",
+      "args": [
+        "r"
+      ],
+      "signature": "module maybe_offset(r) {",
+      "line": 92,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "ghost_if",
+      "args": [
+        "cond"
+      ],
+      "signature": "module ghost_if(cond) {",
+      "line": 99,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "left_half",
+      "args": [
+        "s",
+        "x",
+        "planar",
+        "cut_path",
+        "cut_angle",
+        "offset",
+        "show_frameref",
+        "convexity"
+      ],
+      "signature": "module left_half(s=100, x=0, planar=false, cut_path, cut_angle=0, offset=0, show_frameref=false, convexity=10)",
+      "line": 296,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "right_half",
+      "args": [
+        "s",
+        "x",
+        "planar",
+        "cut_path",
+        "cut_angle",
+        "offset",
+        "show_frameref",
+        "convexity"
+      ],
+      "signature": "module right_half(s=100, x=0, planar=false, cut_path, cut_angle=0, offset=0, show_frameref=false, convexity=10)",
+      "line": 367,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "front_half",
+      "args": [
+        "s",
+        "y",
+        "planar",
+        "cut_path",
+        "cut_angle",
+        "offset",
+        "show_frameref",
+        "convexity"
+      ],
+      "signature": "module front_half(s=100, y=0, planar=false, cut_path, cut_angle=0, offset=0, show_frameref=false, convexity=10)",
+      "line": 437,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "back_half",
+      "args": [
+        "s",
+        "y",
+        "planar",
+        "cut_path",
+        "cut_angle",
+        "offset",
+        "show_frameref",
+        "convexity"
+      ],
+      "signature": "module back_half(s=100, y=0, planar=false, cut_path, cut_angle=0, offset=0, show_frameref=false, convexity=10)",
+      "line": 508,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "bottom_half",
+      "args": [
+        "s",
+        "z",
+        "planar",
+        "cut_path",
+        "cut_angle",
+        "offset",
+        "show_frameref",
+        "convexity"
+      ],
+      "signature": "module bottom_half(s=100, z=0, planar=false, cut_path, cut_angle=0, offset=0, show_frameref=false, convexity=10)",
+      "line": 578,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "top_half",
+      "args": [
+        "s",
+        "z",
+        "planar",
+        "cut_path",
+        "cut_angle",
+        "offset",
+        "show_frameref",
+        "convexity"
+      ],
+      "signature": "module top_half(s=100, z=0, planar=false, cut_path, cut_angle=0, offset=0, show_frameref=false, convexity=10)",
+      "line": 654,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "partition_mask",
+      "args": [
+        "l",
+        "w",
+        "h",
+        "cutsize",
+        "cutpath",
+        "gap",
+        "cutpath_centered",
+        "inverse",
+        "convexity",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module partition_mask( l=100, w=100, h=100, cutsize=10, cutpath=\"jigsaw\", gap=0, cutpath_centered=true, inverse=false, convexity=10, anchor=CENTER, spin=0, orient=UP ) {",
+      "line": 761,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "partition_cut_mask",
+      "args": [
+        "l",
+        "h",
+        "cutsize",
+        "cutpath",
+        "gap",
+        "cutpath_centered",
+        "convexity",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module partition_cut_mask(l=100, h=100, cutsize=10, cutpath=\"jigsaw\", gap=0, cutpath_centered=true, convexity=10, anchor=CENTER, spin=0, orient=UP)",
+      "line": 829,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "partition",
+      "args": [
+        "size",
+        "spread",
+        "cutsize",
+        "cutpath",
+        "gap",
+        "cutpath_centered",
+        "convexity",
+        "spin"
+      ],
+      "signature": "module partition(size=100, spread=10, cutsize=10, cutpath=\"jigsaw\", gap=0, cutpath_centered=true, convexity=10, spin=0)",
+      "line": 883,
+      "path": "BOSL2/partitions.scad"
+    },
+    {
+      "module": "regular_polyhedron",
+      "args": [
+        "name",
+        "index",
+        "type",
+        "faces",
+        "facetype",
+        "hasfaces",
+        "side",
+        "ir",
+        "mr",
+        "or",
+        "r",
+        "d",
+        "anchor",
+        "rounding",
+        "repeat",
+        "facedown",
+        "draw",
+        "rotate_children",
+        "stellate",
+        "longside",
+        "height"
+      ],
+      "signature": "module regular_polyhedron( name=undef, index=undef, type=undef, faces=undef, facetype=undef, hasfaces=undef, side=undef, ir=undef, mr=undef, or=undef, r=undef, d=undef, anchor=CENTER, rounding=0, repeat=true, facedown=true, draw=true, rotate_children=true, stellate = false, longside=undef,       // special parameter for trapezohedron h=undef,height=undef  // special parameter for trapezohedron ) {",
+      "line": 301,
+      "path": "BOSL2/polyhedra.scad"
+    },
+    {
+      "module": "region",
+      "args": [
+        "r",
+        "anchor",
+        "spin",
+        "cp",
+        "atype"
+      ],
+      "signature": "module region(r, anchor=\"origin\", spin=0, cp=\"centroid\", atype=\"hull\")",
+      "line": 358,
+      "path": "BOSL2/regions.scad"
+    },
+    {
+      "module": "debug_region",
+      "args": [
+        "region",
+        "vertices",
+        "edges",
+        "convexity",
+        "size"
+      ],
+      "signature": "module debug_region(region, vertices=true, edges=true, convexity=2, size=1)",
+      "line": 399,
+      "path": "BOSL2/regions.scad"
+    },
+    {
+      "module": "exclusive_or",
+      "args": [],
+      "signature": "module exclusive_or() {",
+      "line": 1383,
+      "path": "BOSL2/regions.scad"
+    },
+    {
+      "module": "hull_region",
+      "args": [
+        "region"
+      ],
+      "signature": "module hull_region(region)",
+      "line": 1530,
+      "path": "BOSL2/regions.scad"
+    },
+    {
+      "module": "round_corners",
+      "args": [
+        "path",
+        "method",
+        "radius",
+        "r",
+        "cut",
+        "joint",
+        "width",
+        "k",
+        "closed",
+        "verbose"
+      ],
+      "signature": "module round_corners(path, method=\"circle\", radius, r, cut, joint, width, k, closed=true, verbose=false) {no_module();}",
+      "line": 384,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "smooth_path",
+      "args": [
+        "path",
+        "tangents",
+        "size",
+        "relsize",
+        "method",
+        "splinesteps",
+        "uniform",
+        "closed"
+      ],
+      "signature": "module smooth_path(path, tangents, size, relsize, method=\"edges\", splinesteps=10, uniform, closed=false) {no_module();}",
+      "line": 742,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "path_join",
+      "args": [
+        "paths",
+        "joint",
+        "k",
+        "relocate",
+        "closed"
+      ],
+      "signature": "module path_join(paths,joint=0,k=0.5,relocate=true,closed=false) { no_module();}",
+      "line": 896,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "offset_stroke",
+      "args": [
+        "path",
+        "width",
+        "rounded",
+        "start",
+        "end",
+        "check_valid",
+        "quality",
+        "chamfer",
+        "closed",
+        "atype",
+        "anchor",
+        "spin",
+        "cp"
+      ],
+      "signature": "module offset_stroke(path, width=1, rounded=true, start, end, check_valid=true, quality=1, chamfer=false, closed=false, atype=\"hull\", anchor=\"origin\", spin, cp=\"centroid\")",
+      "line": 1372,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "_offset_sweep_region",
+      "args": [
+        "region",
+        "height",
+        "bottom",
+        "top",
+        "h",
+        "l",
+        "length",
+        "ends",
+        "bot",
+        "top_hole",
+        "bot_hole",
+        "bottom_hole",
+        "ends_hole",
+        "offset",
+        "r",
+        "steps",
+        "quality",
+        "check_valid",
+        "extra",
+        "cut",
+        "chamfer_width",
+        "chamfer_height",
+        "joint",
+        "k",
+        "angle",
+        "convexity",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype"
+      ],
+      "signature": "module _offset_sweep_region(region, height, bottom, top, h, l, length, ends, bot, top_hole, bot_hole, bottom_hole, ends_hole, offset=\"round\", r=0, steps=16, quality=1, check_valid=true, extra=0, cut=undef, chamfer_width=undef, chamfer_height=undef, joint=undef, k=0.75, angle=45, convexity=10,anchor=\"base\",cp=\"centroid\", spin=0, orient=UP, atype=\"hull\")",
+      "line": 1656,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "offset_sweep",
+      "args": [
+        "path",
+        "height",
+        "bottom",
+        "top",
+        "h",
+        "l",
+        "length",
+        "ends",
+        "bot",
+        "offset",
+        "r",
+        "steps",
+        "quality",
+        "check_valid",
+        "extra",
+        "top_hole",
+        "bot_hole",
+        "bottom_hole",
+        "ends_hole",
+        "cut",
+        "chamfer_width",
+        "chamfer_height",
+        "joint",
+        "k",
+        "angle",
+        "convexity",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype",
+        "_flipdir"
+      ],
+      "signature": "module offset_sweep(path, height, bottom, top, h, l, length, ends, bot, offset=\"round\", r=0, steps=16, quality=1, check_valid=true, extra=0, top_hole, bot_hole, bottom_hole, ends_hole, cut=undef, chamfer_width=undef, chamfer_height=undef, joint=undef, k=0.75, angle=45, convexity=10,anchor=\"base\",cp=\"centroid\", spin=0, orient=UP, atype=\"hull\", _flipdir)",
+      "line": 1857,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "convex_offset_extrude",
+      "args": [
+        "height",
+        "bottom",
+        "top",
+        "h",
+        "l",
+        "length",
+        "offset",
+        "r",
+        "steps",
+        "extra",
+        "cut",
+        "chamfer_width",
+        "chamfer_height",
+        "joint",
+        "k",
+        "angle",
+        "convexity",
+        "thickness"
+      ],
+      "signature": "module convex_offset_extrude( height, bottom=[], top=[], h, l, length, offset=\"round\", r=0, steps=16, extra=0, cut=undef, chamfer_width=undef, chamfer_height=undef, joint=undef, k=0.75, angle=45, convexity=10, thickness = 1/1024 ) {",
+      "line": 2104,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "rounded_prism",
+      "args": [
+        "bottom",
+        "top",
+        "joint_bot",
+        "joint_top",
+        "joint_sides",
+        "k_bot",
+        "k_top",
+        "k_sides",
+        "k",
+        "splinesteps",
+        "h",
+        "length",
+        "l",
+        "height",
+        "convexity",
+        "debug",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype"
+      ],
+      "signature": "module rounded_prism(bottom, top, joint_bot=0, joint_top=0, joint_sides=0, k_bot, k_top, k_sides, k=0.5, splinesteps=16, h, length, l, height, convexity=10, debug=false, anchor=\"origin\",cp=\"centroid\",spin=0, orient=UP, atype=\"hull\")",
+      "line": 2425,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "bent_cutout_mask",
+      "args": [
+        "r",
+        "thickness",
+        "path",
+        "radius",
+        "convexity"
+      ],
+      "signature": "module bent_cutout_mask(r, thickness, path, radius, convexity=10)",
+      "line": 2918,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "join_prism",
+      "args": [
+        "polygon",
+        "base",
+        "base_r",
+        "base_d",
+        "base_T",
+        "scale",
+        "prism_end_T",
+        "short",
+        "length",
+        "l",
+        "height",
+        "h",
+        "aux",
+        "aux_T",
+        "aux_r",
+        "aux_d",
+        "overlap",
+        "base_overlap",
+        "aux_overlap",
+        "n",
+        "base_n",
+        "end_n",
+        "aux_n",
+        "fillet",
+        "base_fillet",
+        "aux_fillet",
+        "end_round",
+        "k",
+        "base_k",
+        "aux_k",
+        "end_k",
+        "start",
+        "end",
+        "uniform",
+        "base_uniform",
+        "aux_uniform",
+        "smooth_normals",
+        "base_smooth_normals",
+        "aux_smooth_normals",
+        "debug",
+        "anchor",
+        "extent",
+        "cp",
+        "atype",
+        "orient",
+        "spin",
+        "convexity",
+        "_name1",
+        "_name2"
+      ],
+      "signature": "module join_prism(polygon, base, base_r, base_d, base_T=IDENT, scale=1, prism_end_T=IDENT, short=false, length, l, height, h, aux=\"none\", aux_T=IDENT, aux_r, aux_d, overlap, base_overlap,aux_overlap, n=15, base_n, end_n, aux_n, fillet, base_fillet,aux_fillet,end_round, k=0.7, base_k,aux_k,end_k,start,end, uniform=true, base_uniform, aux_uniform, smooth_normals=true, base_smooth_normals, aux_smooth_normals, debug=false, anchor=\"origin\", extent=true, cp=\"centroid\", atype=\"hull\", orient=UP, spin=0, convexity=10,_name1=\"base\",_name2=\"aux\")",
+      "line": 3669,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "prism_connector",
+      "args": [
+        "profile",
+        "desc1",
+        "anchor1",
+        "desc2",
+        "anchor2",
+        "shift1",
+        "shift2",
+        "shift",
+        "spin_align",
+        "scale",
+        "fillet",
+        "fillet1",
+        "fillet2",
+        "overlap",
+        "overlap1",
+        "overlap2",
+        "k",
+        "k1",
+        "k2",
+        "n",
+        "n1",
+        "n2",
+        "uniform",
+        "uniform1",
+        "uniform2",
+        "smooth_normals",
+        "smooth_normals1",
+        "smooth_normals2",
+        "edge_r",
+        "edge_joint",
+        "edge_k",
+        "edge_r1",
+        "edge_joint1",
+        "edge_k1",
+        "edge_r2",
+        "edge_joint2",
+        "edge_k2",
+        "debug",
+        "debug_pos"
+      ],
+      "signature": "module prism_connector(profile, desc1, anchor1, desc2, anchor2, shift1, shift2, shift, spin_align=1, scale=1, fillet, fillet1, fillet2, overlap, overlap1, overlap2, k, k1, k2, n, n1, n2, uniform, uniform1, uniform2, smooth_normals, smooth_normals1, smooth_normals2, edge_r, edge_joint, edge_k=0.5, edge_r1, edge_joint1, edge_k1, edge_r2, edge_joint2, edge_k2, debug=false, debug_pos=false)",
+      "line": 4764,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "attach_prism",
+      "args": [
+        "profile",
+        "anchor",
+        "fillet",
+        "rounding",
+        "inside",
+        "l",
+        "length",
+        "h",
+        "height",
+        "endpoint",
+        "T",
+        "shift",
+        "overlap",
+        "n",
+        "n_base",
+        "n_end",
+        "k",
+        "k_base",
+        "k_end",
+        "uniform",
+        "smooth_normals",
+        "edge_r",
+        "edge_joint",
+        "edge_k",
+        "debug",
+        "scale",
+        "spin"
+      ],
+      "signature": "module attach_prism(profile, anchor, fillet=0, rounding=0, inside=false, l, length, h, height, endpoint, T=IDENT, shift=0, overlap=1, n,n_base, n_end, k, k_base, k_end, uniform=true, smooth_normals, edge_r, edge_joint, edge_k=0.5, debug=false, scale=1, spin=0)",
+      "line": 5128,
+      "path": "BOSL2/rounding.scad"
+    },
+    {
+      "module": "phillips_mask",
+      "args": [
+        "size",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module phillips_mask(size=\"#2\", $fn=36, anchor=BOTTOM, spin=0, orient=UP) {",
+      "line": 49,
+      "path": "BOSL2/screw_drive.scad"
+    },
+    {
+      "module": "hex_drive_mask",
+      "args": [
+        "size",
+        "length",
+        "l",
+        "h",
+        "height",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module hex_drive_mask(size,length,l,h,height,anchor,spin,orient)",
+      "line": 155,
+      "path": "BOSL2/screw_drive.scad"
+    },
+    {
+      "module": "torx_mask",
+      "args": [
+        "size",
+        "l",
+        "center",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module torx_mask(size, l=5, center, anchor, spin=0, orient=UP) {",
+      "line": 184,
+      "path": "BOSL2/screw_drive.scad"
+    },
+    {
+      "module": "torx_mask2d",
+      "args": [
+        "size",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module torx_mask2d(size,anchor=CENTER,spin) {",
+      "line": 208,
+      "path": "BOSL2/screw_drive.scad"
+    },
+    {
+      "module": "robertson_mask",
+      "args": [
+        "size",
+        "extra",
+        "ang",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module robertson_mask(size, extra=1, ang=2.5,anchor=TOP,spin,orient) {",
+      "line": 355,
+      "path": "BOSL2/screw_drive.scad"
+    },
+    {
+      "module": "screw",
+      "args": [
+        "spec",
+        "head",
+        "drive",
+        "thread",
+        "drive_size",
+        "length",
+        "l",
+        "thread_len",
+        "tolerance",
+        "details",
+        "undersize",
+        "shaft_undersize",
+        "head_undersize",
+        "atype",
+        "anchor",
+        "spin",
+        "orient",
+        "_shoulder_diam",
+        "_shoulder_len",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "bevelsize",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "_internal",
+        "_counterbore",
+        "_teardrop"
+      ],
+      "signature": "module screw(spec, head, drive, thread, drive_size, length, l, thread_len, tolerance, details=true, undersize, shaft_undersize, head_undersize, atype=\"screw\",anchor, spin=0, orient=UP, _shoulder_diam=0, _shoulder_len=0, bevel,bevel1,bevel2,bevelsize, blunt_start,blunt_start1, blunt_start2, _internal=false, _counterbore, _teardrop=false)",
+      "line": 544,
+      "path": "BOSL2/screws.scad"
+    },
+    {
+      "module": "screw_hole",
+      "args": [
+        "spec",
+        "head",
+        "thread",
+        "oversize",
+        "hole_oversize",
+        "head_oversize",
+        "length",
+        "l",
+        "thread_len",
+        "tolerance",
+        "counterbore",
+        "teardrop",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "atype",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module screw_hole(spec, head, thread, oversize, hole_oversize, head_oversize, length, l, thread_len, tolerance=undef, counterbore, teardrop=false, bevel, bevel1, bevel2, blunt_start, blunt_start1, blunt_start2, atype=\"screw\",anchor=CENTER,spin=0, orient=UP)",
+      "line": 848,
+      "path": "BOSL2/screws.scad"
+    },
+    {
+      "module": "shoulder_screw",
+      "args": [
+        "s",
+        "d",
+        "length",
+        "head",
+        "thread_len",
+        "tolerance",
+        "head_size",
+        "drive",
+        "drive_size",
+        "thread",
+        "undersize",
+        "shaft_undersize",
+        "head_undersize",
+        "shoulder_undersize",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "atype",
+        "anchor",
+        "orient",
+        "spin"
+      ],
+      "signature": "module shoulder_screw(s,d,length,head, thread_len, tolerance, head_size, drive, drive_size, thread, undersize, shaft_undersize, head_undersize, shoulder_undersize=0, blunt_start, blunt_start1, blunt_start2, atype=\"screw\", anchor=BOT, orient,spin)",
+      "line": 1084,
+      "path": "BOSL2/screws.scad"
+    },
+    {
+      "module": "_driver",
+      "args": [
+        "spec"
+      ],
+      "signature": "module _driver(spec)",
+      "line": 1188,
+      "path": "BOSL2/screws.scad"
+    },
+    {
+      "module": "screw_head",
+      "args": [
+        "screw_info",
+        "details",
+        "counterbore",
+        "flat_height",
+        "teardrop",
+        "slop"
+      ],
+      "signature": "module screw_head(screw_info,details=false, counterbore=0,flat_height,teardrop=false,slop=0) {",
+      "line": 1437,
+      "path": "BOSL2/screws.scad"
+    },
+    {
+      "module": "nut",
+      "args": [
+        "spec",
+        "shape",
+        "thickness",
+        "nutwidth",
+        "thread",
+        "tolerance",
+        "hole_oversize",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "bevang",
+        "ibevel",
+        "ibevel1",
+        "ibevel2",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "anchor",
+        "spin",
+        "orient",
+        "oversize"
+      ],
+      "signature": "module nut(spec, shape, thickness, nutwidth, thread, tolerance, hole_oversize, bevel,bevel1,bevel2,bevang=15,ibevel,ibevel1,ibevel2,blunt_start, blunt_start1, blunt_start2, anchor=BOTTOM, spin=0, orient=UP, oversize=0)",
+      "line": 1613,
+      "path": "BOSL2/screws.scad"
+    },
+    {
+      "module": "nut_trap_side",
+      "args": [
+        "trap_width",
+        "spec",
+        "shape",
+        "thickness",
+        "nutwidth",
+        "anchor",
+        "orient",
+        "spin",
+        "poke_len",
+        "poke_diam"
+      ],
+      "signature": "module nut_trap_side(trap_width, spec, shape, thickness, nutwidth, anchor=BOT, orient, spin, poke_len=0, poke_diam) {",
+      "line": 1712,
+      "path": "BOSL2/screws.scad"
+    },
+    {
+      "module": "nut_trap_inline",
+      "args": [
+        "length",
+        "spec",
+        "shape",
+        "l",
+        "height",
+        "h",
+        "nutwidth",
+        "anchor",
+        "orient",
+        "spin"
+      ],
+      "signature": "module nut_trap_inline(length, spec, shape, l, height, h, nutwidth, anchor, orient, spin) {",
+      "line": 1793,
+      "path": "BOSL2/screws.scad"
+    },
+    {
+      "module": "square",
+      "args": [
+        "size",
+        "center",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module square(size=1, center, anchor, spin) {",
+      "line": 71,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "rect",
+      "args": [
+        "size",
+        "rounding",
+        "atype",
+        "chamfer",
+        "anchor",
+        "spin",
+        "corner_flip"
+      ],
+      "signature": "module rect(size=1, rounding=0, atype=\"box\", chamfer=0, anchor=CENTER, spin=0, corner_flip = false) {",
+      "line": 141,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "circle",
+      "args": [
+        "r",
+        "d",
+        "points",
+        "corner",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module circle(r, d, points, corner, anchor=CENTER, spin=0) {",
+      "line": 310,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "ellipse",
+      "args": [
+        "r",
+        "d",
+        "realign",
+        "circum",
+        "uniform",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module ellipse(r, d, realign, circum=false, uniform=false, anchor=CENTER, spin=0)",
+      "line": 435,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "regular_ngon",
+      "args": [
+        "n",
+        "r",
+        "d",
+        "or",
+        "od",
+        "ir",
+        "id",
+        "side",
+        "rounding",
+        "realign",
+        "align_tip",
+        "align_side",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module regular_ngon(n=6, r, d, or, od, ir, id, side, rounding=0, realign=false, align_tip, align_side, anchor=CENTER, spin=0) {",
+      "line": 655,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "pentagon",
+      "args": [
+        "r",
+        "d",
+        "or",
+        "od",
+        "ir",
+        "id",
+        "side",
+        "rounding",
+        "realign",
+        "align_tip",
+        "align_side",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module pentagon(r, d, or, od, ir, id, side, rounding=0, realign=false, align_tip, align_side, anchor=CENTER, spin=0)",
+      "line": 746,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "hexagon",
+      "args": [
+        "r",
+        "d",
+        "or",
+        "od",
+        "ir",
+        "id",
+        "side",
+        "rounding",
+        "realign",
+        "align_tip",
+        "align_side",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module hexagon(r, d, or, od, ir, id, side, rounding=0, realign=false, align_tip, align_side, anchor=CENTER, spin=0)",
+      "line": 807,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "octagon",
+      "args": [
+        "r",
+        "d",
+        "or",
+        "od",
+        "ir",
+        "id",
+        "side",
+        "rounding",
+        "realign",
+        "align_tip",
+        "align_side",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module octagon(r, d, or, od, ir, id, side, rounding=0, realign=false, align_tip, align_side, anchor=CENTER, spin=0)",
+      "line": 867,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "right_triangle",
+      "args": [
+        "size",
+        "center",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module right_triangle(size=[1,1], center, anchor, spin=0) {",
+      "line": 917,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "trapezoid",
+      "args": [
+        "h",
+        "w1",
+        "w2",
+        "ang",
+        "shift",
+        "chamfer",
+        "rounding",
+        "flip",
+        "anchor",
+        "spin",
+        "atype",
+        "angle"
+      ],
+      "signature": "module trapezoid(h, w1, w2, ang, shift, chamfer=0, rounding=0, flip=false, anchor=CENTER, spin=0, atype=\"box\", angle) {",
+      "line": 1123,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "star",
+      "args": [
+        "n",
+        "r",
+        "ir",
+        "d",
+        "or",
+        "od",
+        "id",
+        "step",
+        "realign",
+        "align_tip",
+        "align_pit",
+        "anchor",
+        "spin",
+        "atype"
+      ],
+      "signature": "module star(n, r, ir, d, or, od, id, step, realign=false, align_tip, align_pit, anchor=CENTER, spin=0, atype=\"hull\") {",
+      "line": 1237,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "jittered_poly",
+      "args": [
+        "path",
+        "dist"
+      ],
+      "signature": "module jittered_poly(path, dist=1/512) {",
+      "line": 1331,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "teardrop2d",
+      "args": [
+        "r",
+        "ang",
+        "cap_h",
+        "d",
+        "circum",
+        "realign",
+        "bot_corner",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module teardrop2d(r, ang=45, cap_h, d, circum=false, realign=false, bot_corner=0, anchor=CENTER, spin=0)",
+      "line": 1390,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "egg",
+      "args": [
+        "length",
+        "r1",
+        "r2",
+        "R",
+        "d1",
+        "d2",
+        "D",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module egg(length,r1,r2,R,d1,d2,D,anchor=CENTER, spin=0)",
+      "line": 1553,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "ring",
+      "args": [
+        "n",
+        "ring_width",
+        "r",
+        "r1",
+        "r2",
+        "angle",
+        "d",
+        "d1",
+        "d2",
+        "cp",
+        "points",
+        "corner",
+        "width",
+        "thickness",
+        "start",
+        "long",
+        "full",
+        "cw",
+        "ccw",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module ring(n,ring_width,r,r1,r2,angle,d,d1,d2,cp,points,corner, width,thickness,start, long=false, full=true, cw=false,ccw=false, anchor=CENTER, spin=0)",
+      "line": 1646,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "glued_circles",
+      "args": [
+        "r",
+        "spread",
+        "tangent",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "bulge",
+        "blendR",
+        "blendD",
+        "width",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module glued_circles(r,spread, tangent, r1,r2,d,d1,d2, bulge, blendR,blendD, width, anchor=CENTER, spin=0)",
+      "line": 1952,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "squircle",
+      "args": [
+        "size",
+        "squareness",
+        "style",
+        "anchor",
+        "spin",
+        "atype"
+      ],
+      "signature": "module squircle(size, squareness=0.5, style=\"fg\", anchor=CENTER, spin=0, atype=\"box\" ) {",
+      "line": 2091,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "keyhole",
+      "args": [
+        "l",
+        "r1",
+        "r2",
+        "shoulder_r",
+        "d1",
+        "d2",
+        "length",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module keyhole(l, r1, r2, shoulder_r=0, d1, d2, length, anchor=CTR, spin=0) {",
+      "line": 2274,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "reuleaux_polygon",
+      "args": [
+        "n",
+        "r",
+        "d",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module reuleaux_polygon(n=3, r, d, anchor=CENTER, spin=0) {",
+      "line": 2312,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "supershape",
+      "args": [
+        "step",
+        "n",
+        "m1",
+        "m2",
+        "n1",
+        "n2",
+        "n3",
+        "a",
+        "b",
+        "r",
+        "d",
+        "anchor",
+        "spin",
+        "atype"
+      ],
+      "signature": "module supershape(step=0.5,n,m1=4,m2=undef,n1,n2=undef,n3=undef,a=1,b=undef, r=undef, d=undef, anchor=CENTER, spin=0, atype=\"hull\") {",
+      "line": 2428,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "text",
+      "args": [
+        "text",
+        "size",
+        "font",
+        "halign",
+        "valign",
+        "spacing",
+        "direction",
+        "language",
+        "script",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module text(text, size=10, font, halign, valign, spacing=1.0, direction=\"ltr\", language=\"en\", script=\"latin\", anchor=\"baseline\", spin=0) {",
+      "line": 2503,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "round2d",
+      "args": [
+        "r",
+        "or",
+        "ir"
+      ],
+      "signature": "module round2d(r, or, ir)",
+      "line": 2581,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "shell2d",
+      "args": [
+        "thickness",
+        "or",
+        "ir"
+      ],
+      "signature": "module shell2d(thickness, or=0, ir=0)",
+      "line": 2613,
+      "path": "BOSL2/shapes2d.scad"
+    },
+    {
+      "module": "cube",
+      "args": [
+        "size",
+        "center",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cube(size=1, center, anchor, spin=0, orient=UP)",
+      "line": 62,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "cuboid",
+      "args": [
+        "size",
+        "p1",
+        "p2",
+        "chamfer",
+        "rounding",
+        "edges",
+        "except",
+        "except_edges",
+        "trimcorners",
+        "teardrop",
+        "clip_angle",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cuboid( size, p1, p2, chamfer, rounding, edges=EDGES_ALL, except=[], except_edges, trimcorners=true, teardrop=false, clip_angle, anchor=CENTER, spin=0, orient=UP ) {",
+      "line": 203,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "trunc_cube",
+      "args": [
+        "s",
+        "corner"
+      ],
+      "signature": "module trunc_cube(s,corner) {",
+      "line": 218,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "xtcyl",
+      "args": [
+        "l",
+        "r"
+      ],
+      "signature": "module xtcyl(l,r) {",
+      "line": 230,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "ytcyl",
+      "args": [
+        "l",
+        "r"
+      ],
+      "signature": "module ytcyl(l,r) {",
+      "line": 243,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "tsphere",
+      "args": [
+        "r"
+      ],
+      "signature": "module tsphere(r) {",
+      "line": 256,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "corner_shape",
+      "args": [
+        "corner"
+      ],
+      "signature": "module corner_shape(corner) {",
+      "line": 269,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "prismoid",
+      "args": [
+        "size1",
+        "size2",
+        "h",
+        "shift",
+        "xang",
+        "yang",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "l",
+        "height",
+        "length",
+        "center",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module prismoid( size1=undef, size2=undef, h, shift=[undef,undef], xang, yang, rounding=0, rounding1, rounding2, chamfer=0, chamfer1, chamfer2, l, height, length, center, anchor, spin=0, orient=UP )",
+      "line": 722,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "regular_prism",
+      "args": [
+        "n",
+        "h",
+        "r",
+        "center",
+        "l",
+        "length",
+        "height",
+        "r1",
+        "r2",
+        "ir",
+        "ir1",
+        "ir2",
+        "or",
+        "or1",
+        "or2",
+        "side",
+        "side1",
+        "side2",
+        "d",
+        "d1",
+        "d2",
+        "id",
+        "id1",
+        "id2",
+        "od",
+        "od1",
+        "od2",
+        "ang",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "chamfang",
+        "chamfang1",
+        "chamfang2",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "realign",
+        "shift",
+        "teardrop",
+        "clip_angle",
+        "from_end",
+        "from_end1",
+        "from_end2",
+        "texture",
+        "tex_size",
+        "tex_reps",
+        "tex_inset",
+        "tex_rot",
+        "tex_depth",
+        "tex_samples",
+        "tex_taper",
+        "style",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module regular_prism(n, h, r, center, l, length, height, r1,r2,ir,ir1,ir2,or,or1,or2,side,side1,side2, d, d1, d2,id,id1,id2,od,od1,od2,ang, chamfer, chamfer1, chamfer2, chamfang, chamfang1, chamfang2, rounding, rounding1, rounding2, realign=false, shift=[0,0], teardrop=false, clip_angle, from_end, from_end1, from_end2, texture, tex_size=[5,5], tex_reps, tex_inset=false, tex_rot=0, tex_depth, tex_samples, tex_taper, style, anchor, spin=0, orient=UP )",
+      "line": 974,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "textured_tile",
+      "args": [
+        "texture",
+        "size",
+        "ysize",
+        "height",
+        "w1",
+        "w2",
+        "ang",
+        "h",
+        "shift",
+        "tex_size",
+        "tex_reps",
+        "tex_inset",
+        "tex_rot",
+        "tex_depth",
+        "diff",
+        "tex_extra",
+        "tex_skip",
+        "style",
+        "atype",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module textured_tile( texture, size, ysize, height, w1, w2, ang, h, shift, tex_size, tex_reps, tex_inset=false, tex_rot=0, tex_depth=1, diff=false, tex_extra, tex_skip=0, style=\"min_edge\", atype=\"tex\", anchor, spin=0, orient=UP )",
+      "line": 1293,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "rect_tube",
+      "args": [
+        "h",
+        "size",
+        "isize",
+        "center",
+        "shift",
+        "wall",
+        "size1",
+        "size2",
+        "isize1",
+        "isize2",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "irounding",
+        "irounding1",
+        "irounding2",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "ichamfer",
+        "ichamfer1",
+        "ichamfer2",
+        "anchor",
+        "spin",
+        "orient",
+        "l",
+        "length",
+        "height"
+      ],
+      "signature": "module rect_tube( h, size, isize, center, shift=[0,0], wall, size1, size2, isize1, isize2, rounding=0, rounding1, rounding2, irounding=undef, irounding1=undef, irounding2=undef, chamfer=0, chamfer1, chamfer2, ichamfer=undef, ichamfer1=undef, ichamfer2=undef, anchor, spin=0, orient=UP, l, length, height ) {",
+      "line": 1656,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "wedge",
+      "args": [
+        "size",
+        "center",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module wedge(size=[1, 1, 1], center, anchor, spin=0, orient=UP)",
+      "line": 1844,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "octahedron",
+      "args": [
+        "size",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module octahedron(size=1, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 1934,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "cylinder",
+      "args": [
+        "h",
+        "r1",
+        "r2",
+        "center",
+        "r",
+        "d",
+        "d1",
+        "d2",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cylinder(h, r1, r2, center, r, d, d1, d2, anchor, spin=0, orient=UP)",
+      "line": 2011,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "cyl",
+      "args": [
+        "h",
+        "r",
+        "r2",
+        "center",
+        "l",
+        "r1",
+        "d",
+        "d1",
+        "d2",
+        "length",
+        "height",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "chamfang",
+        "chamfang1",
+        "chamfang2",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "circum",
+        "realign",
+        "shift",
+        "teardrop",
+        "clip_angle",
+        "from_end",
+        "from_end1",
+        "from_end2",
+        "texture",
+        "tex_size",
+        "tex_reps",
+        "tex_counts",
+        "tex_inset",
+        "tex_rot",
+        "tex_scale",
+        "tex_depth",
+        "tex_samples",
+        "tex_taper",
+        "style",
+        "tex_style",
+        "extra",
+        "extra1",
+        "extra2",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cyl( h, r, r2, center, l, r1, d, d1, d2, length, height, chamfer, chamfer1, chamfer2, chamfang, chamfang1, chamfang2, rounding, rounding1, rounding2, circum=false, realign, shift=[0,0], teardrop=false, clip_angle, from_end, from_end1, from_end2, texture, tex_size=[5,5], tex_reps, tex_counts, tex_inset=false, tex_rot=0, tex_scale, tex_depth, tex_samples, tex_taper, style, tex_style, extra, extra1, extra2, anchor, spin=0, orient=UP ) {",
+      "line": 2514,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "xcyl",
+      "args": [
+        "h",
+        "r",
+        "center",
+        "l",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "length",
+        "height",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "chamfang",
+        "chamfang1",
+        "chamfang2",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "circum",
+        "realign",
+        "shift",
+        "teardrop",
+        "clip_angle",
+        "from_end",
+        "from_end1",
+        "from_end2",
+        "texture",
+        "tex_size",
+        "tex_reps",
+        "tex_counts",
+        "tex_inset",
+        "tex_rot",
+        "tex_scale",
+        "tex_depth",
+        "tex_samples",
+        "tex_taper",
+        "style",
+        "tex_style",
+        "extra",
+        "extra1",
+        "extra2",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module xcyl( h, r, center, l, r1, r2, d, d1, d2, length, height, chamfer, chamfer1, chamfer2, chamfang, chamfang1, chamfang2, rounding, rounding1, rounding2, circum=false, realign, shift=[0,0], teardrop=false, clip_angle, from_end, from_end1, from_end2, texture, tex_size=[5,5], tex_reps, tex_counts, tex_inset=false, tex_rot=0, tex_scale, tex_depth, tex_samples, tex_taper, style, tex_style, extra, extra1, extra2, anchor=CENTER, spin=0 ) {",
+      "line": 2664,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "ycyl",
+      "args": [
+        "h",
+        "r",
+        "center",
+        "l",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "length",
+        "height",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "chamfang",
+        "chamfang1",
+        "chamfang2",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "circum",
+        "realign",
+        "shift",
+        "teardrop",
+        "clip_angle",
+        "from_end",
+        "from_end1",
+        "from_end2",
+        "texture",
+        "tex_size",
+        "tex_reps",
+        "tex_counts",
+        "tex_inset",
+        "tex_rot",
+        "tex_scale",
+        "tex_depth",
+        "tex_samples",
+        "tex_taper",
+        "style",
+        "tex_style",
+        "extra",
+        "extra1",
+        "extra2",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module ycyl( h, r, center, l, r1, r2, d, d1, d2, length, height, chamfer, chamfer1, chamfer2, chamfang, chamfang1, chamfang2, rounding, rounding1, rounding2, circum=false, realign, shift=[0,0], teardrop=false, clip_angle, from_end, from_end1, from_end2, texture, tex_size=[5,5], tex_reps, tex_counts, tex_inset=false, tex_rot=0, tex_scale, tex_depth, tex_samples, tex_taper, style, tex_style, extra, extra1, extra2, anchor, spin=0 ) {",
+      "line": 2777,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "zcyl",
+      "args": [
+        "h",
+        "r",
+        "center",
+        "l",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "chamfang",
+        "chamfang1",
+        "chamfang2",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "circum",
+        "realign",
+        "shift",
+        "teardrop",
+        "clip_angle",
+        "from_end",
+        "from_end1",
+        "from_end2",
+        "texture",
+        "tex_size",
+        "tex_reps",
+        "tex_counts",
+        "tex_inset",
+        "tex_rot",
+        "tex_scale",
+        "tex_depth",
+        "tex_samples",
+        "length",
+        "height",
+        "tex_taper",
+        "style",
+        "tex_style",
+        "extra",
+        "extra1",
+        "extra2",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module zcyl( h, r, center, l, r1, r2, d, d1, d2, chamfer, chamfer1, chamfer2, chamfang, chamfang1, chamfang2, rounding, rounding1, rounding2, circum=false, realign, shift=[0,0], teardrop=false, clip_angle, from_end, from_end1, from_end2, texture, tex_size=[5,5], tex_reps, tex_counts, tex_inset=false, tex_rot=0, tex_scale, tex_depth, tex_samples, length, height, tex_taper, style, tex_style, extra, extra1, extra2, anchor, spin=0 ) {",
+      "line": 2885,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "tube",
+      "args": [
+        "h",
+        "or",
+        "ir",
+        "center",
+        "od",
+        "id",
+        "wall",
+        "or1",
+        "or2",
+        "od1",
+        "od2",
+        "ir1",
+        "ir2",
+        "id1",
+        "id2",
+        "realign",
+        "l",
+        "length",
+        "height",
+        "anchor",
+        "spin",
+        "orient",
+        "orounding1",
+        "irounding1",
+        "orounding2",
+        "irounding2",
+        "rounding1",
+        "rounding2",
+        "rounding",
+        "ochamfer1",
+        "ichamfer1",
+        "ochamfer2",
+        "ichamfer2",
+        "chamfer1",
+        "chamfer2",
+        "chamfer",
+        "irounding",
+        "ichamfer",
+        "orounding",
+        "ochamfer",
+        "teardrop",
+        "clip_angle",
+        "shift",
+        "ifn",
+        "rounding_fn",
+        "circum"
+      ],
+      "signature": "module tube( h, or, ir, center, od, id, wall, or1, or2, od1, od2, ir1, ir2, id1, id2, realign, l, length, height, anchor, spin=0, orient=UP, orounding1,irounding1,orounding2,irounding2,rounding1,rounding2,rounding, ochamfer1,ichamfer1,ochamfer2,ichamfer2,chamfer1,chamfer2,chamfer,irounding,ichamfer,orounding,ochamfer, teardrop=false, clip_angle, shift=[0,0], ifn, rounding_fn, circum=false ) {",
+      "line": 3069,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "pie_slice",
+      "args": [
+        "h",
+        "r",
+        "ang",
+        "center",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "l",
+        "length",
+        "height",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module pie_slice( h, r, ang=30, center, r1, r2, d, d1, d2, l, length, height, anchor, spin=0, orient=UP ) {",
+      "line": 3228,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "sphere",
+      "args": [
+        "r",
+        "d",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module sphere(r, d, anchor=CENTER, spin=0, orient=UP) {",
+      "line": 3321,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "spheroid",
+      "args": [
+        "r",
+        "style",
+        "d",
+        "circum",
+        "dual",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module spheroid(r, style=\"aligned\", d, circum=false, dual=false, anchor=CENTER, spin=0, orient=UP)",
+      "line": 3439,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "torus",
+      "args": [
+        "r_maj",
+        "r_min",
+        "center",
+        "d_maj",
+        "d_min",
+        "or",
+        "od",
+        "ir",
+        "id",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module torus( r_maj, r_min, center, d_maj, d_min, or, od, ir, id, anchor, spin=0, orient=UP ) {",
+      "line": 3869,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "teardrop",
+      "args": [
+        "h",
+        "r",
+        "ang",
+        "cap_h",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "cap_h1",
+        "cap_h2",
+        "l",
+        "length",
+        "height",
+        "circum",
+        "realign",
+        "chamfer",
+        "chamfer1",
+        "chamfer2",
+        "anchor",
+        "spin",
+        "orient",
+        "bot_corner1",
+        "bot_corner2",
+        "bot_corner"
+      ],
+      "signature": "module teardrop(h, r, ang=45, cap_h, r1, r2, d, d1, d2, cap_h1, cap_h2, l, length, height, circum=false, realign=false, chamfer, chamfer1, chamfer2,anchor=CENTER, spin=0, orient=UP, bot_corner1, bot_corner2, bot_corner=0)",
+      "line": 4028,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "onion",
+      "args": [
+        "r",
+        "ang",
+        "cap_h",
+        "d",
+        "circum",
+        "realign",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module onion(r, ang=45, cap_h, d, circum=false, realign=false, anchor=CENTER, spin=0, orient=UP)",
+      "line": 4153,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "text3d",
+      "args": [
+        "text",
+        "h",
+        "size",
+        "font",
+        "spacing",
+        "direction",
+        "language",
+        "script",
+        "height",
+        "thickness",
+        "atype",
+        "center",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module text3d(text, h, size=10, font, spacing=1.0, direction=\"ltr\", language=\"en\", script=\"latin\", height, thickness, atype, center=false, anchor, spin=0, orient=UP) {",
+      "line": 4251,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "path_text",
+      "args": [
+        "path",
+        "text",
+        "font",
+        "size",
+        "thickness",
+        "lettersize",
+        "offset",
+        "reverse",
+        "normal",
+        "top",
+        "center",
+        "textmetrics",
+        "kern",
+        "height",
+        "h",
+        "valign",
+        "language",
+        "script"
+      ],
+      "signature": "module path_text(path, text, font, size, thickness, lettersize, offset=0, reverse=false, normal, top, center=false, textmetrics=false, kern=0, height,h, valign=\"baseline\", language, script)",
+      "line": 4441,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "interior_fillet",
+      "args": [
+        "l",
+        "r",
+        "ang",
+        "overlap",
+        "d",
+        "length",
+        "h",
+        "height",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module interior_fillet(l=1.0, r, ang=90, overlap=0.01, d, length, h, height, anchor=CENTER, spin=0, orient=UP)",
+      "line": 4627,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "fillet",
+      "args": [
+        "l",
+        "r",
+        "ang",
+        "r1",
+        "r2",
+        "excess",
+        "d1",
+        "d2",
+        "d",
+        "length",
+        "h",
+        "height",
+        "anchor",
+        "spin",
+        "orient",
+        "rounding",
+        "rounding1",
+        "rounding2",
+        "chamfer",
+        "chamfer1",
+        "chamfer2"
+      ],
+      "signature": "module fillet(l, r, ang, r1, r2, excess=0.01, d1, d2,d,length, h, height, anchor=CENTER, spin=0, orient=UP, rounding,rounding1,rounding2,chamfer,chamfer1,chamfer2)",
+      "line": 4635,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "plot3d",
+      "args": [
+        "f",
+        "x",
+        "y",
+        "zclip",
+        "zspan",
+        "base",
+        "anchor",
+        "orient",
+        "spin",
+        "atype",
+        "cp",
+        "convexity",
+        "style"
+      ],
+      "signature": "module plot3d(f,x,y,zclip, zspan, base=1, anchor=\"origin\", orient=UP, spin=0, atype=\"hull\", cp=\"box\", convexity=4, style=\"default\")",
+      "line": 4715,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "plot_revolution",
+      "args": [
+        "f",
+        "angle",
+        "z",
+        "arclength",
+        "path",
+        "rclip",
+        "rspan",
+        "horiz",
+        "r1",
+        "r2",
+        "r",
+        "d1",
+        "d2",
+        "d",
+        "convexity",
+        "anchor",
+        "orient",
+        "spin",
+        "atype",
+        "cp",
+        "style",
+        "reverse"
+      ],
+      "signature": "module plot_revolution(f,angle,z,arclength, path, rclip, rspan, horiz=false,r1,r2,r,d1,d2,d,convexity=4, anchor=\"origin\", orient=UP, spin=0, atype=\"hull\", cp=\"centroid\", style=\"min_edge\", reverse=false)",
+      "line": 4852,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "heightfield",
+      "args": [
+        "data",
+        "size",
+        "bottom",
+        "maxz",
+        "xrange",
+        "yrange",
+        "style",
+        "convexity",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module heightfield(data, size=[100,100], bottom=-20, maxz=100, xrange=[-1:0.04:1], yrange=[-1:0.04:1], style=\"default\", convexity=10, anchor=CENTER, spin=0, orient=UP)",
+      "line": 4970,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "cylindrical_heightfield",
+      "args": [
+        "data",
+        "l",
+        "r",
+        "base",
+        "transpose",
+        "aspect",
+        "style",
+        "convexity",
+        "xrange",
+        "yrange",
+        "maxh",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "h",
+        "height",
+        "length",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module cylindrical_heightfield( data, l, r, base=1, transpose=false, aspect=1, style=\"min_edge\", convexity=10, xrange=[-1:0.01:1], yrange=[-1:0.01:1], maxh=99, r1, r2, d, d1, d2, h, height, length, anchor=CTR, spin=0, orient=UP ) {",
+      "line": 5178,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "ruler",
+      "args": [
+        "length",
+        "width",
+        "thickness",
+        "depth",
+        "labels",
+        "pipscale",
+        "maxscale",
+        "colors",
+        "alpha",
+        "unit",
+        "inch",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module ruler(length=100, width, thickness=1, depth=3, labels=false, pipscale=1/3, maxscale, colors=[\"black\",\"white\"], alpha=1.0, unit=1, inch=false, anchor=LEFT+BACK+TOP, spin=0, orient=UP)",
+      "line": 5238,
+      "path": "BOSL2/shapes3d.scad"
+    },
+    {
+      "module": "skin",
+      "args": [
+        "profiles",
+        "slices",
+        "refine",
+        "method",
+        "sampling",
+        "caps",
+        "closed",
+        "z",
+        "style",
+        "convexity",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype"
+      ],
+      "signature": "module skin(profiles, slices, refine=1, method=\"direct\", sampling, caps, closed=false, z, style=\"min_edge\", convexity=10, anchor=\"origin\",cp=\"centroid\",spin=0, orient=UP, atype=\"hull\")",
+      "line": 405,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "linear_sweep",
+      "args": [
+        "region",
+        "height",
+        "center",
+        "twist",
+        "scale",
+        "shift",
+        "slices",
+        "maxseg",
+        "style",
+        "convexity",
+        "caps",
+        "texture",
+        "tex_size",
+        "tex_reps",
+        "tex_counts",
+        "tex_inset",
+        "tex_rot",
+        "tex_depth",
+        "tex_scale",
+        "tex_samples",
+        "cp",
+        "atype",
+        "h",
+        "l",
+        "length",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module linear_sweep( region, height, center, twist=0, scale=1, shift=[0,0], slices, maxseg, style=\"default\", convexity, caps=true, texture, tex_size=[5,5], tex_reps, tex_counts, tex_inset=false, tex_rot=0, tex_depth, tex_scale, tex_samples, cp, atype=\"hull\", h,l,length, anchor, spin=0, orient=UP ) {",
+      "line": 750,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "rotate_sweep",
+      "args": [
+        "shape",
+        "angle",
+        "texture",
+        "tex_size",
+        "tex_counts",
+        "tex_reps",
+        "tex_inset",
+        "tex_rot",
+        "tex_scale",
+        "tex_depth",
+        "tex_samples",
+        "tex_taper",
+        "shift",
+        "style",
+        "caps",
+        "closed",
+        "tex_extra",
+        "tex_aspect",
+        "pixel_aspect",
+        "cp",
+        "convexity",
+        "atype",
+        "anchor",
+        "spin",
+        "orient",
+        "start",
+        "_tex_inhibit_y_slicing"
+      ],
+      "signature": "module rotate_sweep( shape, angle=360, texture, tex_size=[5,5], tex_counts, tex_reps, tex_inset=false, tex_rot=0, tex_scale, tex_depth, tex_samples, tex_taper, shift=[0,0], style=\"min_edge\", caps, closed, tex_extra, tex_aspect, pixel_aspect, cp=\"centroid\", convexity=10, atype=\"hull\", anchor=\"origin\", spin=0, orient=UP, start=0, _tex_inhibit_y_slicing=false ) {",
+      "line": 1375,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "spiral_sweep",
+      "args": [
+        "poly",
+        "h",
+        "r",
+        "turns",
+        "taper",
+        "r1",
+        "r2",
+        "d",
+        "d1",
+        "d2",
+        "internal",
+        "lead_in_shape",
+        "lead_in_shape1",
+        "lead_in_shape2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "height",
+        "l",
+        "length",
+        "lead_in_sample",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module spiral_sweep(poly, h, r, turns=1, taper, r1, r2, d, d1, d2, internal=false, lead_in_shape,lead_in_shape1, lead_in_shape2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, height,l,length, lead_in_sample=10, anchor=CENTER, spin=0, orient=UP)",
+      "line": 1663,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "path_sweep",
+      "args": [
+        "shape",
+        "path",
+        "method",
+        "normal",
+        "closed",
+        "twist",
+        "twist_by_length",
+        "scale",
+        "scale_by_length",
+        "symmetry",
+        "last_normal",
+        "tangent",
+        "uniform",
+        "relaxed",
+        "caps",
+        "style",
+        "convexity",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype",
+        "profiles",
+        "width",
+        "texture",
+        "tex_reps",
+        "tex_size",
+        "tex_samples",
+        "tex_inset",
+        "tex_rot",
+        "tex_depth",
+        "tex_extra",
+        "tex_skip"
+      ],
+      "signature": "module path_sweep(shape, path, method=\"incremental\", normal, closed, twist=0, twist_by_length=true, scale=1, scale_by_length=true, symmetry=1, last_normal, tangent, uniform=true, relaxed=false, caps, style=\"min_edge\", convexity=10, anchor=\"origin\",cp=\"centroid\",spin=0, orient=UP, atype=\"hull\",profiles=false,width=1, texture, tex_reps, tex_size, tex_samples, tex_inset=false, tex_rot=0, tex_depth=1, tex_extra, tex_skip)",
+      "line": 2221,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "path_sweep2d",
+      "args": [
+        "shape",
+        "path",
+        "closed",
+        "caps",
+        "quality",
+        "style",
+        "convexity",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype"
+      ],
+      "signature": "module path_sweep2d(shape, path, closed=false, caps, quality=1, style=\"min_edge\", convexity=10, anchor=\"origin\", cp=\"centroid\", spin=0, orient=UP, atype=\"hull\")",
+      "line": 2546,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "sweep",
+      "args": [
+        "shape",
+        "transforms",
+        "closed",
+        "caps",
+        "style",
+        "convexity",
+        "anchor",
+        "cp",
+        "spin",
+        "orient",
+        "atype",
+        "texture",
+        "tex_reps",
+        "tex_size",
+        "tex_samples",
+        "tex_inset",
+        "tex_rot",
+        "tex_depth",
+        "tex_extra",
+        "tex_skip",
+        "normals"
+      ],
+      "signature": "module sweep(shape, transforms, closed=false, caps, style=\"min_edge\", convexity=10, anchor=\"origin\",cp=\"centroid\",spin=0, orient=UP, atype=\"hull\", texture, tex_reps, tex_size, tex_samples, tex_inset=false, tex_rot=0, tex_depth=1, tex_extra, tex_skip, normals)",
+      "line": 2755,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "sweep_attach",
+      "args": [
+        "parent",
+        "child",
+        "frac",
+        "idx",
+        "pathlen",
+        "spin",
+        "overlap",
+        "atype",
+        "cp"
+      ],
+      "signature": "module sweep_attach(parent, child, frac, idx, pathlen, spin=0, overlap=0, atype=\"hull\", cp=\"centroid\")",
+      "line": 2873,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "_textured_revolution",
+      "args": [
+        "shape",
+        "texture",
+        "tex_size",
+        "tex_scale",
+        "inset",
+        "rot",
+        "shift",
+        "taper",
+        "closed",
+        "angle",
+        "style",
+        "atype",
+        "tex_aspect",
+        "pixel_aspect",
+        "inhibit_y_slicing",
+        "tex_extra",
+        "convexity",
+        "counts",
+        "samples",
+        "start",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module _textured_revolution( shape, texture, tex_size, tex_scale=1, inset=false, rot=false, shift=[0,0], taper, closed=true, angle=360, style=\"min_edge\", atype=\"intersect\",tex_aspect, pixel_aspect, inhibit_y_slicing=false,tex_extra, convexity=10, counts, samples, start=0, anchor=CENTER, spin=0, orient=UP ) {",
+      "line": 5116,
+      "path": "BOSL2/skin.scad"
+    },
+    {
+      "module": "slider",
+      "args": [
+        "l",
+        "w",
+        "h",
+        "base",
+        "wall",
+        "ang",
+        "chamfer",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module slider(l=30, w=10, h=10, base=10, wall=5, ang=30, chamfer=2, anchor=BOTTOM, spin=0, orient=UP)",
+      "line": 44,
+      "path": "BOSL2/sliders.scad"
+    },
+    {
+      "module": "rail",
+      "args": [
+        "l",
+        "w",
+        "h",
+        "chamfer",
+        "ang",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module rail(l=30, w=10, h=10, chamfer=1.0, ang=30, anchor=BOTTOM, spin=0, orient=UP)",
+      "line": 98,
+      "path": "BOSL2/sliders.scad"
+    },
+    {
+      "module": "echo_struct",
+      "args": [
+        "struct",
+        "name"
+      ],
+      "signature": "module echo_struct(struct,name=\"\") {",
+      "line": 138,
+      "path": "BOSL2/structs.scad"
+    },
+    {
+      "module": "threaded_rod",
+      "args": [
+        "d",
+        "l",
+        "pitch",
+        "left_handed",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "starts",
+        "internal",
+        "d1",
+        "d2",
+        "length",
+        "h",
+        "height",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "teardrop",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module threaded_rod( d, l, pitch, left_handed=false, bevel,bevel1,bevel2,starts=1, internal=false, d1, d2, length, h, height, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", teardrop=false, anchor, spin, orient ) {",
+      "line": 227,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "threaded_nut",
+      "args": [
+        "nutwidth",
+        "id",
+        "h",
+        "pitch",
+        "starts",
+        "shape",
+        "left_handed",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "id1",
+        "id2",
+        "ibevel1",
+        "ibevel2",
+        "ibevel",
+        "bevang",
+        "thickness",
+        "height",
+        "length",
+        "l",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module threaded_nut( nutwidth, id, h, pitch, starts=1, shape=\"hex\", left_handed=false, bevel, bevel1, bevel2, id1,id2, ibevel1, ibevel2, ibevel, bevang=30, thickness, height, length, l, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", anchor, spin, orient ) {",
+      "line": 336,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "trapezoidal_threaded_rod",
+      "args": [
+        "d",
+        "l",
+        "pitch",
+        "thread_angle",
+        "thread_depth",
+        "flank_angle",
+        "left_handed",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "starts",
+        "internal",
+        "d1",
+        "d2",
+        "length",
+        "h",
+        "height",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "teardrop",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module trapezoidal_threaded_rod( d, l, pitch, thread_angle, thread_depth, flank_angle, left_handed=false, bevel,bevel1,bevel2, starts=1, internal=false, d1, d2, length, h, height, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", teardrop=false, anchor, spin, orient ) {",
+      "line": 534,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "trapezoidal_threaded_nut",
+      "args": [
+        "nutwidth",
+        "id",
+        "h",
+        "pitch",
+        "thread_angle",
+        "thread_depth",
+        "shape",
+        "flank_angle",
+        "left_handed",
+        "starts",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "bevang",
+        "ibevel1",
+        "ibevel2",
+        "ibevel",
+        "thickness",
+        "height",
+        "id1",
+        "id2",
+        "length",
+        "l",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module trapezoidal_threaded_nut( nutwidth, id, h, pitch, thread_angle, thread_depth, shape=\"hex\", flank_angle, left_handed=false, starts=1, bevel,bevel1,bevel2,bevang=30, ibevel1,ibevel2,ibevel, thickness,height, id1,id2, length, l, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", anchor, spin, orient ) {",
+      "line": 659,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "acme_threaded_rod",
+      "args": [
+        "d",
+        "l",
+        "tpi",
+        "pitch",
+        "starts",
+        "left_handed",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "internal",
+        "d1",
+        "d2",
+        "length",
+        "h",
+        "height",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "teardrop",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module acme_threaded_rod( d, l, tpi, pitch, starts=1, left_handed=false, bevel,bevel1,bevel2, internal=false, d1, d2, length, h, height, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", teardrop=false, anchor, spin, orient ) {",
+      "line": 783,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "acme_threaded_nut",
+      "args": [
+        "nutwidth",
+        "id",
+        "h",
+        "tpi",
+        "pitch",
+        "starts",
+        "left_handed",
+        "shape",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "bevang",
+        "ibevel",
+        "ibevel1",
+        "ibevel2",
+        "height",
+        "thickness",
+        "length",
+        "l",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module acme_threaded_nut( nutwidth, id, h, tpi, pitch, starts=1, left_handed=false,shape=\"hex\", bevel,bevel1,bevel2,bevang=30, ibevel,ibevel1,ibevel2, height,thickness, length, l, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", anchor, spin, orient ) {",
+      "line": 883,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "npt_threaded_rod",
+      "args": [
+        "size",
+        "left_handed",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "hollow",
+        "internal",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module npt_threaded_rod( size=1/2, left_handed=false, bevel,bevel1,bevel2, hollow=false, internal=false, anchor, spin, orient ) {",
+      "line": 976,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "bspp_threaded_rod",
+      "args": [
+        "size",
+        "l",
+        "h",
+        "left_handed",
+        "starts",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "internal",
+        "length",
+        "height",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module bspp_threaded_rod( size, l, h, left_handed=false, starts=1, bevel,bevel1,bevel2, internal=false, length, height, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", anchor, spin, orient )",
+      "line": 1139,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "buttress_threaded_rod",
+      "args": [
+        "d",
+        "l",
+        "pitch",
+        "left_handed",
+        "starts",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "internal",
+        "d1",
+        "d2",
+        "length",
+        "h",
+        "height",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "teardrop",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module buttress_threaded_rod( d, l, pitch, left_handed=false, starts=1, bevel,bevel1,bevel2, internal=false, d1, d2, length, h, height, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", teardrop=false, anchor, spin, orient ) {",
+      "line": 1275,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "buttress_threaded_nut",
+      "args": [
+        "nutwidth",
+        "id",
+        "h",
+        "pitch",
+        "shape",
+        "left_handed",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "bevang",
+        "starts",
+        "ibevel",
+        "ibevel1",
+        "ibevel2",
+        "height",
+        "thickness",
+        "length",
+        "l",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module buttress_threaded_nut( nutwidth, id, h, pitch, shape=\"hex\", left_handed=false, bevel,bevel1,bevel2,bevang=30,starts=1, ibevel,ibevel1,ibevel2,height,thickness, length, l, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", anchor, spin, orient ) {",
+      "line": 1374,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "square_threaded_rod",
+      "args": [
+        "d",
+        "l",
+        "pitch",
+        "left_handed",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "starts",
+        "internal",
+        "d1",
+        "d2",
+        "length",
+        "h",
+        "height",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "teardrop",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module square_threaded_rod( d, l, pitch, left_handed=false, bevel,bevel1,bevel2, starts=1, internal=false, d1, d2, length, h, height, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", teardrop=false, anchor, spin, orient ) {",
+      "line": 1489,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "square_threaded_nut",
+      "args": [
+        "nutwidth",
+        "id",
+        "h",
+        "pitch",
+        "left_handed",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "bevang",
+        "ibevel",
+        "ibevel1",
+        "ibevel2",
+        "height",
+        "thickness",
+        "length",
+        "l",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "starts",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module square_threaded_nut( nutwidth, id, h, pitch, left_handed=false, bevel,bevel1,bevel2,bevang=30, ibevel,ibevel1,ibevel2, height,thickness, length, l, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", starts=1, anchor, spin, orient ) {",
+      "line": 1585,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "ball_screw_rod",
+      "args": [
+        "d",
+        "l",
+        "pitch",
+        "ball_diam",
+        "ball_arc",
+        "starts",
+        "left_handed",
+        "internal",
+        "length",
+        "h",
+        "height",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module ball_screw_rod( d, l, pitch, ball_diam=5, ball_arc=100, starts=1, left_handed=false, internal=false, length, h, height, bevel, bevel1, bevel2, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", anchor, spin, orient ) {",
+      "line": 1687,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "generic_threaded_rod",
+      "args": [
+        "d",
+        "l",
+        "pitch",
+        "profile",
+        "left_handed",
+        "internal",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "starts",
+        "d1",
+        "d2",
+        "length",
+        "h",
+        "height",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "teardrop",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module generic_threaded_rod( d, l, pitch, profile, left_handed=false, internal=false, bevel, bevel1, bevel2, starts=1, d1, d2, length, h, height, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", teardrop=false, anchor, spin, orient ) {",
+      "line": 1835,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "generic_threaded_nut",
+      "args": [
+        "nutwidth",
+        "id",
+        "h",
+        "pitch",
+        "profile",
+        "shape",
+        "left_handed",
+        "starts",
+        "bevel",
+        "bevel1",
+        "bevel2",
+        "bevang",
+        "ibevel",
+        "ibevel1",
+        "ibevel2",
+        "id1",
+        "id2",
+        "height",
+        "thickness",
+        "length",
+        "l",
+        "blunt_start",
+        "blunt_start1",
+        "blunt_start2",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "end_len",
+        "end_len1",
+        "end_len2",
+        "lead_in_shape",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module generic_threaded_nut( nutwidth, id, h, pitch, profile, shape=\"hex\", left_handed=false, starts=1, bevel,bevel1,bevel2,bevang=30, ibevel, ibevel1, ibevel2, id1,id2, height, thickness, length, l, blunt_start, blunt_start1, blunt_start2, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, end_len, end_len1, end_len2, lead_in_shape=\"default\", anchor, spin, orient ) {",
+      "line": 2163,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "_nutshape",
+      "args": [
+        "nutwidth",
+        "h",
+        "shape",
+        "bevel1",
+        "bevel2",
+        "bevang"
+      ],
+      "signature": "module _nutshape(nutwidth, h, shape, bevel1, bevel2, bevang)",
+      "line": 2230,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "thread_helix",
+      "args": [
+        "d",
+        "pitch",
+        "thread_depth",
+        "flank_angle",
+        "turns",
+        "profile",
+        "starts",
+        "left_handed",
+        "internal",
+        "d1",
+        "d2",
+        "thread_angle",
+        "lead_in_shape",
+        "lead_in",
+        "lead_in1",
+        "lead_in2",
+        "lead_in_ang",
+        "lead_in_ang1",
+        "lead_in_ang2",
+        "lead_in_sample",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module thread_helix( d, pitch, thread_depth, flank_angle, turns, profile, starts=1, left_handed=false, internal=false, d1, d2, thread_angle, lead_in_shape, lead_in, lead_in1, lead_in2, lead_in_ang, lead_in_ang1, lead_in_ang2, lead_in_sample=10, anchor, spin, orient ) {",
+      "line": 2382,
+      "path": "BOSL2/threading.scad"
+    },
+    {
+      "module": "move",
+      "args": [
+        "v",
+        "p"
+      ],
+      "signature": "module move(v=[0,0,0], p) {",
+      "line": 132,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "left",
+      "args": [
+        "x",
+        "p"
+      ],
+      "signature": "module left(x=0, p) {",
+      "line": 194,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "right",
+      "args": [
+        "x",
+        "p"
+      ],
+      "signature": "module right(x=0, p) {",
+      "line": 242,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "xmove",
+      "args": [
+        "x",
+        "p"
+      ],
+      "signature": "module xmove(x=0, p) {",
+      "line": 253,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "fwd",
+      "args": [
+        "y",
+        "p"
+      ],
+      "signature": "module fwd(y=0, p) {",
+      "line": 297,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "back",
+      "args": [
+        "y",
+        "p"
+      ],
+      "signature": "module back(y=0, p) {",
+      "line": 345,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "ymove",
+      "args": [
+        "y",
+        "p"
+      ],
+      "signature": "module ymove(y=0, p) {",
+      "line": 356,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "down",
+      "args": [
+        "z",
+        "p"
+      ],
+      "signature": "module down(z=0, p) {",
+      "line": 400,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "up",
+      "args": [
+        "z",
+        "p"
+      ],
+      "signature": "module up(z=0, p) {",
+      "line": 446,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "zmove",
+      "args": [
+        "z",
+        "p"
+      ],
+      "signature": "module zmove(z=0, p) {",
+      "line": 457,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "rot",
+      "args": [
+        "a",
+        "v",
+        "cp",
+        "from",
+        "to",
+        "reverse"
+      ],
+      "signature": "module rot(a=0, v, cp, from, to, reverse=false)",
+      "line": 544,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "xrot",
+      "args": [
+        "a",
+        "p",
+        "cp"
+      ],
+      "signature": "module xrot(a=0, p, cp)",
+      "line": 610,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "yrot",
+      "args": [
+        "a",
+        "p",
+        "cp"
+      ],
+      "signature": "module yrot(a=0, p, cp)",
+      "line": 655,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "zrot",
+      "args": [
+        "a",
+        "p",
+        "cp"
+      ],
+      "signature": "module zrot(a=0, p, cp)",
+      "line": 700,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "tilt",
+      "args": [
+        "to",
+        "p",
+        "cp",
+        "reverse"
+      ],
+      "signature": "module tilt(to, p, cp, reverse=false)",
+      "line": 755,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "xscale",
+      "args": [
+        "x",
+        "p",
+        "cp"
+      ],
+      "signature": "module xscale(x=1, p, cp=0) {",
+      "line": 878,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "yscale",
+      "args": [
+        "y",
+        "p",
+        "cp"
+      ],
+      "signature": "module yscale(y=1, p, cp=0) {",
+      "line": 931,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "zscale",
+      "args": [
+        "z",
+        "p",
+        "cp"
+      ],
+      "signature": "module zscale(z=1, p, cp=0) {",
+      "line": 984,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "xflip",
+      "args": [
+        "p",
+        "x"
+      ],
+      "signature": "module xflip(p, x=0) {",
+      "line": 1117,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "yflip",
+      "args": [
+        "p",
+        "y"
+      ],
+      "signature": "module yflip(p, y=0) {",
+      "line": 1170,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "zflip",
+      "args": [
+        "p",
+        "z"
+      ],
+      "signature": "module zflip(p, z=0) {",
+      "line": 1223,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "frame_map",
+      "args": [
+        "x",
+        "y",
+        "z",
+        "p",
+        "reverse"
+      ],
+      "signature": "module frame_map(x,y,z,p,reverse=false)",
+      "line": 1338,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "skew",
+      "args": [
+        "p",
+        "sxy",
+        "sxz",
+        "syx",
+        "syz",
+        "szx",
+        "szy",
+        "axy",
+        "axz",
+        "ayx",
+        "ayz",
+        "azx",
+        "azy"
+      ],
+      "signature": "module skew(p, sxy, sxz, syx, syz, szx, szy, axy, axz, ayx, ayz, azx, azy)",
+      "line": 1412,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "translate",
+      "args": [
+        "v"
+      ],
+      "signature": "module translate(v)",
+      "line": 1574,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "rotate",
+      "args": [
+        "a",
+        "v"
+      ],
+      "signature": "module rotate(a,v)",
+      "line": 1581,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "scale",
+      "args": [
+        "v",
+        "cp",
+        "dir"
+      ],
+      "signature": "module scale(v,cp=[0,0,0],dir)",
+      "line": 1593,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "multmatrix",
+      "args": [
+        "m"
+      ],
+      "signature": "module multmatrix(m)",
+      "line": 1607,
+      "path": "BOSL2/transforms.scad"
+    },
+    {
+      "module": "manfrotto_rc2_plate",
+      "args": [
+        "chamfer",
+        "anchor",
+        "orient",
+        "spin"
+      ],
+      "signature": "module manfrotto_rc2_plate(chamfer=\"all\",anchor,orient,spin)",
+      "line": 32,
+      "path": "BOSL2/tripod_mounts.scad"
+    },
+    {
+      "module": "turtle3d",
+      "args": [
+        "commands",
+        "state",
+        "transforms",
+        "full_state",
+        "repeat"
+      ],
+      "signature": "module turtle3d(commands, state=RIGHT, transforms=false, full_state=false, repeat=1) {no_module();}",
+      "line": 463,
+      "path": "BOSL2/turtle3d.scad"
+    },
+    {
+      "module": "no_children",
+      "args": [
+        "count"
+      ],
+      "signature": "module no_children(count) {",
+      "line": 809,
+      "path": "BOSL2/utility.scad"
+    },
+    {
+      "module": "req_children",
+      "args": [
+        "count"
+      ],
+      "signature": "module req_children(count) {",
+      "line": 832,
+      "path": "BOSL2/utility.scad"
+    },
+    {
+      "module": "no_module",
+      "args": [],
+      "signature": "module no_module() {",
+      "line": 864,
+      "path": "BOSL2/utility.scad"
+    },
+    {
+      "module": "deprecate",
+      "args": [
+        "new_name"
+      ],
+      "signature": "module deprecate(new_name)",
+      "line": 879,
+      "path": "BOSL2/utility.scad"
+    },
+    {
+      "module": "echo_viewport",
+      "args": [],
+      "signature": "module echo_viewport()",
+      "line": 894,
+      "path": "BOSL2/utility.scad"
+    },
+    {
+      "module": "assert_approx",
+      "args": [
+        "got",
+        "expected",
+        "info"
+      ],
+      "signature": "module assert_approx(got, expected, info) {",
+      "line": 928,
+      "path": "BOSL2/utility.scad"
+    },
+    {
+      "module": "assert_equal",
+      "args": [
+        "got",
+        "expected",
+        "info"
+      ],
+      "signature": "module assert_equal(got, expected, info) {",
+      "line": 961,
+      "path": "BOSL2/utility.scad"
+    },
+    {
+      "module": "shape_compare",
+      "args": [
+        "eps"
+      ],
+      "signature": "module shape_compare(eps=1/1024) {",
+      "line": 996,
+      "path": "BOSL2/utility.scad"
+    },
+    {
+      "module": "bosl_required",
+      "args": [
+        "version"
+      ],
+      "signature": "module bosl_required(version) {",
+      "line": 70,
+      "path": "BOSL2/version.scad"
+    },
+    {
+      "module": "vnf_vertex_array",
+      "args": [
+        "points",
+        "caps",
+        "cap1",
+        "cap2",
+        "col_wrap",
+        "row_wrap",
+        "reverse",
+        "style",
+        "triangulate",
+        "texture",
+        "tex_reps",
+        "tex_size",
+        "tex_samples",
+        "tex_inset",
+        "tex_rot",
+        "tex_depth",
+        "tex_extra",
+        "tex_skip",
+        "sidecaps",
+        "sidecap1",
+        "sidecap2",
+        "tex_scaling",
+        "convexity",
+        "cp",
+        "anchor",
+        "spin",
+        "orient",
+        "atype"
+      ],
+      "signature": "module vnf_vertex_array( points, caps, cap1, cap2, col_wrap=false, row_wrap=false, reverse=false, style=\"default\", triangulate = false, texture, tex_reps, tex_size, tex_samples, tex_inset=false, tex_rot=0, tex_depth=1, tex_extra, tex_skip, sidecaps,sidecap1,sidecap2, tex_scaling=\"default\", convexity=2, cp=\"centroid\", anchor=\"origin\", spin=0, orient=UP, atype=\"hull\")",
+      "line": 321,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "vnf_tri_array",
+      "args": [
+        "points",
+        "caps",
+        "cap1",
+        "cap2",
+        "col_wrap",
+        "row_wrap",
+        "reverse",
+        "limit_bunching",
+        "convexity",
+        "cp",
+        "anchor",
+        "spin",
+        "orient",
+        "atype"
+      ],
+      "signature": "module vnf_tri_array( points, caps, cap1, cap2, col_wrap=false, row_wrap=false, reverse=false, limit_bunching=true, convexity=2, cp=\"centroid\", anchor=\"origin\", spin=0, orient=UP, atype=\"hull\")",
+      "line": 576,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "vnf_polyhedron",
+      "args": [
+        "vnf",
+        "convexity",
+        "cp",
+        "anchor",
+        "spin",
+        "orient",
+        "atype"
+      ],
+      "signature": "module vnf_polyhedron(vnf, convexity=2, cp=\"centroid\", anchor=\"origin\", spin=0, orient=UP, atype=\"hull\") {",
+      "line": 1450,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "vnf_wireframe",
+      "args": [
+        "vnf",
+        "width"
+      ],
+      "signature": "module vnf_wireframe(vnf, width=1)",
+      "line": 1490,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "vnf_hull",
+      "args": [
+        "vnf",
+        "fast"
+      ],
+      "signature": "module vnf_hull(vnf, fast=false)",
+      "line": 2037,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "_show_vertices",
+      "args": [
+        "vertices",
+        "size",
+        "filter"
+      ],
+      "signature": "module _show_vertices(vertices, size=1, filter) {",
+      "line": 2296,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "_show_faces",
+      "args": [
+        "vertices",
+        "faces",
+        "size",
+        "filter"
+      ],
+      "signature": "module _show_faces(vertices, faces, size=1, filter) {",
+      "line": 2335,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "debug_vnf",
+      "args": [
+        "vnf",
+        "faces",
+        "vertices",
+        "opacity",
+        "size",
+        "convexity",
+        "filter"
+      ],
+      "signature": "module debug_vnf(vnf, faces=true, vertices=true, opacity=0.5, size=1, convexity=6, filter ) {",
+      "line": 2399,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "vnf_validate",
+      "args": [
+        "vnf",
+        "size",
+        "show_warns",
+        "check_isects",
+        "big_face",
+        "opacity",
+        "adjacent",
+        "label_verts",
+        "label_faces",
+        "wireframe"
+      ],
+      "signature": "module vnf_validate(vnf, size=1, show_warns=true, check_isects=false, big_face=true, opacity=0.67, adjacent=false, label_verts=false, label_faces=false, wireframe=false) {",
+      "line": 2727,
+      "path": "BOSL2/vnf.scad"
+    },
+    {
+      "module": "sparse_wall",
+      "args": [
+        "h",
+        "l",
+        "thick",
+        "maxang",
+        "strut",
+        "max_bridge",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module sparse_wall(h=50, l=100, thick=4, maxang=30, strut=5, max_bridge=20, anchor=CENTER, spin=0, orient=UP)",
+      "line": 54,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "sparse_wall2d",
+      "args": [
+        "size",
+        "maxang",
+        "strut",
+        "max_bridge",
+        "anchor",
+        "spin"
+      ],
+      "signature": "module sparse_wall2d(size=[50,100], maxang=30, strut=5, max_bridge=20, anchor=CENTER, spin=0)",
+      "line": 114,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "sparse_cuboid",
+      "args": [
+        "size",
+        "dir",
+        "strut",
+        "maxang",
+        "max_bridge",
+        "chamfer",
+        "rounding",
+        "edges",
+        "except",
+        "except_edges",
+        "trimcorners",
+        "teardrop",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module sparse_cuboid(size, dir=RIGHT, strut=5, maxang=30, max_bridge=20, chamfer, rounding, edges=EDGES_ALL, except=[], except_edges, trimcorners=true, teardrop=false, anchor=CENTER, spin=0, orient=UP)",
+      "line": 188,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "hex_panel",
+      "args": [
+        "shape",
+        "strut",
+        "spacing",
+        "frame",
+        "bevel_frame",
+        "h",
+        "height",
+        "l",
+        "length",
+        "bevel",
+        "anchor",
+        "orient",
+        "cp",
+        "atype",
+        "spin"
+      ],
+      "signature": "module hex_panel( shape, strut, spacing, frame, bevel_frame, h, height, l, length, bevel = [], anchor, orient = UP, cp=\"centroid\", atype=\"hull\", spin = 0)",
+      "line": 314,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "_honeycomb",
+      "args": [
+        "shape",
+        "spacing",
+        "hex_wall"
+      ],
+      "signature": "module _honeycomb(shape, spacing=10, hex_wall=1)",
+      "line": 405,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "_bevelWall",
+      "args": [
+        "shape",
+        "bevel",
+        "thickness"
+      ],
+      "signature": "module _bevelWall(shape, bevel, thickness) {",
+      "line": 435,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "corrugated_wall",
+      "args": [
+        "h",
+        "l",
+        "thick",
+        "strut",
+        "wall",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module corrugated_wall(h=50, l=100, thick=5, strut=5, wall=2, anchor=CENTER, spin=0, orient=UP)",
+      "line": 489,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "thinning_wall",
+      "args": [
+        "h",
+        "l",
+        "thick",
+        "ang",
+        "braces",
+        "strut",
+        "wall",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module thinning_wall(h=50, l=100, thick=5, ang=30, braces=false, strut, wall, anchor=CENTER, spin=0, orient=UP)",
+      "line": 551,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "thinning_triangle",
+      "args": [
+        "h",
+        "l",
+        "thick",
+        "ang",
+        "strut",
+        "wall",
+        "diagonly",
+        "center",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module thinning_triangle(h=50, l=100, thick=5, ang=30, strut=5, wall=3, diagonly=false, center, anchor, spin=0, orient=UP)",
+      "line": 737,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "narrowing_strut",
+      "args": [
+        "w",
+        "l",
+        "wall",
+        "ang",
+        "anchor",
+        "spin",
+        "orient"
+      ],
+      "signature": "module narrowing_strut(w=10, l=100, wall=5, ang=30, anchor=BOTTOM, spin=0, orient=UP)",
+      "line": 798,
+      "path": "BOSL2/walls.scad"
+    },
+    {
+      "module": "wire_bundle",
+      "args": [
+        "path",
+        "wires",
+        "wirediam",
+        "rounding",
+        "wirenum",
+        "corner_steps"
+      ],
+      "signature": "module wire_bundle(path, wires, wirediam=2, rounding=10, wirenum=0, corner_steps=15) {",
+      "line": 80,
+      "path": "BOSL2/wiring.scad"
+    },
+    {
+      "module": "gear",
+      "args": [
+        "number_of_teeth",
+        "circular_pitch",
+        "diametral_pitch",
+        "pressure_angle",
+        "clearance",
+        "verbose"
+      ],
+      "signature": "module gear(number_of_teeth, circular_pitch=false, diametral_pitch=false, pressure_angle=20, clearance = 0, verbose=false)",
+      "line": 20,
+      "path": "mcad/gears.scad"
+    },
+    {
+      "module": "involute_gear_tooth",
+      "args": [
+        "pitch_radius",
+        "root_radius",
+        "base_radius",
+        "outer_radius",
+        "half_thick_angle"
+      ],
+      "signature": "module involute_gear_tooth( pitch_radius, root_radius, base_radius, outer_radius, half_thick_angle )",
+      "line": 95,
+      "path": "mcad/gears.scad"
+    },
+    {
+      "module": "test_gears",
+      "args": [],
+      "signature": "module test_gears()",
+      "line": 167,
+      "path": "mcad/gears.scad"
+    },
+    {
+      "module": "demo_3d_gears",
+      "args": [],
+      "signature": "module demo_3d_gears()",
+      "line": 174,
+      "path": "mcad/gears.scad"
+    },
+    {
+      "module": "test_involute_curve",
+      "args": [],
+      "signature": "module test_involute_curve()",
+      "line": 193,
+      "path": "mcad/gears.scad"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "生成一个装配体：M8 六角头螺栓（长度40mm）+ M8 平垫圈 + M8 六角螺母，三者同轴"
+    },
+    {
+      "role": "assistant",
+      "content": "[RELATIONSHIP_HINTS]\nRelationship parser constraints (must satisfy in final DSL):\n- coaxial: parts sharing axis should be arranged with same x,y axis (z-offset allowed).\nReturn ONE complete JSON object only."
+    },
+    {
+      "role": "user",
+      "content": "Use these relationship hints strictly when generating final DSL JSON."
+    }
+  ],
+  "dsl": {
+    "version": "1.0",
+    "unit": "mm",
+    "shape": "assembly",
+    "params": {},
+    "parts": [
+      {
+        "shape": "hex_bolt_iso4017",
+        "params": {
+          "length": 40.0,
+          "metric_size": "M8",
+          "head_across_flats": 13.0,
+          "head_height": 5.3,
+          "shank_diameter": 8.0
+        },
+        "unit": "mm"
+      },
+      {
+        "shape": "plain_washer_iso7089",
+        "params": {
+          "metric_size": "M8",
+          "outer_diameter": 16.0,
+          "inner_diameter": 8.4,
+          "thickness": 1.6
+        },
+        "unit": "mm"
+      },
+      {
+        "shape": "hex_nut_iso4032",
+        "params": {
+          "metric_size": "M8",
+          "across_flats": 13.0,
+          "thickness": 6.5,
+          "hole_diameter": 8.4
+        },
+        "unit": "mm"
+      }
+    ],
+    "ops": [
+      {
+        "type": "transform",
+        "name": "moveBolt",
+        "target": "bolt",
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "type": "transform",
+        "name": "moveWasher",
+        "target": "washer",
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "type": "transform",
+        "name": "moveNut",
+        "target": "nut",
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "result": "moveBolt"
+  },
+  "paramsMeta": [
+    {
+      "name": "p0_length",
+      "label": "P0 hex_bolt_iso4017 length",
+      "min": 0.1,
+      "max": 120.0,
+      "step": 0.1,
+      "value": 40.0
+    },
+    {
+      "name": "p0_head_across_flats",
+      "label": "P0 hex_bolt_iso4017 head_across_flats",
+      "min": 0.1,
+      "max": 39.0,
+      "step": 0.1,
+      "value": 13.0
+    },
+    {
+      "name": "p0_head_height",
+      "label": "P0 hex_bolt_iso4017 head_height",
+      "min": 0.1,
+      "max": 15.899999999999999,
+      "step": 0.1,
+      "value": 5.3
+    },
+    {
+      "name": "p0_shank_diameter",
+      "label": "P0 hex_bolt_iso4017 shank_diameter",
+      "min": 0.1,
+      "max": 24.0,
+      "step": 0.1,
+      "value": 8.0
+    },
+    {
+      "name": "p1_outer_diameter",
+      "label": "P1 plain_washer_iso7089 outer_diameter",
+      "min": 0.1,
+      "max": 48.0,
+      "step": 0.1,
+      "value": 16.0
+    },
+    {
+      "name": "p1_inner_diameter",
+      "label": "P1 plain_washer_iso7089 inner_diameter",
+      "min": 0.1,
+      "max": 25.200000000000003,
+      "step": 0.1,
+      "value": 8.4
+    },
+    {
+      "name": "p1_thickness",
+      "label": "P1 plain_washer_iso7089 thickness",
+      "min": 0.1,
+      "max": 11.6,
+      "step": 0.1,
+      "value": 1.6
+    },
+    {
+      "name": "p2_across_flats",
+      "label": "P2 hex_nut_iso4032 across_flats",
+      "min": 0.1,
+      "max": 39.0,
+      "step": 0.1,
+      "value": 13.0
+    },
+    {
+      "name": "p2_thickness",
+      "label": "P2 hex_nut_iso4032 thickness",
+      "min": 0.1,
+      "max": 19.5,
+      "step": 0.1,
+      "value": 6.5
+    },
+    {
+      "name": "p2_hole_diameter",
+      "label": "P2 hex_nut_iso4032 hole_diameter",
+      "min": 0.1,
+      "max": 25.200000000000003,
+      "step": 0.1,
+      "value": 8.4
+    }
+  ],
+  "reply": "已生成组合体（3 个实体，3 个操作，单位按 mm 换算为毫米）。"
+}

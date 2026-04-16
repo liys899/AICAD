@@ -1,0 +1,22 @@
+{
+  "source": "dsl",
+  "dsl": {
+    "version": "1.0",
+    "unit": "mm",
+    "shape": "library_call",
+    "params": {
+      "module": "screw",
+      "args": {
+        "spec": "M8,40",
+        "head": "hex",
+        "drive": "none",
+        "thread": "coarse",
+        "details": true
+      },
+      "include_mode": "include",
+      "library_path": "openscad_vendor/BOSL2/screws.scad"
+    }
+  },
+  "paramsMeta": [],
+  "reply": "已生成library_call（module=screw，args={'spec': 'M8,40', 'head': 'hex', 'drive': 'none', 'thread': 'coarse', 'details': True}，include_mode=include，library_path=openscad_vendor/BOSL2/screws.scad，单位按 mm 换算为毫米）。"
+}

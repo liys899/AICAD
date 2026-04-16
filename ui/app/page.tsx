@@ -24,6 +24,7 @@ import {
 import CadViewer from "./components/cad-viewer"
 
 type ParamState = Record<string, number>
+type ParamGroup = { key: string; title: string; items: ParamMeta[] }
 
 const panelShell: CSSProperties = {
   display: "flex",
@@ -130,6 +131,35 @@ export default function Home() {
     setRenderedScad(applyParams(scadTemplate, params))
   }
 
+  const groupedParams: ParamGroup[] = (() => {
+    const groups = new Map<string, ParamGroup>()
+    paramsMeta.forEach((p) => {
+      const m = /^p(\d+)_/.exec(p.name)
+      if (!m) {
+        const key = "__general__"
+        if (!groups.has(key)) groups.set(key, { key, title: "通用参数", items: [] })
+        groups.get(key)!.items.push(p)
+        return
+      }
+      const idx = m[1]
+      const shapeMatch = /^P\d+\s+([^\s]+)\s+/.exec(p.label)
+      const shape = shapeMatch?.[1]
+      const key = `p${idx}`
+      const title = shape ? `Part ${idx} (${shape})` : `Part ${idx}`
+      if (!groups.has(key)) groups.set(key, { key, title, items: [] })
+      groups.get(key)!.items.push(p)
+    })
+    const list = Array.from(groups.values())
+    list.sort((a, b) => {
+      if (a.key === "__general__") return -1
+      if (b.key === "__general__") return 1
+      const ai = Number(a.key.replace("p", ""))
+      const bi = Number(b.key.replace("p", ""))
+      return ai - bi
+    })
+    return list
+  })()
+
   return (
     <Layout style={{ height: "100dvh", maxHeight: "100dvh", overflow: "hidden", display: "flex", flexDirection: "column", background: "#f5f5f5" }}>
       <Layout.Header style={{ flexShrink: 0, background: "#fff", padding: "0 16px", lineHeight: "52px", height: 52, borderBottom: "1px solid #f0f0f0" }}>
@@ -200,8 +230,16 @@ export default function Home() {
         <div className="cqask-viewer-col" style={{ flex: "1 1 0", minWidth: 0, minHeight: 0, display: "flex", flexDirection: "column" }}>
           <div style={{ ...panelShell, padding: 0 }}>
             <div style={{ ...panelHeader, borderRadius: "8px 8px 0 0" }}>三维预览</div>
-            <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", padding: 8 }}>
+            <div style={{ flex: 1, minHeight: 0, display: "flex", flexDirection: "column", padding: 8, position: "relative" }}>
               <CadViewer scadScript={renderedScad} />
+              {sending ? (
+                <div className="cad-loading-overlay">
+                  <div className="cad-loading-content">
+                    <div className="cad-loading-spinner" />
+                    <Typography.Text style={{ color: "#fff", fontSize: 13 }}>正在生成模型，请稍候...</Typography.Text>
+                  </div>
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
@@ -216,25 +254,30 @@ export default function Home() {
                 </Typography.Text>
               ) : (
                 <Space direction="vertical" style={{ width: "100%" }} size="middle">
-                  {paramsMeta.map((p) => (
-                    <div key={p.name}>
-                      <Typography.Text style={{ fontSize: 13 }}>{p.label}</Typography.Text>
-                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 4 }}>
-                        <Slider style={{ flex: 1 }} min={p.min} max={p.max} step={p.step} value={params[p.name] ?? p.value} onChange={(v) => onChangeParam(p.name, Number(v))} />
-                        <Typography.Text type="secondary" style={{ width: 56, textAlign: "right", fontSize: 12 }}>
-                          {Number(params[p.name] ?? p.value).toFixed(2)}
-                        </Typography.Text>
-                      </div>
+                  {groupedParams.map((group) => (
+                    <div key={group.key} style={{ border: "1px solid #f0f0f0", borderRadius: 8, padding: "8px 10px" }}>
+                      <Typography.Text strong style={{ fontSize: 13 }}>
+                        {group.title}
+                      </Typography.Text>
+                      <Space direction="vertical" style={{ width: "100%", marginTop: 8 }} size="middle">
+                        {group.items.map((p) => (
+                          <div key={p.name}>
+                            <Typography.Text style={{ fontSize: 13 }}>{p.label}</Typography.Text>
+                            <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 4 }}>
+                              <Slider style={{ flex: 1 }} min={p.min} max={p.max} step={p.step} value={params[p.name] ?? p.value} onChange={(v) => onChangeParam(p.name, Number(v))} />
+                              <Typography.Text type="secondary" style={{ width: 56, textAlign: "right", fontSize: 12 }}>
+                                {Number(params[p.name] ?? p.value).toFixed(2)}
+                              </Typography.Text>
+                            </div>
+                          </div>
+                        ))}
+                      </Space>
                     </div>
                   ))}
                 </Space>
               )}
             </div>
-            <div style={{ flexShrink: 0, padding: 10, borderTop: "1px solid #f0f0f0", background: "#fff" }}>
-              <Button type="primary" block onClick={onUpdateModel} disabled={!scadTemplate.trim()}>
-                更新模型
-              </Button>
-            </div>
+            
           </div>
         </div>
       </div>

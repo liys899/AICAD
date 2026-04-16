@@ -1,0 +1,83 @@
+{
+  "source": "dsl",
+  "dsl": {
+    "version": "1.0",
+    "unit": "mm",
+    "shape": "assembly",
+    "params": {},
+    "parts": [
+      {
+        "shape": "shaft",
+        "params": {
+          "radius": 10.0,
+          "length": 100.0
+        },
+        "unit": "mm"
+      },
+      {
+        "shape": "hollow_shaft",
+        "params": {
+          "outer_radius": 10.0,
+          "inner_radius": 3.0,
+          "length": 100.0
+        },
+        "unit": "mm"
+      }
+    ],
+    "ops": [
+      {
+        "type": "boolean",
+        "name": "cut1",
+        "kind": "difference",
+        "targets": [
+          "shaft",
+          "hollow_shaft"
+        ]
+      }
+    ],
+    "result": "cut1"
+  },
+  "paramsMeta": [
+    {
+      "name": "p0_radius",
+      "label": "P0 shaft radius",
+      "min": 0.1,
+      "max": 30.0,
+      "step": 0.1,
+      "value": 10.0
+    },
+    {
+      "name": "p0_length",
+      "label": "P0 shaft length",
+      "min": 0.1,
+      "max": 300.0,
+      "step": 0.1,
+      "value": 100.0
+    },
+    {
+      "name": "p1_outer_radius",
+      "label": "P1 hollow_shaft outer_radius",
+      "min": 0.1,
+      "max": 30.0,
+      "step": 0.1,
+      "value": 10.0
+    },
+    {
+      "name": "p1_inner_radius",
+      "label": "P1 hollow_shaft inner_radius",
+      "min": 0.1,
+      "max": 13.0,
+      "step": 0.1,
+      "value": 3.0
+    },
+    {
+      "name": "p1_length",
+      "label": "P1 hollow_shaft length",
+      "min": 0.1,
+      "max": 300.0,
+      "step": 0.1,
+      "value": 100.0
+    }
+  ],
+  "reply": "已生成组合体（2 个实体，1 个操作，单位按 mm 换算为毫米）。"
+}

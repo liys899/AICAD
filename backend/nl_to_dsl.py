@@ -2,6 +2,8 @@
 import json
 import os
 import re
+import time
+from pathlib import Path
 from typing import Any
 
 from openai import OpenAI
@@ -73,6 +75,67 @@ Multi-turn:
     shape_rules=build_shape_rules_block(),
 )
 
+_SCAD_INDEX_PATH = Path(__file__).resolve().parent / "openscad_vendor" / "scad_module_index.json"
+_SCAD_MODULE_INDEX_CACHE: list[dict[str, Any]] | None = None
+
+
+def _load_scad_module_index() -> list[dict[str, Any]]:
+    global _SCAD_MODULE_INDEX_CACHE
+    if _SCAD_MODULE_INDEX_CACHE is not None:
+        return _SCAD_MODULE_INDEX_CACHE
+    if not _SCAD_INDEX_PATH.exists():
+        _SCAD_MODULE_INDEX_CACHE = []
+        return _SCAD_MODULE_INDEX_CACHE
+    try:
+        payload = json.loads(_SCAD_INDEX_PATH.read_text(encoding="utf-8"))
+        modules = payload.get("modules")
+        if isinstance(modules, list):
+            _SCAD_MODULE_INDEX_CACHE = [m for m in modules if isinstance(m, dict)]
+        else:
+            _SCAD_MODULE_INDEX_CACHE = []
+    except Exception:
+        _SCAD_MODULE_INDEX_CACHE = []
+    return _SCAD_MODULE_INDEX_CACHE
+
+
+def _build_library_candidates_block(chat_messages: list[dict[str, str]], limit: int = 12) -> str:
+    modules = _load_scad_module_index()
+    if not modules:
+        return ""
+    corpus = " ".join(
+        str(m.get("content", "")).lower()
+        for m in chat_messages
+        if isinstance(m, dict) and isinstance(m.get("content"), str)
+    )
+    query_tokens = {t for t in re.findall(r"[a-zA-Z_][a-zA-Z0-9_]{2,}", corpus) if len(t) >= 3}
+    scored: list[tuple[int, dict[str, Any]]] = []
+    for m in modules:
+        module_name = str(m.get("module", "")).lower()
+        args = [str(a).lower() for a in (m.get("args") or []) if isinstance(a, str)]
+        score = 0
+        for tok in query_tokens:
+            if tok in module_name:
+                score += 3
+            if any(tok in a for a in args):
+                score += 1
+        if score > 0:
+            scored.append((score, m))
+    if not scored:
+        pick = modules[: min(limit, len(modules))]
+    else:
+        pick = [m for _, m in sorted(scored, key=lambda x: x[0], reverse=True)[:limit]]
+    lines = [
+        "Library_call candidate modules from local scad_module_index.json:",
+        "If using shape=\"library_call\", prefer module names from this list and keep args aligned.",
+    ]
+    for m in pick:
+        mod = str(m.get("module", ""))
+        path = str(m.get("path", ""))
+        args = m.get("args") or []
+        args_s = ", ".join(str(a) for a in args) if args else "(no args)"
+        lines.append(f"- {mod} | path={path} | args={args_s}")
+    return "\n".join(lines)
+
 
 def generate_dsl_from_messages(chat_messages: list[dict[str, str]]) -> dict[str, Any]:
     """chat_messages: OpenAI-style roles user|assistant only (no system)."""
@@ -81,6 +144,9 @@ def generate_dsl_from_messages(chat_messages: list[dict[str, str]]) -> dict[str,
     model = os.getenv("ZHIPU_MODEL", "glm-4-flash")
     client = _client()
     api_messages: list[dict[str, str]] = [{"role": "system", "content": _DSL_SYSTEM}]
+    candidates_block = _build_library_candidates_block(chat_messages)
+    if candidates_block:
+        api_messages.append({"role": "system", "content": candidates_block})
     for m in chat_messages:
         role = (m.get("role") or "").strip().lower()
         content = m.get("content")
@@ -94,7 +160,7 @@ def generate_dsl_from_messages(chat_messages: list[dict[str, str]]) -> dict[str,
 
     messages = api_messages
     last_err = None
-    for _attempt in range(3):
+    for attempt in range(3):
         try:
             msg = client.chat.completions.create(
                 model=model,
@@ -105,6 +171,13 @@ def generate_dsl_from_messages(chat_messages: list[dict[str, str]]) -> dict[str,
             return json.loads(_extract_json_object(raw_text))
         except Exception as exc:
             last_err = exc
+            # Upstream model API may intermittently return 5xx; retry same payload directly.
+            status = getattr(exc, "status_code", None)
+            text = str(exc)
+            is_retryable_upstream = status in {500, 502, 503, 504} or any(code in text for code in (" 500", " 502", " 503", " 504"))
+            if is_retryable_upstream and attempt < 2:
+                time.sleep(0.6 * (attempt + 1))
+                continue
             messages.append({"role": "assistant", "content": "Invalid previous JSON."})
             messages.append(
                 {

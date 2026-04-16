@@ -1,6 +1,8 @@
 ﻿from __future__ import annotations
 
 from dataclasses import dataclass
+import json
+from pathlib import Path
 import re
 from business_shapes import SHAPE_ALIASES, supported_shapes_set
 
@@ -25,6 +27,32 @@ _NUM_WITH_UNIT_RE = re.compile(
     r"^\s*(?P<val>-?\d+(?:\.\d+)?)\s*(?P<unit>mm|cm|m|in|inch|inches|millimeter|millimeters|centimeter|centimeters|meter|meters)?\s*$",
     re.IGNORECASE,
 )
+_SCAD_INDEX_PATH = Path(__file__).resolve().parent / "openscad_vendor" / "scad_module_index.json"
+_SCAD_MODULE_INDEX_CACHE: dict[str, set[str]] | None = None
+_METRIC_NUT_ISO4032 = {
+    "m4": {"across_flats": 7.0, "thickness": 3.2, "hole_diameter": 4.3},
+    "m5": {"across_flats": 8.0, "thickness": 4.0, "hole_diameter": 5.3},
+    "m6": {"across_flats": 10.0, "thickness": 5.0, "hole_diameter": 6.4},
+    "m8": {"across_flats": 13.0, "thickness": 6.5, "hole_diameter": 8.4},
+    "m10": {"across_flats": 17.0, "thickness": 8.0, "hole_diameter": 10.5},
+    "m12": {"across_flats": 19.0, "thickness": 10.0, "hole_diameter": 13.0},
+}
+_METRIC_BOLT_ISO4017 = {
+    "m4": {"head_across_flats": 7.0, "head_height": 2.8, "shank_diameter": 4.0},
+    "m5": {"head_across_flats": 8.0, "head_height": 3.5, "shank_diameter": 5.0},
+    "m6": {"head_across_flats": 10.0, "head_height": 4.0, "shank_diameter": 6.0},
+    "m8": {"head_across_flats": 13.0, "head_height": 5.3, "shank_diameter": 8.0},
+    "m10": {"head_across_flats": 17.0, "head_height": 6.4, "shank_diameter": 10.0},
+    "m12": {"head_across_flats": 19.0, "head_height": 7.5, "shank_diameter": 12.0},
+}
+_METRIC_WASHER_ISO7089 = {
+    "m4": {"outer_diameter": 9.0, "inner_diameter": 4.3, "thickness": 0.8},
+    "m5": {"outer_diameter": 10.0, "inner_diameter": 5.3, "thickness": 1.0},
+    "m6": {"outer_diameter": 12.0, "inner_diameter": 6.4, "thickness": 1.6},
+    "m8": {"outer_diameter": 16.0, "inner_diameter": 8.4, "thickness": 1.6},
+    "m10": {"outer_diameter": 20.0, "inner_diameter": 10.5, "thickness": 2.0},
+    "m12": {"outer_diameter": 24.0, "inner_diameter": 13.0, "thickness": 2.5},
+}
 
 
 @dataclass(frozen=True)
@@ -101,6 +129,108 @@ def _to_int_sides(value, field_name: str, lo: int = 3, hi: int = 64) -> int:
     return n
 
 
+def _load_scad_module_index_by_path() -> dict[str, set[str]]:
+    global _SCAD_MODULE_INDEX_CACHE
+    if _SCAD_MODULE_INDEX_CACHE is not None:
+        return _SCAD_MODULE_INDEX_CACHE
+    out: dict[str, set[str]] = {}
+    if not _SCAD_INDEX_PATH.exists():
+        _SCAD_MODULE_INDEX_CACHE = out
+        return out
+    try:
+        payload = json.loads(_SCAD_INDEX_PATH.read_text(encoding="utf-8"))
+        modules = payload.get("modules")
+        if isinstance(modules, list):
+            for item in modules:
+                if not isinstance(item, dict):
+                    continue
+                path = str(item.get("path", "")).strip()
+                module = str(item.get("module", "")).strip()
+                if not path or not module:
+                    continue
+                out.setdefault(path.lower(), set()).add(module)
+    except Exception:
+        out = {}
+    _SCAD_MODULE_INDEX_CACHE = out
+    return out
+
+
+def _resolve_library_path(lib: str, library_path: str) -> str:
+    if library_path:
+        return library_path.strip().replace("\\", "/").lower()
+    aliases = {
+        "mcad": "mcad/",
+        "bosl2": "bosl2/",
+    }
+    return aliases.get(lib.strip().lower(), "")
+
+
+def _normalize_library_call(params_raw: dict) -> dict:
+    if not isinstance(params_raw, dict):
+        raise ValueError("library_call requires params object.")
+    module_name = str(params_raw.get("module", "")).strip()
+    if not module_name:
+        raise ValueError("library_call requires non-empty 'module'.")
+    args = params_raw.get("args", {})
+    if args is None:
+        args = {}
+    if not isinstance(args, dict):
+        raise ValueError("library_call 'args' must be an object of named parameters.")
+    include_mode = str(params_raw.get("include_mode", "use")).strip().lower()
+    if include_mode not in {"use", "include"}:
+        raise ValueError("library_call include_mode must be 'use' or 'include'.")
+    lib = str(params_raw.get("lib", "")).strip().lower()
+    library_path = str(params_raw.get("library_path", "")).strip()
+    library_paths_raw = params_raw.get("library_paths", None)
+    if library_paths_raw is not None and not isinstance(library_paths_raw, list):
+        raise ValueError("library_call 'library_paths' must be an array of strings.")
+
+    # Resolve one-or-more library paths, or fall back to legacy lib/library_path.
+    resolved_paths: list[str] = []
+    if isinstance(library_paths_raw, list) and len(library_paths_raw) > 0:
+        for item in library_paths_raw:
+            p = str(item or "").strip()
+            if p:
+                resolved_paths.append(p.replace("\\", "/").lower())
+    else:
+        if not lib and not library_path:
+            raise ValueError("library_call requires either 'library_paths', 'library_path' or 'lib'.")
+        rp = _resolve_library_path(lib, library_path)
+        if rp:
+            resolved_paths.append(rp)
+
+    # Validate module exists in our vendored index when possible.
+    by_path = _load_scad_module_index_by_path()
+    allowed: set[str] = set()
+    for resolved_path in resolved_paths:
+        if resolved_path.endswith("/"):
+            for pth, mods in by_path.items():
+                if pth.startswith(resolved_path):
+                    allowed.update(mods)
+        else:
+            allowed.update(by_path.get(resolved_path, set()))
+    if allowed and module_name not in allowed:
+        examples = ", ".join(sorted(list(allowed))[:12])
+        hint = resolved_paths[0] if resolved_paths else ""
+        raise ValueError(
+            f"library_call module '{module_name}' is not in index for '{hint}'. "
+            f"Try one of: {examples}"
+        )
+    out = {
+        "module": module_name,
+        "args": args,
+        "include_mode": include_mode,
+    }
+    if lib:
+        out["lib"] = lib
+    if library_path:
+        out["library_path"] = library_path
+    if resolved_paths and (isinstance(library_paths_raw, list) and len(library_paths_raw) > 0):
+        # Keep multi-path form for downstream OpenSCAD include generation.
+        out["library_paths"] = [p for p in (str(x).strip() for x in library_paths_raw) if p]
+    return out
+
+
 def _normalize_single(shape_raw: str, params_raw: dict, factor: float) -> tuple[str, dict]:
     shape = str(shape_raw).strip().lower()
     shape = SHAPE_ALIASES.get(shape, shape)
@@ -115,6 +245,8 @@ def _normalize_single(shape_raw: str, params_raw: dict, factor: float) -> tuple[
     if not isinstance(params_raw, dict):
         raise ValueError("DSL 'params' must be an object.")
     params = params_raw
+    if shape == "library_call":
+        return shape, _normalize_library_call(params)
     out_params: dict = {}
     if shape == "sphere":
         if "radius" in params:
@@ -201,6 +333,68 @@ def _normalize_single(shape_raw: str, params_raw: dict, factor: float) -> tuple[
         out_params["face_width"] = _to_pos_float(fw, "width", factor)
         pa = params.get("pressure_angle", 20)
         out_params["pressure_angle"] = float(_to_pos_float(pa, "pressure_angle", 1.0))
+    elif shape == "spur_gear_pair":
+        raw_t1 = params.get("teeth1", params.get("z1"))
+        raw_t2 = params.get("teeth2", params.get("z2"))
+        if raw_t1 is None or raw_t2 is None:
+            raise ValueError("spur_gear_pair requires teeth1 and teeth2.")
+        out_params["teeth1"] = _to_int_teeth(raw_t1, "teeth1")
+        out_params["teeth2"] = _to_int_teeth(raw_t2, "teeth2")
+        mod_key = params.get("module", params.get("pitch_module", params.get("m")))
+        if mod_key is None:
+            raise ValueError("spur_gear_pair requires module.")
+        out_params["pitch_module"] = _to_pos_float(mod_key, "module", factor)
+        fw = params.get("width", params.get("face_width", params.get("thickness")))
+        if fw is None:
+            raise ValueError("spur_gear_pair requires width.")
+        out_params["face_width"] = _to_pos_float(fw, "width", factor)
+        pa = params.get("pressure_angle", 20)
+        out_params["pressure_angle"] = float(_to_pos_float(pa, "pressure_angle", 1.0))
+    elif shape == "bearing_608":
+        out_params["outer_diameter"] = 22.0
+        out_params["inner_diameter"] = 8.0
+        out_params["width"] = _to_pos_float(params.get("width", 7.0), "width", factor)
+    elif shape == "bearing_6204":
+        out_params["outer_diameter"] = 47.0
+        out_params["inner_diameter"] = 20.0
+        out_params["width"] = _to_pos_float(params.get("width", 14.0), "width", factor)
+    elif shape == "hex_nut_iso4032":
+        key = str(params.get("metric_size", params.get("size", "m8"))).strip().lower()
+        preset = _METRIC_NUT_ISO4032.get(key)
+        if preset:
+            out_params["metric_size"] = key.upper()
+            out_params["across_flats"] = float(preset["across_flats"])
+            out_params["thickness"] = float(preset["thickness"])
+            out_params["hole_diameter"] = float(preset["hole_diameter"])
+        else:
+            out_params["across_flats"] = _to_pos_float(params.get("across_flats"), "across_flats", factor)
+            out_params["thickness"] = _to_pos_float(params.get("thickness"), "thickness", factor)
+            out_params["hole_diameter"] = _to_pos_float(params.get("hole_diameter"), "hole_diameter", factor)
+    elif shape == "hex_bolt_iso4017":
+        key = str(params.get("metric_size", params.get("size", "m8"))).strip().lower()
+        preset = _METRIC_BOLT_ISO4017.get(key)
+        out_params["length"] = _to_pos_float(params.get("length"), "length", factor)
+        if preset:
+            out_params["metric_size"] = key.upper()
+            out_params["head_across_flats"] = float(preset["head_across_flats"])
+            out_params["head_height"] = float(preset["head_height"])
+            out_params["shank_diameter"] = float(preset["shank_diameter"])
+        else:
+            out_params["head_across_flats"] = _to_pos_float(params.get("head_across_flats"), "head_across_flats", factor)
+            out_params["head_height"] = _to_pos_float(params.get("head_height"), "head_height", factor)
+            out_params["shank_diameter"] = _to_pos_float(params.get("shank_diameter"), "shank_diameter", factor)
+    elif shape == "plain_washer_iso7089":
+        key = str(params.get("metric_size", params.get("size", "m8"))).strip().lower()
+        preset = _METRIC_WASHER_ISO7089.get(key)
+        if preset:
+            out_params["metric_size"] = key.upper()
+            out_params["outer_diameter"] = float(preset["outer_diameter"])
+            out_params["inner_diameter"] = float(preset["inner_diameter"])
+            out_params["thickness"] = float(preset["thickness"])
+        else:
+            out_params["outer_diameter"] = _to_pos_float(params.get("outer_diameter"), "outer_diameter", factor)
+            out_params["inner_diameter"] = _to_pos_float(params.get("inner_diameter"), "inner_diameter", factor)
+            out_params["thickness"] = _to_pos_float(params.get("thickness"), "thickness", factor)
     elif shape == "regular_prism":
         raw_sides = params.get("sides", params.get("n", params.get("face_count")))
         if raw_sides is None:

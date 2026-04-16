@@ -1,0 +1,161 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "生成六角螺母"
+    },
+    {
+      "role": "assistant",
+      "content": "已生成六角螺母（ISO4032）（metric_size=M6，across_flats=10.0，thickness=5.0，hole_diameter=6.4，单位按 mm 换算为毫米）。\n[DSL_JSON]\n{\"params\":{\"across_flats\":10,\"hole_diameter\":6.4,\"metric_size\":\"M6\",\"thickness\":5},\"shape\":\"hex_nut_iso4032\",\"unit\":\"mm\",\"version\":\"1.0\"}"
+    },
+    {
+      "role": "user",
+      "content": "Single hexagonal nut, mechanical fastener, symmetrical 6-sided shape, hollow center with spiral threading, shiny metal surface, floating on white background, 3D render, volumetric lighting, high detail mesh, 4K texture"
+    },
+    {
+      "role": "assistant",
+      "content": "[RELATIONSHIP_HINTS]\nRelationship parser constraints (must satisfy in final DSL):\n- gear_mesh: output an assembly with at least two spur_gear parts.\n- gear_mesh: include transform ops to position gears for meshing relationship.\nReturn ONE complete JSON object only."
+    },
+    {
+      "role": "user",
+      "content": "Use these relationship hints strictly when generating final DSL JSON."
+    }
+  ],
+  "dsl": {
+    "version": "1.0",
+    "unit": "mm",
+    "shape": "assembly",
+    "params": {},
+    "parts": [
+      {
+        "shape": "spur_gear",
+        "params": {
+          "teeth": 20,
+          "pitch_module": 2.5,
+          "face_width": 5.0,
+          "pressure_angle": 20.0
+        },
+        "unit": "mm"
+      },
+      {
+        "shape": "spur_gear",
+        "params": {
+          "teeth": 40,
+          "pitch_module": 2.5,
+          "face_width": 5.0,
+          "pressure_angle": 20.0
+        },
+        "unit": "mm"
+      }
+    ],
+    "ops": [
+      {
+        "type": "transform",
+        "name": "moveA",
+        "target": "p0",
+        "translate": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "type": "transform",
+        "name": "moveB",
+        "target": "p1",
+        "translate": [
+          0.0,
+          0.0,
+          5.0
+        ],
+        "rotate": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "type": "boolean",
+        "name": "cut1",
+        "kind": "union",
+        "targets": [
+          "moveA",
+          "moveB"
+        ]
+      }
+    ],
+    "result": "cut1"
+  },
+  "paramsMeta": [
+    {
+      "name": "p0_teeth",
+      "label": "P0 spur_gear teeth",
+      "min": 3.0,
+      "max": 60.0,
+      "step": 1.0,
+      "value": 20.0
+    },
+    {
+      "name": "p0_pitch_module",
+      "label": "P0 spur_gear pitch_module",
+      "min": 0.1,
+      "max": 12.5,
+      "step": 0.1,
+      "value": 2.5
+    },
+    {
+      "name": "p0_face_width",
+      "label": "P0 spur_gear face_width",
+      "min": 0.1,
+      "max": 15.0,
+      "step": 0.1,
+      "value": 5.0
+    },
+    {
+      "name": "p0_pressure_angle",
+      "label": "P0 spur_gear pressure_angle",
+      "min": 0.1,
+      "max": 60.0,
+      "step": 0.1,
+      "value": 20.0
+    },
+    {
+      "name": "p1_teeth",
+      "label": "P1 spur_gear teeth",
+      "min": 3.0,
+      "max": 120.0,
+      "step": 1.0,
+      "value": 40.0
+    },
+    {
+      "name": "p1_pitch_module",
+      "label": "P1 spur_gear pitch_module",
+      "min": 0.1,
+      "max": 12.5,
+      "step": 0.1,
+      "value": 2.5
+    },
+    {
+      "name": "p1_face_width",
+      "label": "P1 spur_gear face_width",
+      "min": 0.1,
+      "max": 15.0,
+      "step": 0.1,
+      "value": 5.0
+    },
+    {
+      "name": "p1_pressure_angle",
+      "label": "P1 spur_gear pressure_angle",
+      "min": 0.1,
+      "max": 60.0,
+      "step": 0.1,
+      "value": 20.0
+    }
+  ],
+  "reply": "已生成组合体（2 个实体，3 个操作，单位按 mm 换算为毫米）。"
+}

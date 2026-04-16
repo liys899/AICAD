@@ -11,8 +11,15 @@ CORE_SHAPES: tuple[str, ...] = (
     "hollow_shaft",
     "stepped_shaft",
     "spur_gear",
+    "spur_gear_pair",
+    "bearing_608",
+    "bearing_6204",
+    "hex_nut_iso4032",
+    "hex_bolt_iso4017",
+    "plain_washer_iso7089",
     "regular_prism",
     "regular_pyramid",
+    "library_call",
 )
 
 SHAPE_ALIASES: dict[str, str] = {
@@ -23,6 +30,12 @@ SHAPE_ALIASES: dict[str, str] = {
     "solid_shaft": "shaft",
     "tube": "hollow_shaft",
     "sleeve": "hollow_shaft",
+    "bolt": "hex_bolt_iso4017",
+    "hex_bolt": "hex_bolt_iso4017",
+    "nut": "hex_nut_iso4032",
+    "hex_nut": "hex_nut_iso4032",
+    "washer": "plain_washer_iso7089",
+    "plain_washer": "plain_washer_iso7089",
 }
 
 SHAPE_PARAM_LINES: tuple[str, ...] = (
@@ -33,8 +46,15 @@ SHAPE_PARAM_LINES: tuple[str, ...] = (
     "- hollow_shaft (tube/sleeve): outer_radius OR outer_diameter, inner_radius OR inner_diameter, and length",
     "- stepped_shaft (2-step shaft): radius1 OR diameter1, length1, radius2 OR diameter2, length2",
     "- spur_gear (standard involute spur, MCAD reference): teeth (integer tooth count), module (mm, pitch module m), width (mm, face width), pressure_angle (degrees, default 20)",
+    "- spur_gear_pair (meshing spur gears): teeth1, teeth2, module, width, pressure_angle(optional, default 20).",
+    "- bearing_608 (deep groove ball bearing, preset dims): optional width to override standard.",
+    "- bearing_6204 (deep groove ball bearing, preset dims): optional width to override standard.",
+    "- hex_nut_iso4032: metric_size (e.g. M6/M8/M10) OR explicit across_flats + thickness + hole_diameter.",
+    "- hex_bolt_iso4017: metric_size + length OR explicit head_across_flats + head_height + shank_diameter + length.",
+    "- plain_washer_iso7089: metric_size OR explicit outer_diameter + inner_diameter + thickness.",
     "- regular_prism (right prism, regular n-gon base): sides (integer n>=3), radius (mm, circumradius of base), height (mm, prism length along extrusion)",
     "- regular_pyramid (right pyramid, regular n-gon base, apex centered above base): sides (integer n>=3), radius (mm, circumradius of base), height (mm, apex to base plane distance). Aliases: prism -> regular_prism, pyramid -> regular_pyramid.",
+    "- library_call (generic OpenSCAD library module): module (required module name), args (object of named args), and either library_path (e.g. openscad_vendor/mcad/gears.scad) or lib alias (mcad|bosl2). Optional include_mode: use|include (default use).",
 )
 
 SHAPE_RULE_LINES: tuple[str, ...] = (
@@ -45,6 +65,10 @@ SHAPE_RULE_LINES: tuple[str, ...] = (
     '- For stepped shaft / 台阶轴 / 阶梯轴 use shape="stepped_shaft" with radius1/length1 and radius2/length2.',
     '- For 棱柱 / 正n棱柱 / polygon prism use shape="regular_prism" with sides, radius, height.',
     '- For 棱锥 / 正n棱锥 / pyramid use shape="regular_pyramid" with sides, radius, height.',
+    '- For one meshing gear pair / 一对啮合直齿轮 use shape="spur_gear_pair".',
+    '- For bearing 608 use shape="bearing_608"; for bearing 6204 use shape="bearing_6204".',
+    '- For hex nut use shape="hex_nut_iso4032"; for hex bolt use shape="hex_bolt_iso4017"; for plain washer use shape="plain_washer_iso7089".',
+    '- If user asks to call an OpenSCAD vendor library module directly, use shape="library_call" with module + args + library_path (or lib alias).',
 )
 
 

@@ -1,0 +1,38 @@
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "直径20 长100 的实心轴，中心打直径6通孔"
+    },
+    {
+      "role": "assistant",
+      "content": "已生成组合体（2 个实体，1 个操作，单位按 mm 换算为毫米）。\n[DSL_JSON]\n{\"ops\":[{\"kind\":\"difference\",\"name\":\"cut1\",\"targets\":[\"p0\",\"p1\"],\"type\":\"boolean\"}],\"params\":{},\"parts\":[{\"params\":{\"length\":100,\"radius\":10},\"shape\":\"shaft\",\"unit\":\"mm\"},{\"params\":{\"height\":100.2,\"radius\":1},\"shape\":\"cylinder\",\"unit\":\"mm\"}],\"result\":\"cut1\",\"shape\":\"assembly\",\"unit\":\"mm\",\"version\":\"1.0\"}"
+    },
+    {
+      "role": "user",
+      "content": "生成一个带外螺纹的六角头螺栓"
+    }
+  ],
+  "dsl": {
+    "version": "1.0",
+    "unit": "mm",
+    "shape": "hex_bolt_iso4017",
+    "params": {
+      "length": 20.0,
+      "head_across_flats": 16.0,
+      "head_height": 6.0,
+      "shank_diameter": 14.0
+    }
+  },
+  "paramsMeta": [
+    {
+      "name": "length",
+      "label": "螺栓长度 (mm)",
+      "min": 4.0,
+      "max": 120.0,
+      "step": 0.5,
+      "value": 20.0
+    }
+  ],
+  "reply": "已生成六角头螺栓（ISO4017）（length=20.0，head_across_flats=16.0，head_height=6.0，shank_diameter=14.0，单位按 mm 换算为毫米）。"
+}
